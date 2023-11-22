@@ -10,4 +10,4 @@ class OpenedxUnidigitalConfig(AppConfig):
     Configuration for the openedx_unidigital Django application.
     """
 
-    name = 'openedx_unidigital'
+    name = "openedx_unidigital"
