@@ -20,6 +20,7 @@ git+https://github.com/edunext/platform-plugin-superset@v0.1.0
 # git+https://github.com/eduNEXT/platform-plugin-ontask
 # git+https://github.com/eduNEXT/platform-plugin-groups
 # git+https://github.com/eduNEXT/platform-plugin-oncampus
+# git+https://github.com/eduNEXT/platform-plugin-turnitin
 # Official plugins
 git+https://github.com/eduNEXT/h5pxblock.git@edues
 git+https://github.com/eduNEXT/FeedbackXBlock@edues
