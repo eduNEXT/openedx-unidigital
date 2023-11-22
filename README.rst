@@ -1,74 +1,120 @@
 openedx-unidigital
 #############################
 
-.. note::
-
-  This README was auto-generated. Maintainer: please review its contents and
-  update all relevant sections. Instructions to you are marked with
-  "PLACEHOLDER" or "TODO". Update or remove those sections, and remove this
-  note when you are done.
-
-|pypi-badge| |ci-badge| |codecov-badge| |doc-badge| |pyversions-badge|
+|pypi-badge| |ci-badge| |pyversions-badge|
 |license-badge| |status-badge|
 
 Purpose
 *******
 
-An Open edX plugin for the Unidigital project
+A plugin that setups the Open edX platform to be used in the context
+of the Unidigital project.
 
-TODO: The ``README.rst`` file should start with a brief description of the repository and its purpose.
-It should be described in the context of other repositories under the ``openedx``
-organization. It should make clear where this fits in to the overall Open edX
-codebase and should be oriented towards people who are new to the Open edX
-project.
-
-Getting Started with Development
-********************************
-
-Please see the Open edX documentation for `guidance on Python development <https://docs.openedx.org/en/latest/developers/how-tos/get-ready-for-python-dev.html>`_ in this repo.
+This plugin has been created as an open source contribution to the Open edX platform
+and has been funded by the Unidigital project from the Spanish Government - 2023.
 
 Deploying
 *********
 
-TODO: How can a new user go about deploying this component? Is it just a few
-commands? Is there a larger how-to that should be linked here?
+This plugin is meant to be used in the context of the Unidigital project.
 
-PLACEHOLDER: For details on how to deploy this component, see the `deployment how-to`_
+To deploy this plugin in a Open edX platform, you can use the following
+command:
 
-.. _deployment how-to: https://docs.openedx.org/projects/openedx-unidigital/how-tos/how-to-deploy-this-component.html
+.. code-block:: bash
 
-Getting Help
-************
+    pip install openedx-unidigital
 
-Documentation
-=============
+This will install all the required dependencies and will add the plugin
+to the list of installed plugins in the platform.
 
-PLACEHOLDER: Start by going through `the documentation`_.  If you need more help see below.
 
-.. _the documentation: https://docs.openedx.org/projects/openedx-unidigital
+.. note::
 
-(TODO: `Set up documentation <https://openedx.atlassian.net/wiki/spaces/DOC/pages/21627535/Publish+Documentation+on+Read+the+Docs>`_)
+    This plugin is meant to be used in the context of the Unidigital project.
+    You need to use the following branch of the edx-platform repository:
+    https://github.com/eduNEXT/edunext-platform/tree/open-release/palm.4/edues
 
-More Help
-=========
+    It's based on the open-release/palm.4 branch of the edx-platform repository
+    and it's compatible with tutor version v16.1.7
 
-If you're having trouble, we have discussion forums at
-https://discuss.openedx.org where you can connect with others in the
-community.
 
-Our real-time conversations are on Slack. You can request a `Slack
-invitation`_, then join our `community Slack workspace`_.
+Features
+********
 
-For anything non-trivial, the best path is to open an issue in this
-repository with as many details about the issue you are facing as you
-can provide.
+This plugin adds the following features to the Open edX platform:
 
-https://github.com/eduNEXT/openedx-unidigital/issues
+Aspects
+=======
+This plugin adds the Aspects Learner Analytics dependencies to the platform.
 
-For more information about these options, see the `Getting Help <https://openedx.org/getting-help>`__ page.
+- openedx-event-sink-clickhouse: A plugin to send events to a Clickhouse database.
+- event-routing-backends: A plugin to route events to different backends.
 
-.. _Slack invitation: https://openedx.org/slack
-.. _community Slack workspace: https://openedx.slack.com/
+XBlocks
+=======
+
+Limesurvey XBlock
+-----------------
+
+This plugin adds a new XBlock to the platform that allows to embed a Limesurvey
+survey in a course.
+
+Mindmap XBlock
+---------------
+
+This plugin adds a new XBlock to the platform that allows to embed a Mindmap
+in a course.
+
+Files Manager XBlock
+--------------------
+
+This plugin adds a new XBlock to the platform that allows to share files to the
+students in a course.
+
+H5P XBlock
+----------
+
+This plugin adds a new XBlock to the platform that allows to embed H5P content.
+This specific version has multiple improvements over the original H5P XBlock:
+
+- Allow to view H5P content in the CMS
+- Improvements to the H5P studio view
+
+Feedback XBlock
+---------------
+
+This plugin adds a new XBlock to the platform that allows to embed a Feedback
+form in a course. This specific version has multiple improvements over the
+original Feedback XBlock:
+
+- Improved translations
+- Instructor dashboard integration to view the feedback results
+- A new star icon likert set
+
+edx-ora2
+--------
+
+This specific version of the edx-ora2 has multiple improvements over the
+original edx-ora2 XBlock:
+
+
+
+Platform plugins
+================
+
+Forum Email Notifier
+--------------------
+
+This plugin adds a new feature to the platform that allows to send email notifications
+to the students when there is new activity in the forums. It also allows to configure
+the frequency of the notifications for instructors in each course.
+
+Superset
+--------
+
+This plugin adds a new feature to the platform that allows to embed Superset dashboards
+in the platform.
 
 License
 *******
@@ -110,7 +156,7 @@ file in this repo.
 Reporting Security Issues
 *************************
 
-Please do not report security issues in public. Please email security@openedx.org.
+Please do not report security issues in public. Please email security@edunext.co.
 
 .. |pypi-badge| image:: https://img.shields.io/pypi/v/openedx-unidigital.svg
     :target: https://pypi.python.org/pypi/openedx-unidigital/
@@ -119,14 +165,6 @@ Please do not report security issues in public. Please email security@openedx.or
 .. |ci-badge| image:: https://github.com/eduNEXT/openedx-unidigital/workflows/Python%20CI/badge.svg?branch=main
     :target: https://github.com/eduNEXT/openedx-unidigital/actions
     :alt: CI
-
-.. |codecov-badge| image:: https://codecov.io/github/eduNEXT/openedx-unidigital/coverage.svg?branch=main
-    :target: https://codecov.io/github/eduNEXT/openedx-unidigital?branch=main
-    :alt: Codecov
-
-.. |doc-badge| image:: https://readthedocs.org/projects/openedx-unidigital/badge/?version=latest
-    :target: https://docs.openedx.org/projects/openedx-unidigital
-    :alt: Documentation
 
 .. |pyversions-badge| image:: https://img.shields.io/pypi/pyversions/openedx-unidigital.svg
     :target: https://pypi.python.org/pypi/openedx-unidigital/

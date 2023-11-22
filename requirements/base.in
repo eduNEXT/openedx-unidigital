@@ -5,3 +5,22 @@ Django             # Web application framework
 
 
 openedx-atlas
+# Aspects requirements
+openedx-event-sink-clickhouse
+edx-event-routing-backends
+edx-completion>=4.4.0
+openedx-events>=9.2.0
+# Plugins
+git+https://github.com/eduNEXT/xblock-limesurvey@v0.6.4
+git+https://github.com/eduNEXT/xblock-mindmap@v0.9.0
+git+https://github.com/eduNEXT/xblock-imagesgallery.git@v0.4.2
+git+https://github.com/eduNEXT/xblock-filesmanager.git@v0.3.0
+git+https://github.com/edunext/platform-plugin-forum-email-notifier@v0.3.2
+git+https://github.com/edunext/platform-plugin-superset@v0.1.0
+# git+https://github.com/eduNEXT/platform-plugin-ontask
+# git+https://github.com/eduNEXT/platform-plugin-groups
+# git+https://github.com/eduNEXT/platform-plugin-oncampus
+# Official plugins
+git+https://github.com/eduNEXT/h5pxblock.git@edues
+git+https://github.com/eduNEXT/FeedbackXBlock@edues
+git+https://github.com/eduNEXT/edx-ora2.git@ednx-release/palm.edues
