@@ -4,117 +4,89 @@ openedx-unidigital
 |pypi-badge| |ci-badge| |pyversions-badge|
 |license-badge| |status-badge|
 
-Purpose
-*******
+# Open edX Unidigital Plugin
 
-A plugin that setups the Open edX platform to be used in the context
-of the Unidigital project.
+## Purpose
 
-This plugin has been created as an open source contribution to the Open edX platform
-and has been funded by the Unidigital project from the Spanish Government - 2023.
+This plugin is designed to configure the Open edX platform for use within the
+Unidigital project, an initiative funded by the Spanish Government in 2023.
 
-Deploying
-*********
+As an open-source contribution to the Open edX platform, this plugin enhances
+its functionality to align with the requirements of the Unidigital project.
 
-This plugin is meant to be used in the context of the Unidigital project.
+## Deployment
 
-To deploy this plugin in a Open edX platform, you can use the following
-command:
+To deploy this plugin in your Open edX platform within the Unidigital project,
+execute the following command:
 
 .. code-block:: bash
 
     pip install openedx-unidigital
 
-This will install all the required dependencies and will add the plugin
-to the list of installed plugins in the platform.
+This command installs the necessary dependencies and adds the plugin to the list
+of installed plugins in the platform.
 
+**Note:** Ensure that you use the specified branch of the edx-platform repository:
+[Unidigital Branch](https://github.com/eduNEXT/edunext-platform/tree/open-release/palm.4/edues).
+The plugin is based on the open-release/palm.4 branch and is compatible with Tutor version v16.1.7.
 
-.. note::
+## Features
 
-    This plugin is meant to be used in the context of the Unidigital project.
-    You need to use the following branch of the edx-platform repository:
-    https://github.com/eduNEXT/edunext-platform/tree/open-release/palm.4/edues
+### Aspects
 
-    It's based on the open-release/palm.4 branch of the edx-platform repository
-    and it's compatible with tutor version v16.1.7
+This plugin introduces Aspects Learner Analytics dependencies to the Open edX platform, including:
 
+- [openedx-event-sink-clickhouse](https://github.com/openedx/openedx-event-sink-clickhouse): A plugin for sending events to a Clickhouse database.
+- [event-routing-backends](https://github.com/openedx/event-routing-backends): A plugin for routing events to different backends.
 
-Features
-********
+### XBlocks
 
-This plugin adds the following features to the Open edX platform:
+#### Limesurvey XBlock
 
-Aspects
-=======
-This plugin adds the Aspects Learner Analytics dependencies to the platform.
+Integrates a new XBlock into the platform, enabling the embedding of Limesurvey surveys within a course.
 
-- openedx-event-sink-clickhouse: A plugin to send events to a Clickhouse database.
-- event-routing-backends: A plugin to route events to different backends.
+#### Mindmap XBlock
 
-XBlocks
-=======
+Adds a new XBlock to the platform, facilitating the embedding of Mindmaps within a course.
 
-Limesurvey XBlock
------------------
+#### Files Manager XBlock
 
-This plugin adds a new XBlock to the platform that allows to embed a Limesurvey
-survey in a course.
+Introduces a new XBlock allowing instructors to share files with students in a course.
 
-Mindmap XBlock
----------------
+#### H5P XBlock
 
-This plugin adds a new XBlock to the platform that allows to embed a Mindmap
-in a course.
+Enhances the platform with a new XBlock supporting the embedding of H5P content. This version includes improvements such as:
 
-Files Manager XBlock
---------------------
+- Viewing H5P content in the CMS.
+- Enhancements to the H5P studio view.
 
-This plugin adds a new XBlock to the platform that allows to share files to the
-students in a course.
+#### Feedback XBlock
 
-H5P XBlock
-----------
+Integrates a new XBlock enabling the embedding of a Feedback form within a course. This version boasts multiple improvements, including:
 
-This plugin adds a new XBlock to the platform that allows to embed H5P content.
-This specific version has multiple improvements over the original H5P XBlock:
+- Enhanced translations.
+- Integration with the instructor dashboard to view feedback results.
+- Introduction of a new star icon likert set.
 
-- Allow to view H5P content in the CMS
-- Improvements to the H5P studio view
+#### edx-ora2
 
-Feedback XBlock
----------------
+This specific version of the edx-ora2 XBlock includes multiple improvements over the original version.
 
-This plugin adds a new XBlock to the platform that allows to embed a Feedback
-form in a course. This specific version has multiple improvements over the
-original Feedback XBlock:
+- ORA Staff Grader improvements.
 
-- Improved translations
-- Instructor dashboard integration to view the feedback results
-- A new star icon likert set
+### Platform Plugins
 
-edx-ora2
---------
+#### Forum Email Notifier
 
-This specific version of the edx-ora2 has multiple improvements over the
-original edx-ora2 XBlock:
+Extends the platform with a new feature that sends email notifications to students when there is new activity in the forums. It also allows instructors to configure the frequency of notifications for each course.
 
+#### Superset
 
+Adds a new feature to the platform, allowing the embedding of Superset dashboards directly within the platform.
 
-Platform plugins
-================
+## License
 
-Forum Email Notifier
---------------------
-
-This plugin adds a new feature to the platform that allows to send email notifications
-to the students when there is new activity in the forums. It also allows to configure
-the frequency of the notifications for instructors in each course.
-
-Superset
---------
-
-This plugin adds a new feature to the platform that allows to embed Superset dashboards
-in the platform.
+This plugin is distributed under the [XYZ License](link-to-license). Please refer to the [License File](link-to-license-file) for more information.
 
 License
 *******
