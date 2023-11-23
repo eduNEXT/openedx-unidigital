@@ -127,15 +127,19 @@ Please see `LICENSE.txt <LICENSE.txt>`_ for details.
 Contributing
 ************
 
-Contributions are very welcome.
-Please read `How To Contribute <https://openedx.org/r/how-to-contribute>`_ for details.
+To add a new required dependency to the plugin you need to add it to the
+``requirements/base.in`` file and then run the following command:
 
-This project is currently accepting all types of contributions, bug fixes,
-security fixes, maintenance work, or new features.  However, please make sure
-to have a discussion about your new feature idea with the maintainers prior to
-beginning development to maximize the chances of your change being accepted.
-You can start a conversation by creating a new issue on this repo summarizing
-your idea.
+.. code-block:: bash
+
+    make upgrade
+
+As dependencies can be git repositories, you can also specify a specific
+branch or commit hash in the ``requirements/base.in`` file:
+
+.. code-block:: bash
+
+    {package_name} @ git+https://github.com/{org}/{repo_name}.git@{branch_tag_or_commit_hash}
 
 The Open edX Code of Conduct
 ****************************
