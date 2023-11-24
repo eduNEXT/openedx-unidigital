@@ -73,6 +73,9 @@ def load_requirements(*requirements_paths):
         if regex_match:
             package = regex_match.group(1)
             version_constraints = regex_match.group(2)
+            if not version_constraints and "git" in current_line:
+                current_line = current_line.strip()
+                version_constraints = "@"+current_line[current_line.index("git"):]
             check_name_consistent(package)
             existing_version_constraints = current_requirements.get(package, None)
             # It's fine to add constraints to an unconstrained package,

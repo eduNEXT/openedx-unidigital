@@ -39,8 +39,6 @@ LOCALE_PATHS = [
     root("openedx_unidigital", "conf", "locale"),
 ]
 
-ROOT_URLCONF = "openedx_unidigital.urls"
-
 SECRET_KEY = "insecure-secret-key"
 
 MIDDLEWARE = (

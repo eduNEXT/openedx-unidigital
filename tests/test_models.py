@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """
 Tests for the `openedx-unidigital` models module.
 """

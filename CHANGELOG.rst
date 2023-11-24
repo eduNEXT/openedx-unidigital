@@ -16,10 +16,11 @@ Unreleased
 
 *
 
-0.1.0 – 2023-11-22
+0.1.0 - 2023-11-23
 **********************************************
 
 Added
 =====
 
-* First release on PyPI.
+* Initial release of openedx_unidigital.
+* Added Unidigital required dependencies.

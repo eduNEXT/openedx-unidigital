@@ -4,6 +4,22 @@
 #
 #    make upgrade
 #
+amqp==5.2.0
+    # via
+    #   -r requirements/quality.txt
+    #   kombu
+aniso8601==9.0.1
+    # via
+    #   -r requirements/quality.txt
+    #   tincan
+apache-libcloud==3.8.0
+    # via
+    #   -r requirements/quality.txt
+    #   edx-event-routing-backends
+appdirs==1.4.4
+    # via
+    #   -r requirements/quality.txt
+    #   fs
 asgiref==3.7.2
     # via
     #   -r requirements/quality.txt
@@ -13,8 +29,42 @@ astroid==3.0.1
     #   -r requirements/quality.txt
     #   pylint
     #   pylint-celery
+attrs==23.1.0
+    # via
+    #   -r requirements/quality.txt
+    #   edx-ace
+    #   openedx-events
+backports-zoneinfo[tzdata]==0.2.1
+    # via
+    #   -r requirements/quality.txt
+    #   backports-zoneinfo
+    #   celery
+    #   kombu
+beautifulsoup4==4.12.2
+    # via
+    #   -r requirements/quality.txt
+    #   platform-plugin-forum-email-notifier
+billiard==4.2.0
+    # via
+    #   -r requirements/quality.txt
+    #   celery
 black==23.11.0
     # via -r requirements/dev.in
+bleach==6.1.0
+    # via
+    #   -r requirements/quality.txt
+    #   ora2
+boto3==1.7.0
+    # via
+    #   -r requirements/quality.txt
+    #   fs-s3fs
+    #   ora2
+    #   xblock-mindmap
+botocore==1.10.84
+    # via
+    #   -r requirements/quality.txt
+    #   boto3
+    #   s3transfer
 build==1.0.3
     # via
     #   -r requirements/pip-tools.txt
@@ -23,28 +73,67 @@ cachetools==5.3.2
     # via
     #   -r requirements/ci.txt
     #   tox
+celery==5.3.6
+    # via
+    #   -r requirements/quality.txt
+    #   edx-celeryutils
+    #   event-tracking
+    #   openedx-event-sink-clickhouse
+    #   platform-plugin-forum-email-notifier
+    #   xblock-filesmanager
+certifi==2023.11.17
+    # via
+    #   -r requirements/quality.txt
+    #   requests
+cffi==1.16.0
+    # via
+    #   -r requirements/quality.txt
+    #   cryptography
+    #   pynacl
 chardet==5.2.0
     # via
     #   -r requirements/ci.txt
     #   diff-cover
     #   tox
+charset-normalizer==3.3.2
+    # via
+    #   -r requirements/quality.txt
+    #   requests
 click==8.1.7
     # via
     #   -r requirements/pip-tools.txt
     #   -r requirements/quality.txt
     #   black
+    #   celery
+    #   click-didyoumean
     #   click-log
+    #   click-plugins
+    #   click-repl
     #   code-annotations
+    #   edx-django-utils
     #   edx-lint
     #   pip-tools
+click-didyoumean==0.3.0
+    # via
+    #   -r requirements/quality.txt
+    #   celery
 click-log==0.4.0
     # via
     #   -r requirements/quality.txt
     #   edx-lint
+click-plugins==1.1.1
+    # via
+    #   -r requirements/quality.txt
+    #   celery
+click-repl==0.3.0
+    # via
+    #   -r requirements/quality.txt
+    #   celery
 code-annotations==1.5.0
     # via
     #   -r requirements/quality.txt
     #   edx-lint
+    #   edx-toggles
 colorama==0.4.6
     # via
     #   -r requirements/ci.txt
@@ -54,6 +143,15 @@ coverage[toml]==7.3.2
     #   -r requirements/quality.txt
     #   coverage
     #   pytest-cov
+cryptography==41.0.5
+    # via
+    #   -r requirements/quality.txt
+    #   django-fernet-fields-v2
+    #   pyjwt
+defusedxml==0.7.1
+    # via
+    #   -r requirements/quality.txt
+    #   ora2
 diff-cover==8.0.1
     # via -r requirements/dev.in
 dill==0.3.7
@@ -68,20 +166,204 @@ django==3.2.23
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/quality.txt
+    #   django-appconf
+    #   django-config-models
+    #   django-crum
+    #   django-fernet-fields-v2
+    #   django-model-utils
+    #   django-statici18n
+    #   django-waffle
+    #   djangorestframework
+    #   drf-jwt
+    #   edx-ace
+    #   edx-celeryutils
+    #   edx-completion
+    #   edx-django-utils
+    #   edx-drf-extensions
+    #   edx-event-routing-backends
     #   edx-i18n-tools
+    #   edx-submissions
+    #   edx-toggles
+    #   event-tracking
+    #   jsonfield
+    #   openedx-django-pyfs
+    #   openedx-event-sink-clickhouse
+    #   openedx-events
+    #   openedx-filters
+    #   ora2
+    #   platform-plugin-forum-email-notifier
+    #   platform-plugin-superset
+django-appconf==1.0.6
+    # via
+    #   -r requirements/quality.txt
+    #   django-statici18n
+django-config-models==2.5.1
+    # via
+    #   -r requirements/quality.txt
+    #   edx-event-routing-backends
+django-crum==0.7.9
+    # via
+    #   -r requirements/quality.txt
+    #   edx-django-utils
+    #   edx-toggles
+    #   platform-plugin-superset
+    #   xblock-limesurvey
+django-fernet-fields-v2==0.9
+    # via
+    #   -r requirements/quality.txt
+    #   edx-event-routing-backends
+django-model-utils==4.3.1
+    # via
+    #   -r requirements/quality.txt
+    #   edx-celeryutils
+    #   edx-completion
+    #   edx-submissions
+    #   ora2
+    #   platform-plugin-forum-email-notifier
+django-rest-framework==0.1.0
+    # via
+    #   -r requirements/quality.txt
+    #   openedx-event-sink-clickhouse
+    #   platform-plugin-forum-email-notifier
+django-simple-history==3.0.0
+    # via
+    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
+    #   -r requirements/quality.txt
+    #   ora2
+django-statici18n==2.4.0
+    # via
+    #   -r requirements/quality.txt
+    #   xblock-filesmanager
+    #   xblock-imagesgallery
+    #   xblock-limesurvey
+    #   xblock-mindmap
+django-waffle==4.0.0
+    # via
+    #   -r requirements/quality.txt
+    #   edx-django-utils
+    #   edx-drf-extensions
+    #   edx-toggles
+djangorestframework==3.14.0
+    # via
+    #   -r requirements/quality.txt
+    #   django-config-models
+    #   django-rest-framework
+    #   drf-jwt
+    #   edx-completion
+    #   edx-drf-extensions
+    #   edx-submissions
+    #   ora2
+docutils==0.20.1
+    # via
+    #   -r requirements/quality.txt
+    #   botocore
+drf-jwt==1.19.2
+    # via
+    #   -r requirements/quality.txt
+    #   edx-drf-extensions
+edx-ace==1.7.0
+    # via
+    #   -r requirements/quality.txt
+    #   platform-plugin-forum-email-notifier
+edx-celeryutils==1.2.3
+    # via
+    #   -r requirements/quality.txt
+    #   edx-event-routing-backends
+edx-completion==4.4.0
+    # via -r requirements/quality.txt
+edx-django-utils==5.8.0
+    # via
+    #   -r requirements/quality.txt
+    #   django-config-models
+    #   edx-drf-extensions
+    #   edx-toggles
+    #   event-tracking
+    #   openedx-event-sink-clickhouse
+    #   ora2
+    #   platform-plugin-forum-email-notifier
+edx-drf-extensions==8.13.1
+    # via
+    #   -r requirements/quality.txt
+    #   edx-completion
+edx-event-routing-backends==7.1.0
+    # via -r requirements/quality.txt
 edx-i18n-tools==1.3.0
-    # via -r requirements/dev.in
+    # via
+    #   -r requirements/dev.in
+    #   -r requirements/quality.txt
+    #   ora2
+    #   xblock-filesmanager
+    #   xblock-imagesgallery
+    #   xblock-limesurvey
+    #   xblock-mindmap
 edx-lint==5.3.6
     # via -r requirements/quality.txt
+edx-opaque-keys[django]==2.5.1
+    # via
+    #   -r requirements/quality.txt
+    #   edx-completion
+    #   edx-drf-extensions
+    #   edx-opaque-keys
+    #   openedx-event-sink-clickhouse
+    #   openedx-events
+    #   ora2
+    #   xblock-filesmanager
+edx-submissions==3.6.0
+    # via
+    #   -r requirements/quality.txt
+    #   ora2
+    #   xblock-mindmap
+edx-toggles==5.1.0
+    # via
+    #   -r requirements/quality.txt
+    #   edx-completion
+    #   edx-event-routing-backends
+    #   openedx-event-sink-clickhouse
+    #   ora2
+event-tracking==2.2.0
+    # via
+    #   -r requirements/quality.txt
+    #   edx-completion
+    #   edx-event-routing-backends
 exceptiongroup==1.2.0
     # via
     #   -r requirements/quality.txt
     #   pytest
+fastavro==1.9.0
+    # via
+    #   -r requirements/quality.txt
+    #   openedx-events
+fasteners==0.19
+    # via
+    #   -r requirements/quality.txt
+    #   edx-event-routing-backends
+feedback-xblock @ git+https://github.com/eduNEXT/FeedbackXBlock@edues
+    # via -r requirements/quality.txt
 filelock==3.13.1
     # via
     #   -r requirements/ci.txt
     #   tox
     #   virtualenv
+fs==2.4.16
+    # via
+    #   -r requirements/quality.txt
+    #   fs-s3fs
+    #   openedx-django-pyfs
+    #   xblock
+fs-s3fs==1.1.0
+    # via
+    #   -r requirements/quality.txt
+    #   openedx-django-pyfs
+h5p-xblock @ git+https://github.com/eduNEXT/h5pxblock.git@edues
+    # via -r requirements/quality.txt
+html5lib==1.1
+    # via
+    #   -r requirements/quality.txt
+    #   ora2
+idna==3.5
+    # via
+    #   -r requirements/quality.txt
+    #   requests
 importlib-metadata==6.8.0
     # via
     #   -r requirements/pip-tools.txt
@@ -90,6 +372,10 @@ iniconfig==2.0.0
     # via
     #   -r requirements/quality.txt
     #   pytest
+isodate==0.6.1
+    # via
+    #   -r requirements/quality.txt
+    #   edx-event-routing-backends
 isort==5.12.0
     # via
     #   -r requirements/quality.txt
@@ -99,19 +385,90 @@ jinja2==3.1.2
     #   -r requirements/quality.txt
     #   code-annotations
     #   diff-cover
+jmespath==0.10.0
+    # via
+    #   -r requirements/quality.txt
+    #   boto3
+    #   botocore
+jsonfield==3.1.0
+    # via
+    #   -r requirements/quality.txt
+    #   edx-celeryutils
+    #   edx-event-routing-backends
+    #   edx-submissions
+    #   ora2
+kombu==5.3.4
+    # via
+    #   -r requirements/quality.txt
+    #   celery
+lazy==1.6
+    # via
+    #   -r requirements/quality.txt
+    #   ora2
+    #   xblock
+libsass==0.22.0
+    # via
+    #   -r requirements/quality.txt
+    #   ora2
+loremipsum==1.0.5
+    # via
+    #   -r requirements/quality.txt
+    #   ora2
 lxml==4.9.3
-    # via edx-i18n-tools
+    # via
+    #   -r requirements/quality.txt
+    #   edx-i18n-tools
+    #   ora2
+    #   xblock
+mako==1.3.0
+    # via
+    #   -r requirements/quality.txt
+    #   xblock
+    #   xblock-filesmanager
+    #   xblock-imagesgallery
+    #   xblock-limesurvey
+    #   xblock-mindmap
+    #   xblock-utils
 markupsafe==2.1.3
     # via
     #   -r requirements/quality.txt
     #   jinja2
+    #   mako
+    #   xblock
 mccabe==0.7.0
     # via
     #   -r requirements/quality.txt
     #   pylint
 mypy-extensions==1.0.0
     # via black
+newrelic==9.2.0
+    # via
+    #   -r requirements/quality.txt
+    #   edx-django-utils
+oauthlib==3.2.2
+    # via
+    #   -r requirements/quality.txt
+    #   requests-oauthlib
 openedx-atlas==0.5.0
+    # via -r requirements/quality.txt
+openedx-django-pyfs==3.4.0
+    # via
+    #   -r requirements/quality.txt
+    #   xblock
+openedx-event-sink-clickhouse==0.4.0
+    # via -r requirements/quality.txt
+openedx-events==9.2.0
+    # via
+    #   -r requirements/quality.txt
+    #   platform-plugin-forum-email-notifier
+openedx-filters==1.6.0
+    # via
+    #   -r requirements/quality.txt
+    #   edx-event-routing-backends
+    #   platform-plugin-forum-email-notifier
+    #   platform-plugin-superset
+    #   xblock-limesurvey
+ora2 @ git+https://github.com/eduNEXT/edx-ora2.git@ednx-release/palm.edues
     # via -r requirements/quality.txt
 packaging==23.2
     # via
@@ -124,7 +481,14 @@ packaging==23.2
     #   pytest
     #   tox
 path==16.7.1
-    # via edx-i18n-tools
+    # via
+    #   -r requirements/quality.txt
+    #   edx-i18n-tools
+    #   path-py
+path-py==12.5.0
+    # via
+    #   -r requirements/quality.txt
+    #   ora2
 pathspec==0.11.2
     # via black
 pbr==6.0.0
@@ -133,6 +497,10 @@ pbr==6.0.0
     #   stevedore
 pip-tools==7.3.0
     # via -r requirements/pip-tools.txt
+platform-plugin-forum-email-notifier @ git+https://github.com/edunext/platform-plugin-forum-email-notifier@v0.3.2
+    # via -r requirements/quality.txt
+platform-plugin-superset @ git+https://github.com/edunext/platform-plugin-superset@v0.1.0
+    # via -r requirements/quality.txt
 platformdirs==3.11.0
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
@@ -150,13 +518,33 @@ pluggy==1.3.0
     #   pytest
     #   tox
 polib==1.2.0
-    # via edx-i18n-tools
+    # via
+    #   -r requirements/quality.txt
+    #   edx-i18n-tools
+prompt-toolkit==3.0.41
+    # via
+    #   -r requirements/quality.txt
+    #   click-repl
+psutil==5.9.6
+    # via
+    #   -r requirements/quality.txt
+    #   edx-django-utils
 pycodestyle==2.11.1
     # via -r requirements/quality.txt
+pycparser==2.21
+    # via
+    #   -r requirements/quality.txt
+    #   cffi
 pydocstyle==6.3.0
     # via -r requirements/quality.txt
 pygments==2.17.2
     # via diff-cover
+pyjwt[crypto]==2.8.0
+    # via
+    #   -r requirements/quality.txt
+    #   drf-jwt
+    #   edx-drf-extensions
+    #   pyjwt
 pylint==3.0.2
     # via
     #   -r requirements/quality.txt
@@ -177,6 +565,15 @@ pylint-plugin-utils==0.8.2
     #   -r requirements/quality.txt
     #   pylint-celery
     #   pylint-django
+pymongo==3.13.0
+    # via
+    #   -r requirements/quality.txt
+    #   edx-opaque-keys
+    #   event-tracking
+pynacl==1.5.0
+    # via
+    #   -r requirements/quality.txt
+    #   edx-django-utils
 pyproject-api==1.6.1
     # via
     #   -r requirements/ci.txt
@@ -194,27 +591,96 @@ pytest-cov==4.1.0
     # via -r requirements/quality.txt
 pytest-django==4.7.0
     # via -r requirements/quality.txt
+python-dateutil==2.8.2
+    # via
+    #   -r requirements/quality.txt
+    #   botocore
+    #   celery
+    #   edx-ace
+    #   edx-event-routing-backends
+    #   ora2
+    #   xblock
 python-slugify==8.0.1
     # via
     #   -r requirements/quality.txt
     #   code-annotations
+python-swiftclient==4.4.0
+    # via
+    #   -r requirements/quality.txt
+    #   ora2
 pytz==2023.3.post1
     # via
     #   -r requirements/quality.txt
     #   django
+    #   djangorestframework
+    #   edx-completion
+    #   edx-event-routing-backends
+    #   edx-submissions
+    #   event-tracking
+    #   ora2
+    #   tincan
+    #   xblock
 pyyaml==6.0.1
     # via
     #   -r requirements/quality.txt
     #   code-annotations
     #   edx-i18n-tools
+    #   superset-api-client
+    #   xblock
+requests==2.31.0
+    # via
+    #   -r requirements/quality.txt
+    #   apache-libcloud
+    #   edx-drf-extensions
+    #   edx-event-routing-backends
+    #   openedx-event-sink-clickhouse
+    #   python-swiftclient
+    #   requests-oauthlib
+    #   sailthru-client
+    #   superset-api-client
+    #   xblock-limesurvey
+requests-oauthlib==1.3.1
+    # via
+    #   -r requirements/quality.txt
+    #   superset-api-client
+s3transfer==0.1.13
+    # via
+    #   -r requirements/quality.txt
+    #   boto3
+sailthru-client==2.2.3
+    # via
+    #   -r requirements/quality.txt
+    #   edx-ace
+semantic-version==2.10.0
+    # via
+    #   -r requirements/quality.txt
+    #   edx-drf-extensions
+simplejson==3.19.2
+    # via
+    #   -r requirements/quality.txt
+    #   sailthru-client
+    #   xblock
+    #   xblock-utils
 six==1.16.0
     # via
     #   -r requirements/quality.txt
+    #   bleach
+    #   edx-ace
     #   edx-lint
+    #   event-tracking
+    #   fs
+    #   fs-s3fs
+    #   html5lib
+    #   isodate
+    #   python-dateutil
 snowballstemmer==2.2.0
     # via
     #   -r requirements/quality.txt
     #   pydocstyle
+soupsieve==2.5
+    # via
+    #   -r requirements/quality.txt
+    #   beautifulsoup4
 sqlparse==0.4.4
     # via
     #   -r requirements/quality.txt
@@ -223,10 +689,21 @@ stevedore==5.1.0
     # via
     #   -r requirements/quality.txt
     #   code-annotations
+    #   edx-ace
+    #   edx-django-utils
+    #   edx-opaque-keys
+superset-api-client==0.6.0
+    # via
+    #   -r requirements/quality.txt
+    #   platform-plugin-superset
 text-unidecode==1.3
     # via
     #   -r requirements/quality.txt
     #   python-slugify
+tincan==1.0.0
+    # via
+    #   -r requirements/quality.txt
+    #   edx-event-routing-backends
 tomli==2.0.1
     # via
     #   -r requirements/ci.txt
@@ -253,15 +730,86 @@ typing-extensions==4.8.0
     #   asgiref
     #   astroid
     #   black
+    #   edx-opaque-keys
+    #   kombu
     #   pylint
+tzdata==2023.3
+    # via
+    #   -r requirements/quality.txt
+    #   backports-zoneinfo
+    #   celery
+urllib3==2.1.0
+    # via
+    #   -r requirements/quality.txt
+    #   requests
+vine==5.1.0
+    # via
+    #   -r requirements/quality.txt
+    #   amqp
+    #   celery
+    #   kombu
 virtualenv==20.24.7
     # via
     #   -r requirements/ci.txt
     #   tox
+voluptuous==0.14.1
+    # via
+    #   -r requirements/quality.txt
+    #   ora2
+wcwidth==0.2.12
+    # via
+    #   -r requirements/quality.txt
+    #   prompt-toolkit
+web-fragments==2.1.0
+    # via
+    #   -r requirements/quality.txt
+    #   platform-plugin-forum-email-notifier
+    #   platform-plugin-superset
+    #   xblock
+    #   xblock-utils
+webencodings==0.5.1
+    # via
+    #   -r requirements/quality.txt
+    #   bleach
+    #   html5lib
+webob==1.8.7
+    # via
+    #   -r requirements/quality.txt
+    #   xblock
 wheel==0.41.3
     # via
     #   -r requirements/pip-tools.txt
     #   pip-tools
+xblock[django]==1.8.1
+    # via
+    #   -r requirements/quality.txt
+    #   edx-completion
+    #   feedback-xblock
+    #   h5p-xblock
+    #   ora2
+    #   platform-plugin-superset
+    #   xblock
+    #   xblock-filesmanager
+    #   xblock-imagesgallery
+    #   xblock-limesurvey
+    #   xblock-mindmap
+    #   xblock-utils
+xblock-filesmanager @ git+https://github.com/eduNEXT/xblock-filesmanager.git@v0.5.0
+    # via -r requirements/quality.txt
+xblock-imagesgallery @ git+https://github.com/eduNEXT/xblock-imagesgallery.git@v0.4.2
+    # via -r requirements/quality.txt
+xblock-limesurvey @ git+https://github.com/eduNEXT/xblock-limesurvey@v0.6.4
+    # via -r requirements/quality.txt
+xblock-mindmap @ git+https://github.com/eduNEXT/xblock-mindmap@v0.9.0
+    # via -r requirements/quality.txt
+xblock-utils==4.0.0
+    # via
+    #   -r requirements/quality.txt
+    #   platform-plugin-superset
+    #   xblock-filesmanager
+    #   xblock-imagesgallery
+    #   xblock-limesurvey
+    #   xblock-mindmap
 zipp==3.17.0
     # via
     #   -r requirements/pip-tools.txt
