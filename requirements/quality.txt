@@ -69,6 +69,7 @@ celery==5.3.6
     #   event-tracking
     #   openedx-event-sink-clickhouse
     #   platform-plugin-forum-email-notifier
+    #   xblock-filesmanager
 certifi==2023.11.17
     # via
     #   -r requirements/test.txt
@@ -272,6 +273,7 @@ edx-opaque-keys[django]==2.5.1
     #   openedx-event-sink-clickhouse
     #   openedx-events
     #   ora2
+    #   xblock-filesmanager
 edx-submissions==3.6.0
     # via
     #   -r requirements/test.txt
@@ -319,7 +321,7 @@ html5lib==1.1
     # via
     #   -r requirements/test.txt
     #   ora2
-idna==3.4
+idna==3.5
     # via
     #   -r requirements/test.txt
     #   requests
@@ -687,7 +689,7 @@ xblock[django]==1.8.1
     #   xblock-limesurvey
     #   xblock-mindmap
     #   xblock-utils
-xblock-filesmanager @ git+https://github.com/eduNEXT/xblock-filesmanager.git@v0.3.0
+xblock-filesmanager @ git+https://github.com/eduNEXT/xblock-filesmanager.git@v0.5.0
     # via -r requirements/test.txt
 xblock-imagesgallery @ git+https://github.com/eduNEXT/xblock-imagesgallery.git@v0.4.2
     # via -r requirements/test.txt
