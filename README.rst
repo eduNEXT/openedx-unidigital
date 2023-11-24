@@ -21,7 +21,7 @@ execute the following command:
 
 .. code-block:: bash
 
-    pip install openedx-unidigital
+    pip install git+https://github.com/eduNEXT/openedx-unidigital.git@main
 
 This command installs the necessary dependencies and adds the plugin to the list
 of installed plugins in the platform.
@@ -48,6 +48,7 @@ XBlocks
 
 - `Limesurvey XBlock <https://github.com/eduNEXT/xblock-limesurvey>`_: An XBlock for embedding Limesurvey surveys within a course.
 - `Mindmap XBlock <https://github.com/eduNEXT/xblock-mindmap>`_: An XBlock for embedding Mindmaps within a course.
+- `Images Gallery XBlock <https://github.com/xblock-imagesgallery>`: An XBlock for embedding an image gallery within a course.
 - `Files Manager XBlock <https://github.com/eduNEXT/xblock-filesmanager>`_: An XBlock for sharing files with students within a course.
 - `H5P XBlock <https://github.com/eduNEXT/h5pxblock>`_: An XBlock for embedding H5P content within a course.
 - `Feedback XBlock <https://github.com/eduNEXT/FeedbackXBlock>`_: An XBlock for embedding a Feedback form within a course.
