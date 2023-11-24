@@ -86,6 +86,12 @@ branch or commit hash in the ``requirements/base.in`` file:
 
     {package_name} @ git+https://github.com/{org}/{repo_name}.git@{branch_tag_or_commit_hash}
 
+This plugin is intended to hold only stable releases of the dependencies, so
+you should not use the ``@master`` branch in the ``requirements/base.in`` file
+neither use it to install development versions of the dependencies. To do this
+make sure to add your dependencies to the ``OPENEDX_EXTRA_PIP_REQUIREMENTS`` setting
+in your tutor ``config.yml`` file.
+
 The Open edX Code of Conduct
 ****************************
 
