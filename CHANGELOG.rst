@@ -22,7 +22,7 @@ Unreleased
 Added
 =====
 
-* Added instructions for filesmanager XBlock.
+* xblock-filesmanager updated to v.0.6.0
 
 0.1.0 - 2023-11-23
 **********************************************
