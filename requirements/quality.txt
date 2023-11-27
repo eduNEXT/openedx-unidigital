@@ -238,7 +238,7 @@ edx-celeryutils==1.2.3
     #   edx-event-routing-backends
 edx-completion==4.4.0
     # via -r requirements/test.txt
-edx-django-utils==5.8.0
+edx-django-utils==5.9.0
     # via
     #   -r requirements/test.txt
     #   django-config-models
@@ -321,7 +321,7 @@ html5lib==1.1
     # via
     #   -r requirements/test.txt
     #   ora2
-idna==3.5
+idna==3.6
     # via
     #   -r requirements/test.txt
     #   requests
@@ -689,7 +689,7 @@ xblock[django]==1.8.1
     #   xblock-limesurvey
     #   xblock-mindmap
     #   xblock-utils
-xblock-filesmanager @ git+https://github.com/eduNEXT/xblock-filesmanager.git@v0.5.0
+xblock-filesmanager @ git+https://github.com/eduNEXT/xblock-filesmanager.git@v.0.6.0
     # via -r requirements/test.txt
 xblock-imagesgallery @ git+https://github.com/eduNEXT/xblock-imagesgallery.git@v0.4.2
     # via -r requirements/test.txt
