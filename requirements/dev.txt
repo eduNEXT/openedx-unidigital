@@ -143,7 +143,7 @@ coverage[toml]==7.3.2
     #   -r requirements/quality.txt
     #   coverage
     #   pytest-cov
-cryptography==41.0.5
+cryptography==41.0.7
     # via
     #   -r requirements/quality.txt
     #   django-fernet-fields-v2
@@ -281,7 +281,7 @@ edx-django-utils==5.9.0
     #   openedx-event-sink-clickhouse
     #   ora2
     #   platform-plugin-forum-email-notifier
-edx-drf-extensions==8.13.1
+edx-drf-extensions==9.0.0
     # via
     #   -r requirements/quality.txt
     #   edx-completion
@@ -722,7 +722,7 @@ tomlkit==0.12.3
     # via
     #   -r requirements/quality.txt
     #   pylint
-tox==4.11.3
+tox==4.11.4
     # via -r requirements/ci.txt
 typing-extensions==4.8.0
     # via
@@ -794,7 +794,7 @@ xblock[django]==1.8.1
     #   xblock-limesurvey
     #   xblock-mindmap
     #   xblock-utils
-xblock-filesmanager @ git+https://github.com/eduNEXT/xblock-filesmanager.git@v.0.6.0
+xblock-filesmanager @ git+https://github.com/eduNEXT/xblock-filesmanager.git@v.0.6.1
     # via -r requirements/quality.txt
 xblock-imagesgallery @ git+https://github.com/eduNEXT/xblock-imagesgallery.git@v0.4.2
     # via -r requirements/quality.txt
