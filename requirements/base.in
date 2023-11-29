@@ -14,7 +14,7 @@ openedx-events>=9.2.0
 xblock-limesurvey @ git+https://github.com/eduNEXT/xblock-limesurvey@v0.6.4
 xblock-mindmap @ git+https://github.com/eduNEXT/xblock-mindmap@v0.9.0
 xblock-imagesgallery @ git+https://github.com/eduNEXT/xblock-imagesgallery.git@v0.4.2
-xblock-filesmanager @ git+https://github.com/eduNEXT/xblock-filesmanager.git@v.0.6.1
+xblock-filesmanager @ git+https://github.com/eduNEXT/xblock-filesmanager.git@v0.6.2
 platform-plugin-forum-email-notifier @ git+https://github.com/edunext/platform-plugin-forum-email-notifier@v0.3.2
 platform-plugin-superset @ git+https://github.com/edunext/platform-plugin-superset@v0.1.0
 # git+https://github.com/eduNEXT/platform-plugin-ontask
