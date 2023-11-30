@@ -441,7 +441,7 @@ xblock[django]==1.8.1
     #   xblock-limesurvey
     #   xblock-mindmap
     #   xblock-utils
-xblock-filesmanager @ git+https://github.com/eduNEXT/xblock-filesmanager.git@v0.6.2
+xblock-filesmanager @ git+https://github.com/eduNEXT/xblock-filesmanager.git@v0.6.3
     # via -r requirements/base.in
 xblock-imagesgallery @ git+https://github.com/eduNEXT/xblock-imagesgallery.git@v0.4.2
     # via -r requirements/base.in
