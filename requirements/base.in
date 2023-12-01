@@ -17,6 +17,7 @@ xblock-imagesgallery @ git+https://github.com/eduNEXT/xblock-imagesgallery.git@v
 xblock-filesmanager @ git+https://github.com/eduNEXT/xblock-filesmanager.git@v0.6.3
 platform-plugin-forum-email-notifier @ git+https://github.com/edunext/platform-plugin-forum-email-notifier@v0.3.2
 platform-plugin-superset @ git+https://github.com/edunext/platform-plugin-superset@v0.1.0
+platform-plugin-communications @ git+https://github.com/edunext/platform-plugin-communications@v0.3.0
 # git+https://github.com/eduNEXT/platform-plugin-ontask
 # git+https://github.com/eduNEXT/platform-plugin-groups
 # git+https://github.com/eduNEXT/platform-plugin-oncampus
