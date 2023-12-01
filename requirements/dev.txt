@@ -79,6 +79,7 @@ celery==5.3.6
     #   edx-celeryutils
     #   event-tracking
     #   openedx-event-sink-clickhouse
+    #   platform-plugin-communications
     #   platform-plugin-forum-email-notifier
     #   xblock-filesmanager
 certifi==2023.11.17
@@ -191,6 +192,7 @@ django==3.2.23
     #   openedx-events
     #   openedx-filters
     #   ora2
+    #   platform-plugin-communications
     #   platform-plugin-forum-email-notifier
     #   platform-plugin-superset
 django-appconf==1.0.6
@@ -253,6 +255,7 @@ djangorestframework==3.14.0
     #   edx-drf-extensions
     #   edx-submissions
     #   ora2
+    #   platform-plugin-communications
 docutils==0.20.1
     # via
     #   -r requirements/quality.txt
@@ -307,6 +310,7 @@ edx-opaque-keys[django]==2.5.1
     #   openedx-event-sink-clickhouse
     #   openedx-events
     #   ora2
+    #   platform-plugin-communications
     #   xblock-filesmanager
 edx-submissions==3.6.0
     # via
@@ -364,7 +368,7 @@ idna==3.6
     # via
     #   -r requirements/quality.txt
     #   requests
-importlib-metadata==6.8.0
+importlib-metadata==6.9.0
     # via
     #   -r requirements/pip-tools.txt
     #   build
@@ -450,7 +454,9 @@ oauthlib==3.2.2
     #   -r requirements/quality.txt
     #   requests-oauthlib
 openedx-atlas==0.5.0
-    # via -r requirements/quality.txt
+    # via
+    #   -r requirements/quality.txt
+    #   platform-plugin-communications
 openedx-django-pyfs==3.4.0
     # via
     #   -r requirements/quality.txt
@@ -497,6 +503,8 @@ pbr==6.0.0
     #   stevedore
 pip-tools==7.3.0
     # via -r requirements/pip-tools.txt
+platform-plugin-communications @ git+https://github.com/edunext/platform-plugin-communications@v0.3.0
+    # via -r requirements/quality.txt
 platform-plugin-forum-email-notifier @ git+https://github.com/edunext/platform-plugin-forum-email-notifier@v0.3.2
     # via -r requirements/quality.txt
 platform-plugin-superset @ git+https://github.com/edunext/platform-plugin-superset@v0.1.0
@@ -748,7 +756,7 @@ vine==5.1.0
     #   amqp
     #   celery
     #   kombu
-virtualenv==20.24.7
+virtualenv==20.25.0
     # via
     #   -r requirements/ci.txt
     #   tox
