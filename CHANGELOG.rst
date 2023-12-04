@@ -16,11 +16,20 @@ Unreleased
 
 *
 
+0.3.2 - 2023-12-04
+**********************************************
+
+Added
+=====
+
+* platform-plugin-communications updated to v0.3.1
+
 0.3.1 - 2023-12-01
 **********************************************
 
 Added
 =====
+
 * xblock-filesmanager updated to v0.6.4
 
 0.3.0 - 2023-12-01

@@ -368,7 +368,7 @@ idna==3.6
     # via
     #   -r requirements/quality.txt
     #   requests
-importlib-metadata==6.9.0
+importlib-metadata==7.0.0
     # via
     #   -r requirements/pip-tools.txt
     #   build
@@ -503,15 +503,14 @@ pbr==6.0.0
     #   stevedore
 pip-tools==7.3.0
     # via -r requirements/pip-tools.txt
-platform-plugin-communications @ git+https://github.com/edunext/platform-plugin-communications@v0.3.0
+platform-plugin-communications @ git+https://github.com/edunext/platform-plugin-communications@v0.3.1
     # via -r requirements/quality.txt
 platform-plugin-forum-email-notifier @ git+https://github.com/edunext/platform-plugin-forum-email-notifier@v0.3.2
     # via -r requirements/quality.txt
 platform-plugin-superset @ git+https://github.com/edunext/platform-plugin-superset@v0.1.0
     # via -r requirements/quality.txt
-platformdirs==3.11.0
+platformdirs==4.1.0
     # via
-    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/ci.txt
     #   -r requirements/quality.txt
     #   black

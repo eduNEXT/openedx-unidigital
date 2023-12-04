@@ -419,7 +419,7 @@ pbr==6.0.0
     # via
     #   -r requirements/base.txt
     #   stevedore
-platform-plugin-communications @ git+https://github.com/edunext/platform-plugin-communications@v0.3.0
+platform-plugin-communications @ git+https://github.com/edunext/platform-plugin-communications@v0.3.1
     # via -r requirements/base.txt
 platform-plugin-forum-email-notifier @ git+https://github.com/edunext/platform-plugin-forum-email-notifier@v0.3.2
     # via -r requirements/base.txt

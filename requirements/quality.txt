@@ -445,16 +445,14 @@ pbr==6.0.0
     # via
     #   -r requirements/test.txt
     #   stevedore
-platform-plugin-communications @ git+https://github.com/edunext/platform-plugin-communications@v0.3.0
+platform-plugin-communications @ git+https://github.com/edunext/platform-plugin-communications@v0.3.1
     # via -r requirements/test.txt
 platform-plugin-forum-email-notifier @ git+https://github.com/edunext/platform-plugin-forum-email-notifier@v0.3.2
     # via -r requirements/test.txt
 platform-plugin-superset @ git+https://github.com/edunext/platform-plugin-superset@v0.1.0
     # via -r requirements/test.txt
-platformdirs==3.11.0
-    # via
-    #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
-    #   pylint
+platformdirs==4.1.0
+    # via pylint
 pluggy==1.3.0
     # via
     #   -r requirements/test.txt
