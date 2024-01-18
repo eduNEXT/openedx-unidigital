@@ -12,6 +12,10 @@ aniso8601==9.0.1
     # via
     #   -r requirements/base.txt
     #   tincan
+annotated-types==0.6.0
+    # via
+    #   -r requirements/base.txt
+    #   pydantic
 apache-libcloud==3.8.0
     # via
     #   -r requirements/base.txt
@@ -35,7 +39,7 @@ backports-zoneinfo[tzdata]==0.2.1
     #   backports-zoneinfo
     #   celery
     #   kombu
-beautifulsoup4==4.12.2
+beautifulsoup4==4.12.3
     # via
     #   -r requirements/base.txt
     #   platform-plugin-forum-email-notifier
@@ -110,7 +114,7 @@ coverage[toml]==7.4.0
     # via
     #   coverage
     #   pytest-cov
-cryptography==41.0.7
+cryptography==42.0.0
     # via
     #   -r requirements/base.txt
     #   django-fernet-fields-v2
@@ -148,6 +152,7 @@ defusedxml==0.7.1
     #   openedx-filters
     #   ora2
     #   platform-plugin-communications
+    #   platform-plugin-elm-credentials
     #   platform-plugin-forum-email-notifier
     #   platform-plugin-superset
     #   platform-plugin-teams
@@ -212,6 +217,7 @@ djangorestframework==3.14.0
     #   edx-submissions
     #   ora2
     #   platform-plugin-communications
+    #   platform-plugin-elm-credentials
     #   platform-plugin-teams
 docutils==0.20.1
     # via
@@ -231,7 +237,7 @@ edx-celeryutils==1.2.3
     #   edx-event-routing-backends
 edx-completion==4.4.0
     # via -r requirements/base.txt
-edx-django-utils==5.9.0
+edx-django-utils==5.10.1
     # via
     #   -r requirements/base.txt
     #   django-config-models
@@ -241,10 +247,11 @@ edx-django-utils==5.9.0
     #   openedx-event-sink-clickhouse
     #   ora2
     #   platform-plugin-forum-email-notifier
-edx-drf-extensions==9.1.1
+edx-drf-extensions==9.1.2
     # via
     #   -r requirements/base.txt
     #   edx-completion
+    #   platform-plugin-elm-credentials
     #   platform-plugin-teams
 edx-event-routing-backends==8.0.0
     # via -r requirements/base.txt
@@ -287,7 +294,7 @@ event-tracking==2.2.0
     #   edx-event-routing-backends
 exceptiongroup==1.2.0
     # via pytest
-fastavro==1.9.2
+fastavro==1.9.3
     # via
     #   -r requirements/base.txt
     #   openedx-events
@@ -323,7 +330,7 @@ isodate==0.6.1
     # via
     #   -r requirements/base.txt
     #   edx-event-routing-backends
-jinja2==3.1.2
+jinja2==3.1.3
     # via
     #   -r requirements/base.txt
     #   code-annotations
@@ -339,7 +346,7 @@ jsonfield==3.1.0
     #   edx-event-routing-backends
     #   edx-submissions
     #   ora2
-kombu==5.3.4
+kombu==5.3.5
     # via
     #   -r requirements/base.txt
     #   celery
@@ -348,7 +355,7 @@ lazy==1.6
     #   -r requirements/base.txt
     #   ora2
     #   xblock
-libsass==0.22.0
+libsass==0.23.0
     # via
     #   -r requirements/base.txt
     #   ora2
@@ -356,13 +363,13 @@ loremipsum==1.0.5
     # via
     #   -r requirements/base.txt
     #   ora2
-lxml==5.0.0
+lxml==5.1.0
     # via
     #   -r requirements/base.txt
     #   edx-i18n-tools
     #   ora2
     #   xblock
-mako==1.3.0
+mako==1.3.1
     # via
     #   -r requirements/base.txt
     #   xblock
@@ -371,13 +378,13 @@ mako==1.3.0
     #   xblock-limesurvey
     #   xblock-mindmap
     #   xblock-utils
-markupsafe==2.1.3
+markupsafe==2.1.4
     # via
     #   -r requirements/base.txt
     #   jinja2
     #   mako
     #   xblock
-newrelic==9.3.0
+newrelic==9.5.0
     # via
     #   -r requirements/base.txt
     #   edx-django-utils
@@ -385,10 +392,11 @@ oauthlib==3.2.2
     # via
     #   -r requirements/base.txt
     #   requests-oauthlib
-openedx-atlas==0.5.0
+openedx-atlas==0.6.0
     # via
     #   -r requirements/base.txt
     #   platform-plugin-communications
+    #   platform-plugin-elm-credentials
 openedx-django-pyfs==3.4.1
     # via
     #   -r requirements/base.txt
@@ -425,6 +433,8 @@ pbr==6.0.0
     #   stevedore
 platform-plugin-communications @ git+https://github.com/edunext/platform-plugin-communications@v0.3.1
     # via -r requirements/base.txt
+platform-plugin-elm-credentials @ git+https://github.com/eduNEXT/platform-plugin-elm-credentials.git@v0.2.0
+    # via -r requirements/base.txt
 platform-plugin-forum-email-notifier @ git+https://github.com/edunext/platform-plugin-forum-email-notifier@v0.3.2
     # via -r requirements/base.txt
 platform-plugin-superset @ git+https://github.com/edunext/platform-plugin-superset@v0.1.0
@@ -441,7 +451,7 @@ prompt-toolkit==3.0.43
     # via
     #   -r requirements/base.txt
     #   click-repl
-psutil==5.9.7
+psutil==5.9.8
     # via
     #   -r requirements/base.txt
     #   edx-django-utils
@@ -449,6 +459,14 @@ pycparser==2.21
     # via
     #   -r requirements/base.txt
     #   cffi
+pydantic==2.5.3
+    # via
+    #   -r requirements/base.txt
+    #   platform-plugin-elm-credentials
+pydantic-core==2.14.6
+    # via
+    #   -r requirements/base.txt
+    #   pydantic
 pyjwt[crypto]==2.8.0
     # via
     #   -r requirements/base.txt
@@ -588,9 +606,12 @@ tomli==2.0.1
 typing-extensions==4.9.0
     # via
     #   -r requirements/base.txt
+    #   annotated-types
     #   asgiref
     #   edx-opaque-keys
     #   kombu
+    #   pydantic
+    #   pydantic-core
 tzdata==2023.4
     # via
     #   -r requirements/base.txt
@@ -610,7 +631,7 @@ voluptuous==0.14.1
     # via
     #   -r requirements/base.txt
     #   ora2
-wcwidth==0.2.12
+wcwidth==0.2.13
     # via
     #   -r requirements/base.txt
     #   prompt-toolkit
