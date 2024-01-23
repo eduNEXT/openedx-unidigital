@@ -1,0 +1,25 @@
+# Aspects requirements
+openedx-event-sink-clickhouse
+edx-event-routing-backends
+edx-completion>=4.4.0
+openedx-events>=9.2.0
+
+# eduNEXT plugins
+xblock-limesurvey @ git+https://github.com/eduNEXT/xblock-limesurvey@v0.6.4
+xblock-mindmap @ git+https://github.com/eduNEXT/xblock-mindmap@v0.9.0
+xblock-imagesgallery @ git+https://github.com/eduNEXT/xblock-imagesgallery.git@v0.4.2
+xblock-filesmanager @ git+https://github.com/eduNEXT/xblock-filesmanager.git@v0.7.0
+platform-plugin-forum-email-notifier @ git+https://github.com/edunext/platform-plugin-forum-email-notifier@v0.3.2
+platform-plugin-superset @ git+https://github.com/edunext/platform-plugin-superset@v0.1.0
+platform-plugin-communications @ git+https://github.com/edunext/platform-plugin-communications@v0.3.1
+platform-plugin-teams @ git+https://github.com/edunext/platform-plugin-teams@v0.2.0
+platform-plugin-elm-credentials @ git+https://github.com/eduNEXT/platform-plugin-elm-credentials.git@v0.2.0
+# git+https://github.com/eduNEXT/platform-plugin-ontask
+# git+https://github.com/eduNEXT/platform-plugin-groups
+# git+https://github.com/eduNEXT/platform-plugin-oncampus
+# git+https://github.com/eduNEXT/platform-plugin-turnitin
+
+# Community plugins
+h5p-xblock @ git+https://github.com/eduNEXT/h5pxblock.git@edues
+feedback-xblock @ git+https://github.com/eduNEXT/FeedbackXBlock@edues
+ora2 @ git+https://github.com/eduNEXT/edx-ora2.git@ednx-release/palm.edues
