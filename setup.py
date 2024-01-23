@@ -163,6 +163,10 @@ setup(
     ),
     include_package_data=True,
     install_requires=load_requirements("requirements/base.in"),
+    extras_require={
+        "stage": load_requirements("requirements/stage.in"),
+        "prod": load_requirements("requirements/prod.in"),
+    },
     python_requires=">=3.8",
     license="AGPL 3.0",
     zip_safe=False,
