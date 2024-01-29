@@ -16,6 +16,14 @@ Unreleased
 
 *
 
+0.6.2 - 2024-01-29
+**********************************************
+
+Changed
+=======
+
+* Update ``platform-plugin-elm-credentials`` in stage and prod requirements
+
 0.6.1 - 2024-01-23
 **********************************************
 
