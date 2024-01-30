@@ -1,5 +1,5 @@
 # edX requirements
-openedx-events>=9.2.0
+openedx-events
 
 # eduNEXT plugins
 xblock-limesurvey @ git+https://github.com/eduNEXT/xblock-limesurvey@v0.6.4
