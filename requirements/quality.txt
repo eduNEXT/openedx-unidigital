@@ -20,7 +20,7 @@ click==8.1.7
     #   edx-lint
 click-log==0.4.0
     # via edx-lint
-code-annotations==1.5.0
+code-annotations==1.6.0
     # via
     #   -r requirements/test.txt
     #   edx-lint
@@ -69,7 +69,7 @@ pbr==6.0.0
     # via
     #   -r requirements/test.txt
     #   stevedore
-platformdirs==4.1.0
+platformdirs==4.2.0
     # via pylint
 pluggy==1.4.0
     # via
@@ -100,7 +100,7 @@ pytest==8.0.0
     #   pytest-django
 pytest-cov==4.1.0
     # via -r requirements/test.txt
-pytest-django==4.7.0
+pytest-django==4.8.0
     # via -r requirements/test.txt
 python-slugify==8.0.2
     # via
