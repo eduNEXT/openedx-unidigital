@@ -16,6 +16,22 @@ Unreleased
 
 *
 
+0.9.1 - 2024-03-06
+**********************************************
+
+Changed
+=======
+
+* Replace ``openedx-event-sink-clickhouse`` by ``platform-plugin-aspects==0.2.0`` in production requirements
+
+0.9.0 - 2024-02-01
+**********************************************
+
+Added
+=====
+
+* Remove extra character from feedback-block in stage requirements
+
 0.8.0 - 2024-01-31
 **********************************************
 
