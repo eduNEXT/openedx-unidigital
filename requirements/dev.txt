@@ -116,7 +116,7 @@ mypy-extensions==1.0.0
     # via black
 openedx-atlas==0.6.0
     # via -r requirements/quality.txt
-packaging==23.2
+packaging==24.0
     # via
     #   -r requirements/ci.txt
     #   -r requirements/pip-tools.txt
@@ -188,7 +188,7 @@ pyproject-hooks==1.0.0
     #   -r requirements/pip-tools.txt
     #   build
     #   pip-tools
-pytest==8.0.2
+pytest==8.1.1
     # via
     #   -r requirements/quality.txt
     #   pytest-cov
@@ -257,7 +257,7 @@ virtualenv==20.25.1
     # via
     #   -r requirements/ci.txt
     #   tox
-wheel==0.42.0
+wheel==0.43.0
     # via
     #   -r requirements/pip-tools.txt
     #   pip-tools
