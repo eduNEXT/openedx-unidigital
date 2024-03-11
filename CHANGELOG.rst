@@ -15,8 +15,18 @@ Unreleased
 **********
 
 *
+
+0.10.1 - 2024-03-11
+**********************************************
+
+Added
+=====
+
+* Add ``seb-openedx`` with branch ``bav/quince-support-tmp`` in stage requirements
+
 0.10.0 - 2024-03-07
 **********************************************
+
 Added
 =====
 
