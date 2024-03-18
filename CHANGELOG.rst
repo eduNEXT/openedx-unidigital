@@ -16,6 +16,14 @@ Unreleased
 
 *
 
+0.10.3 - 2024-03-18
+**********************************************
+
+Added
+=====
+
+* Use feedback-block with branch ``bav/show-parents-display-name`` in stage requirements
+
 0.10.2 - 2024-03-11
 **********************************************
 
