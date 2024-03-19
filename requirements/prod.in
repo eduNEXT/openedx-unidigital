@@ -13,7 +13,7 @@ platform-plugin-forum-email-notifier @ git+https://github.com/edunext/platform-p
 platform-plugin-superset @ git+https://github.com/edunext/platform-plugin-superset@v0.1.0
 platform-plugin-communications @ git+https://github.com/edunext/platform-plugin-communications@v0.3.1
 platform-plugin-teams @ git+https://github.com/edunext/platform-plugin-teams@v0.2.0
-platform-plugin-elm-credentials @ git+https://github.com/eduNEXT/platform-plugin-elm-credentials.git@v0.2.1
+platform-plugin-elm-credentials @ git+https://github.com/eduNEXT/platform-plugin-elm-credentials.git@v0.3.0
 eox-core[sentry]==v9.1.1
 
 # Community plugins
