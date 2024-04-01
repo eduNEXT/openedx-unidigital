@@ -21,7 +21,7 @@ eox-core[sentry]==v9.1.1
 
 # Community plugins
 h5p-xblock @ git+https://github.com/edly-io/h5pxblock.git@v0.2.9
-feedback-xblock @ git+https://github.com/edunext/FeedbackXBlock@1.4.0/edues
+feedback-xblock @ git+https://github.com/edunext/FeedbackXBlock@master
 ora2 @ git+https://github.com/eduNEXT/edx-ora2.git@5.5.5/edues/santander
 
 # Plugin dependencies
