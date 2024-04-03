@@ -16,6 +16,15 @@ Unreleased
 
 *
 
+
+0.10.9 - 2024-04-02
+**********************************************
+
+Changed
+=======
+
+* Upgrade ``edx-ora2`` with latest changes in ``5.5.5/edues/santander`` branch in stage requirements
+
 0.10.8 - 2024-04-01
 **********************************************
 
