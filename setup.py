@@ -161,6 +161,11 @@ setup(
         include=["openedx_unidigital", "openedx_unidigital.*"],
         exclude=["*tests"],
     ),
+    entry_points={
+        "lms.djangoapp": [
+            "openedx_unidigital = openedx_unidigital.apps:OpenedxUnidigitalConfig"
+        ],
+    },
     include_package_data=True,
     install_requires=load_requirements("requirements/base.in"),
     extras_require={

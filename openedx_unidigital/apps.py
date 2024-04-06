@@ -11,3 +11,17 @@ class OpenedxUnidigitalConfig(AppConfig):
     """
 
     name = "openedx_unidigital"
+
+    plugin_app = {
+        "signals_config": {
+            "lms.djangoapp": {
+                "relative_path": "handlers",
+                "receivers": [
+                    {
+                        "receiver_func_name": "add_member_to_team_by_language",
+                        "signal_path": "openedx_events.learning.signals.COURSE_ENROLLMENT_CREATED",
+                    },
+                ],
+            }
+        },
+    }
