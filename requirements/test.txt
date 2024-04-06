@@ -4,7 +4,7 @@
 #
 #    make upgrade
 #
-asgiref==3.7.2
+asgiref==3.8.1
     # via
     #   -r requirements/base.txt
     #   django
@@ -14,13 +14,16 @@ backports-zoneinfo==0.2.1
     #   django
 click==8.1.7
     # via code-annotations
-code-annotations==1.7.0
+code-annotations==1.8.0
     # via -r requirements/test.in
 coverage[toml]==7.4.4
     # via pytest-cov
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/base.txt
+    #   django-crum
+django-crum==0.7.9
+    # via -r requirements/base.txt
 exceptiongroup==1.2.0
     # via pytest
 iniconfig==2.0.0
@@ -41,7 +44,7 @@ pytest==8.1.1
     # via
     #   pytest-cov
     #   pytest-django
-pytest-cov==4.1.0
+pytest-cov==5.0.0
     # via -r requirements/test.in
 pytest-django==4.8.0
     # via -r requirements/test.in
@@ -61,7 +64,7 @@ tomli==2.0.1
     # via
     #   coverage
     #   pytest
-typing-extensions==4.10.0
+typing-extensions==4.11.0
     # via
     #   -r requirements/base.txt
     #   asgiref
