@@ -23,3 +23,6 @@ def plugin_settings(settings):
     settings.OPENEDX_UNIDIGITAL_USER_PREFERENCES_BACKEND = (
         "openedx_unidigital.edxapp_wrapper.backends.user_preferences_q_v1"
     )
+    settings.OPENEDX_UNIDIGITAL_STUDENT_BACKEND = (
+        "openedx_unidigital.edxapp_wrapper.backends.student_q_v1"
+    )

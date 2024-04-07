@@ -36,3 +36,9 @@ def plugin_settings(settings):
         "OPENEDX_UNIDIGITAL_USER_PREFERENCES_BACKEND",
         settings.OPENEDX_UNIDIGITAL_USER_PREFERENCES_BACKEND,
     )
+    settings.OPENEDX_UNIDIGITAL_STUDENT_BACKEND = getattr(
+        settings, "ENV_TOKENS", {}
+    ).get(
+        "OPENEDX_UNIDIGITAL_STUDENT_BACKEND",
+        settings.OPENEDX_UNIDIGITAL_STUDENT_BACKEND,
+    )
