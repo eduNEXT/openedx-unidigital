@@ -14,7 +14,11 @@ from openedx_unidigital.edxapp_wrapper.user_preferences import get_user_preferen
 
 def add_member_to_course_group_by_language(enrollment, **kwargs) -> None:
     """
-    Add user to team/cohort by language.
+    Add user to course group (team/cohort) by language preference.
+
+    - First, we get the configuration per language stored in other course settings.
+    - Then, we get the user's language preference.
+    - Finally, we add the user to the course group based on the user's language preference.
 
     Args:
         enrollment (CourseEnrollment): The course enrollment object.
