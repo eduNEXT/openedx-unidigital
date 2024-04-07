@@ -1,5 +1,6 @@
 """Event handlers for the Open edX Unidigital plugin."""
 
+import logging
 from typing import List
 
 from django.conf import settings
@@ -8,8 +9,15 @@ from openedx_unidigital.edxapp_wrapper.course_groups import add_user_to_cohort
 from openedx_unidigital.edxapp_wrapper.lang_pref import LANGUAGE_KEY
 from openedx_unidigital.edxapp_wrapper.modulestore import modulestore
 from openedx_unidigital.edxapp_wrapper.student import get_user_by_username_or_email
-from openedx_unidigital.edxapp_wrapper.teams import get_team_by_team_id
+from openedx_unidigital.edxapp_wrapper.teams import (
+    AddToIncompatibleTeamError,
+    AlreadyOnTeamInTeamset,
+    NotEnrolledInCourseForTeam,
+    get_team_by_team_id,
+)
 from openedx_unidigital.edxapp_wrapper.user_preferences import get_user_preference
+
+log = logging.getLogger(__name__)
 
 
 def add_member_to_course_group_by_language(enrollment, **kwargs) -> None:
@@ -84,4 +92,12 @@ def add_user_to_team(user, team_id: str) -> None:
         team_id (str): The team id.
     """
     team = get_team_by_team_id(team_id)
-    team.add_user(user)
+
+    try:
+        team.add_user(user)
+    except AlreadyOnTeamInTeamset:
+        log.error(f"The user {user} is already on a team in the teamset.")
+    except NotEnrolledInCourseForTeam:
+        log.error(f"The user {user} is not enrolled in the course for the team.")
+    except AddToIncompatibleTeamError:
+        log.error(f"The user {user} cannot be added to the team.")
