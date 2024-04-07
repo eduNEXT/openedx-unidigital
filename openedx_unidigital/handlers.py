@@ -15,6 +15,10 @@ from openedx_unidigital.edxapp_wrapper.user_preferences import get_user_preferen
 def add_member_to_course_group_by_language(enrollment, **kwargs) -> None:
     """
     Add user to team/cohort by language.
+
+    Args:
+        enrollment (CourseEnrollment): The course enrollment object.
+        **kwargs: Kwargs of the event.
     """
     membership_by_language = get_membership_by_language(enrollment.course.course_key)
     user = get_user_by_username_or_email(enrollment.user.pii.username)
@@ -30,7 +34,7 @@ def add_user_to_course_group(user, course_groups: List[dict]) -> None:
 
     Args:
         user (User): The user object.
-        course_groups (List[dict]): The course groups.
+        course_groups (List[dict]): The course groups of the language.
     """
     for group in course_groups:
         group_id = group.get("id", "")
@@ -61,7 +65,7 @@ def get_membership_by_language(course_key: str) -> dict:
         course_key (str): The course key.
 
     Returns:
-        dict: The other course settings.
+        dict: The other course settings if exists, otherwise an empty dict.
     """
     course_block = modulestore().get_course(course_key)
     return course_block.other_course_settings.get("MEMBERSHIP_BY_LANGUAGE_CONFIG") or {}
@@ -69,7 +73,7 @@ def get_membership_by_language(course_key: str) -> dict:
 
 def add_user_to_team(user, team_id: str) -> None:
     """
-    Add user to team.
+    Add a user to a team.
 
     Args:
         user (User): The user object.
