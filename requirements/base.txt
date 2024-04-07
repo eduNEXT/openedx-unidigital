@@ -12,9 +12,6 @@ django==4.2.11
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/base.in
-    #   django-crum
-django-crum==0.7.9
-    # via -r requirements/base.in
 openedx-atlas==0.6.0
     # via -r requirements/base.in
 sqlparse==0.4.4

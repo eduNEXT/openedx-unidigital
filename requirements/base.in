@@ -3,4 +3,3 @@
 
 Django             # Web application framework
 openedx-atlas      # An Open edX CLI tool for moving translation files from openedx-translations
-django_crum        # Current Request User Middleware
