@@ -64,7 +64,7 @@ def get_membership_by_language(course_key: str) -> dict:
         dict: The other course settings.
     """
     course_block = modulestore().get_course(course_key)
-    return course_block.other_course_settings.get("MEMBERSHIP_BY_LANGUAGE_CONFIG")
+    return course_block.other_course_settings.get("MEMBERSHIP_BY_LANGUAGE_CONFIG") or {}
 
 
 def add_user_to_team(user, team_id: str) -> None:
