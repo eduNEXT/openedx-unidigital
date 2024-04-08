@@ -181,4 +181,9 @@ setup(
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.8",
     ],
+    entry_points={
+        "lms.djangoapp": [
+            "openedx_unidigital = openedx_unidigital.apps:OpenedxUnidigitalConfig"
+        ],
+    }
 )
