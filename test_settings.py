@@ -60,6 +60,8 @@ TEMPLATES = [
     }
 ]
 
+LANGUAGE_CODE = "en"
+
 # Settings for the plugin
 OPENEDX_UNIDIGITAL_COURSE_GROUPS_BACKEND = (
     "openedx_unidigital.edxapp_wrapper.backends.course_groups_q_v1_test"
