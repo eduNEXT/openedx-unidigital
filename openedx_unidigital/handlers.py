@@ -5,13 +5,9 @@ from typing import List
 
 from django.conf import settings
 
-from openedx_unidigital.edxapp_wrapper.course_groups import (
-    CourseUserGroup,
-    get_cohort_by_id,
-)
-from openedx_unidigital.edxapp_wrapper.course_groups import (
-    add_user_to_cohort as add_user_to_cohort_backend,
-)
+from openedx_unidigital.edxapp_wrapper.course_groups import CourseUserGroup
+from openedx_unidigital.edxapp_wrapper.course_groups import add_user_to_cohort as add_user_to_cohort_backend
+from openedx_unidigital.edxapp_wrapper.course_groups import get_cohort_by_id
 from openedx_unidigital.edxapp_wrapper.lang_pref import LANGUAGE_KEY
 from openedx_unidigital.edxapp_wrapper.modulestore import modulestore
 from openedx_unidigital.edxapp_wrapper.student import get_user_by_username_or_email
