@@ -101,14 +101,15 @@ def add_user_to_team(user, team_id: str) -> None:
     if team:
         try:
             team.add_user(user)
+            log.info(f"The {user=} has been added to the {team=}.")
         except AlreadyOnTeamInTeamset:
-            log.error(f"The user {user} is already on a team in the teamset.")
+            log.info(f"The {user=} is already on a team in the teamset.")
         except NotEnrolledInCourseForTeam:
-            log.error(f"The user {user} is not enrolled in the course for the team.")
+            log.info(f"The {user=} is not enrolled in the course for the team.")
         except AddToIncompatibleTeamError:
-            log.error(f"The user {user} cannot be added to the team.")
+            log.info(f"The {user=} cannot be added to the team.")
     else:
-        log.error(f"The team with the id {team_id} does not exist.")
+        log.info(f"The team with the {team_id=} does not exist.")
 
 
 def add_user_to_cohort(user, cohort_id: str, course_key: str) -> None:
@@ -122,6 +123,9 @@ def add_user_to_cohort(user, cohort_id: str, course_key: str) -> None:
     """
     try:
         cohort = get_cohort_by_id(course_key, cohort_id)
-        add_user_to_cohort_backend(user, cohort)
+        add_user_to_cohort_backend(cohort, user)
+        log.info(f"The {user=} has been added to the {cohort=}.")
     except CourseUserGroup.DoesNotExist:
-        log.error(f"The cohort with the id {cohort_id} does not exist.")
+        log.info(f"The cohort with the {cohort_id=} does not exist.")
+    except ValueError:
+        log.info(f"The {user=} is already in the cohort.")
