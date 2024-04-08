@@ -55,9 +55,10 @@ def add_user_to_course_group(user, course_groups: List[dict], course_key: str) -
     """
     for group in course_groups:
         group_id = group.get("id", "")
-        if group.get("type") == "team":
+        group_type = group.get("type", "").lower()
+        if group_type == "team":
             add_user_to_team(user, group_id)
-        elif group.get("type") == "cohort":
+        elif group_type == "cohort":
             add_user_to_cohort(user, group_id, course_key)
 
 
