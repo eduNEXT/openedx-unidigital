@@ -14,7 +14,7 @@ def add_user_to_cohort(*args, **kwargs):
     backend_function = settings.OPENEDX_UNIDIGITAL_COURSE_GROUPS_BACKEND
     backend = import_module(backend_function)
 
-    return backend.modulestore(*args, **kwargs)
+    return backend.add_user_to_cohort(*args, **kwargs)
 
 
 def get_cohort_by_id(*args, **kwargs):
