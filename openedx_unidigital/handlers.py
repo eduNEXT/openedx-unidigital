@@ -93,11 +93,14 @@ def add_user_to_team(user, team_id: str) -> None:
     """
     team = get_team_by_team_id(team_id)
 
-    try:
-        team.add_user(user)
-    except AlreadyOnTeamInTeamset:
-        log.error(f"The user {user} is already on a team in the teamset.")
-    except NotEnrolledInCourseForTeam:
-        log.error(f"The user {user} is not enrolled in the course for the team.")
-    except AddToIncompatibleTeamError:
-        log.error(f"The user {user} cannot be added to the team.")
+    if team:
+        try:
+            team.add_user(user)
+        except AlreadyOnTeamInTeamset:
+            log.error(f"The user {user} is already on a team in the teamset.")
+        except NotEnrolledInCourseForTeam:
+            log.error(f"The user {user} is not enrolled in the course for the team.")
+        except AddToIncompatibleTeamError:
+            log.error(f"The user {user} cannot be added to the team.")
+    else:
+        log.error(f"The team with the id {team_id} does not exist.")
