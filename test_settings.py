@@ -59,3 +59,23 @@ TEMPLATES = [
         },
     }
 ]
+
+# Settings for the plugin
+OPENEDX_UNIDIGITAL_COURSE_GROUPS_BACKEND = (
+    "openedx_unidigital.edxapp_wrapper.backends.course_groups_q_v1_test"
+)
+OPENEDX_UNIDIGITAL_LANG_PREF_BACKEND = (
+    "openedx_unidigital.edxapp_wrapper.backends.lang_pref_q_v1_test"
+)
+OPENEDX_UNIDIGITAL_MODULESTORE_BACKEND = (
+    "openedx_unidigital.edxapp_wrapper.backends.modulestore_q_v1_test"
+)
+OPENEDX_UNIDIGITAL_TEAMS_BACKEND = (
+    "openedx_unidigital.edxapp_wrapper.backends.teams_q_v1_test"
+)
+OPENEDX_UNIDIGITAL_USER_PREFERENCES_BACKEND = (
+    "openedx_unidigital.edxapp_wrapper.backends.user_preferences_q_v1_test"
+)
+OPENEDX_UNIDIGITAL_STUDENT_BACKEND = (
+    "openedx_unidigital.edxapp_wrapper.backends.student_q_v1_test"
+)
