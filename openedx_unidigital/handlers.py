@@ -5,7 +5,13 @@ from typing import List
 
 from django.conf import settings
 
-from openedx_unidigital.edxapp_wrapper.course_groups import add_user_to_cohort
+from openedx_unidigital.edxapp_wrapper.course_groups import (
+    CourseUserGroup,
+    get_cohort_by_id,
+)
+from openedx_unidigital.edxapp_wrapper.course_groups import (
+    add_user_to_cohort as add_user_to_cohort_backend,
+)
 from openedx_unidigital.edxapp_wrapper.lang_pref import LANGUAGE_KEY
 from openedx_unidigital.edxapp_wrapper.modulestore import modulestore
 from openedx_unidigital.edxapp_wrapper.student import get_user_by_username_or_email
@@ -32,28 +38,31 @@ def add_member_to_course_group_by_language(enrollment, **kwargs) -> None:
         enrollment (CourseEnrollment): The course enrollment object.
         **kwargs: Kwargs of the event.
     """
-    membership_by_language = get_membership_by_language(enrollment.course.course_key)
+    course_key = enrollment.course.course_key
+
+    membership_by_language = get_membership_by_language(course_key)
     user = get_user_by_username_or_email(enrollment.user.pii.username)
-    language_preference = get_language_preference(user)
+    lang_pref = get_language_preference(user)
 
-    if language_preference in membership_by_language:
-        add_user_to_course_group(user, membership_by_language[language_preference])
+    if lang_pref in membership_by_language:
+        add_user_to_course_group(user, membership_by_language[lang_pref], course_key)
 
 
-def add_user_to_course_group(user, course_groups: List[dict]) -> None:
+def add_user_to_course_group(user, course_groups: List[dict], course_key: str) -> None:
     """
     Add user to course group.
 
     Args:
         user (User): The user object.
         course_groups (List[dict]): The course groups of the language.
+        course_key (str): The course key.
     """
     for group in course_groups:
         group_id = group.get("id", "")
         if group.get("type") == "team":
             add_user_to_team(user, group_id)
         elif group.get("type") == "cohort":
-            add_user_to_cohort(user, group_id)
+            add_user_to_cohort(user, group_id, course_key)
 
 
 def get_language_preference(user) -> str:
@@ -104,3 +113,19 @@ def add_user_to_team(user, team_id: str) -> None:
             log.error(f"The user {user} cannot be added to the team.")
     else:
         log.error(f"The team with the id {team_id} does not exist.")
+
+
+def add_user_to_cohort(user, cohort_id: str, course_key: str) -> None:
+    """
+    Add a user to a cohort.
+
+    Args:
+        user (User): The user object.
+        cohort_id (str): The cohort id.
+        course_key (str): The course key.
+    """
+    try:
+        cohort = get_cohort_by_id(course_key, cohort_id)
+        add_user_to_cohort_backend(user, cohort)
+    except CourseUserGroup.DoesNotExist:
+        log.error(f"The cohort with the id {cohort_id} does not exist.")
