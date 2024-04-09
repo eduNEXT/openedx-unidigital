@@ -258,7 +258,7 @@ class TestHandlers(TestCase):
         mock_course_team_membership: Mock,
     ):
         """Test `add_user_to_team` when the user is already on a team in the teamset."""
-        self.team.add_user.side_effect = AlreadyOnTeamInTeamset
+        self.team.add_user.side_effect = [AlreadyOnTeamInTeamset, None]
         mock_get_team_by_team_id.return_value = self.team
         old_membership = Mock(team="old-team")
         mock_course_team_membership.objects.filter().first.return_value = old_membership
@@ -266,8 +266,9 @@ class TestHandlers(TestCase):
         add_user_to_team(self.user, self.team.id)
 
         mock_get_team_by_team_id.assert_called_once_with(self.team.id)
-        self.team.add_user.assert_called_once_with(self.user)
-        mock_log.info.assert_called_with(
+        self.team.add_user.assert_called_with(self.user)
+        self.assertEqual(self.team.add_user.call_count, 2)
+        mock_log.debug.assert_called_with(
             f"The user='{self.user}' was moved from the "
             f"team='{old_membership.team}' to the team='{self.team}'."
         )

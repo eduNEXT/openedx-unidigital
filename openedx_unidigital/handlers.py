@@ -124,7 +124,8 @@ def add_user_to_team(user, team_id: str) -> None:
                 team__topic_id=team.topic_id,
             ).first()
             old_membership.delete()
-            log.info(
+            team.add_user(user)
+            log.debug(
                 f"The user='{user}' was moved from the "
                 f"team='{old_membership.team}' to the team='{team}'."
             )
