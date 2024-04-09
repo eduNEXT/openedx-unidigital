@@ -195,14 +195,34 @@ class TestHandlers(TestCase):
         """Test `get_membership_by_language` retrieves the correct settings"""
         mock_modulestore.return_value.get_course.return_value = self.course
 
-        # Test when the course has the MEMBERSHIP_BY_LANGUAGE_CONFIG setting
+        # MEMBERSHIP_BY_LANGUAGE_CONFIG setting exists
         result = get_membership_by_language(self.course_key)
+
         self.assertEqual(result, self.membership_by_lang_conf)
         mock_modulestore().get_course.assert_called_with(self.course_key)
 
-        # Test when the course does not have the MEMBERSHIP_BY_LANGUAGE_CONFIG setting
-        self.course.other_course_settings = {}
+        # MEMBERSHIP_BY_LANGUAGE_CONFIG setting has keys with comma-separated languages
+        self.course.other_course_settings = {
+            "MEMBERSHIP_BY_LANGUAGE_CONFIG": {
+                "es-419,es-ES": self.membership_by_lang_conf["en"]
+            }
+        }
+        expected_result = {
+            "es-419": self.membership_by_lang_conf["en"],
+            "es-es": self.membership_by_lang_conf["en"],
+        }
+
         result = get_membership_by_language(self.course_key)
+
+        self.assertEqual(len(result), 2)
+        self.assertEqual(result, expected_result)
+        mock_modulestore().get_course.assert_called_with(self.course_key)
+
+        # MEMBERSHIP_BY_LANGUAGE_CONFIG does not exist
+        self.course.other_course_settings = {}
+
+        result = get_membership_by_language(self.course_key)
+
         self.assertEqual(result, {})
         mock_modulestore().get_course.assert_called_with(self.course_key)
 
