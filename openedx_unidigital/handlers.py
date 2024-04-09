@@ -125,7 +125,8 @@ def add_user_to_team(user, team_id: str) -> None:
             ).first()
             old_membership.delete()
             log.info(
-                f"The user='{user}' was moved from the team='{old_membership.team} to the team='{team}'."
+                f"The user='{user}' was moved from the "
+                f"team='{old_membership.team}' to the team='{team}'."
             )
         except NotEnrolledInCourseForTeam:
             log.exception(

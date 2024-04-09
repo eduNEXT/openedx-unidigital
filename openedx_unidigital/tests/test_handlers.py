@@ -30,6 +30,16 @@ class NotEnrolledInCourseForTeam(BaseException):
     pass
 
 
+class UserMock:
+    """Mock class for User"""
+
+    def __init__(self, username):
+        self.username = username
+
+    def __str__(self):
+        return self.username
+
+
 class TestHandlers(TestCase):
     """Tests for handlers of the Open edX Unidigital plugin"""
 
@@ -41,7 +51,7 @@ class TestHandlers(TestCase):
         self.cohort = Mock(id="cohort-name")
         self.enrollment.course.course_key = self.course_key
         self.enrollment.user.pii.username = self.username
-        self.user = Mock()
+        self.user = UserMock(self.username)
         self.lang_pref = "en"
         self.membership_by_lang_conf = {
             "en": [
@@ -238,21 +248,28 @@ class TestHandlers(TestCase):
         )
 
     @patch(f"{HANDLERS_MODULE_PATH}.AlreadyOnTeamInTeamset", new=AlreadyOnTeamInTeamset)
+    @patch(f"{HANDLERS_MODULE_PATH}.CourseTeamMembership")
     @patch(f"{HANDLERS_MODULE_PATH}.get_team_by_team_id")
     @patch(f"{HANDLERS_MODULE_PATH}.log")
     def test_add_user_to_team_already_on_team(
-        self, mock_log: Mock, mock_get_team_by_team_id: Mock
+        self,
+        mock_log: Mock,
+        mock_get_team_by_team_id: Mock,
+        mock_course_team_membership: Mock,
     ):
         """Test `add_user_to_team` when the user is already on a team in the teamset."""
         self.team.add_user.side_effect = AlreadyOnTeamInTeamset
         mock_get_team_by_team_id.return_value = self.team
+        old_membership = Mock(team="old-team")
+        mock_course_team_membership.objects.filter().first.return_value = old_membership
 
         add_user_to_team(self.user, self.team.id)
 
         mock_get_team_by_team_id.assert_called_once_with(self.team.id)
         self.team.add_user.assert_called_once_with(self.user)
-        mock_log.exception.assert_called_with(
-            f"The user='{self.user}' is already on a team in the teamset."
+        mock_log.info.assert_called_with(
+            f"The user='{self.user}' was moved from the "
+            f"team='{old_membership.team}' to the team='{self.team}'."
         )
 
     @patch(
