@@ -35,18 +35,19 @@ class TestHandlers(TestCase):
 
     def setUp(self) -> None:
         self.enrollment = Mock()
-        self.course_key = "test_course_key"
-        self.username = "test_username"
+        self.course_key = "test-course-key"
+        self.username = "test-username"
         self.team = Mock(id="team-id")
-        self.cohort = Mock(name="cohort-name")
+        self.cohort = Mock()
+        self.cohort.name = "cohort-name"
         self.enrollment.course.course_key = self.course_key
         self.enrollment.user.pii.username = self.username
         self.user = Mock()
         self.lang_pref = "en"
         self.membership_by_lang_conf = {
             "en": [
-                {"type": "team", "id": "team-id-1"},
-                {"type": "cohort", "name": "cohort-name-1"},
+                {"type": "team", "id": "team-id"},
+                {"type": "cohort", "name": "cohort-name"},
             ]
         }
         self.other_course_settings = {
@@ -113,10 +114,7 @@ class TestHandlers(TestCase):
         mock_add_user_to_team: Mock,
     ):
         """Test `add_user_to_course_group` with team type"""
-        course_groups = [
-            {"type": "team", "id": "team-id-1"},
-            {"type": "cohort", "name": "cohort-name-1"},
-        ]
+        course_groups = self.membership_by_lang_conf["en"]
         add_user_to_course_group(self.user, course_groups, self.course_key)
 
         mock_add_user_to_team.assert_called_once_with(self.user, self.team.id)
@@ -321,7 +319,7 @@ class TestHandlers(TestCase):
 
         mock_get_team_by_team_id.assert_called_once_with(self.team.id)
         mock_log.exception.assert_called_with(
-            "The team with the team_id='team_id' does not exist."
+            f"The team with the team_id='{self.team.id}' does not exist."
         )
         self.team.add_user.assert_not_called()
 
@@ -366,7 +364,7 @@ class TestHandlers(TestCase):
             self.course_key, self.cohort.name
         )
         mock_log.exception.assert_called_once_with(
-            f"The cohort with the name='{self.cohort.name}' does not exist."
+            f"The cohort with the cohort_name='{self.cohort.name}' does not exist."
         )
 
     @patch(f"{HANDLERS_MODULE_PATH}.CourseUserGroup")
