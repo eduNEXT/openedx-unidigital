@@ -185,7 +185,7 @@ should use the ``@master`` branch, neither use it to install development
 versions of the dependencies.
 
 As dependencies can be git repositories, you can also specify a specific
-branch or commit hash in the ``requirements/base.in`` file:
+branch or commit hash in the ``stage.in`` or ``prod.in`` file:
 
 .. code-block:: bash
 
