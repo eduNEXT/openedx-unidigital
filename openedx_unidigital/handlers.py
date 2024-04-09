@@ -14,6 +14,7 @@ from openedx_unidigital.edxapp_wrapper.student import get_user_by_username_or_em
 from openedx_unidigital.edxapp_wrapper.teams import (
     AddToIncompatibleTeamError,
     AlreadyOnTeamInTeamset,
+    CourseTeamMembership,
     NotEnrolledInCourseForTeam,
     get_team_by_team_id,
 )
@@ -117,7 +118,15 @@ def add_user_to_team(user, team_id: str) -> None:
             team.add_user(user)
             log.info(f"The user='{user}' has been added to the team='{team}'.")
         except AlreadyOnTeamInTeamset:
-            log.exception(f"The user='{user}' is already on a team in the teamset.")
+            old_membership = CourseTeamMembership.objects.filter(
+                user=user,
+                team__course_id=team.course_id,
+                team__topic_id=team.topic_id,
+            ).first()
+            old_membership.delete()
+            log.info(
+                f"The user='{user}' was moved from the team='{old_membership.team} to the team='{team}'."
+            )
         except NotEnrolledInCourseForTeam:
             log.exception(
                 f"The user='{user}' is not enrolled in the course of the team."

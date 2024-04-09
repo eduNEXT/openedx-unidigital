@@ -47,6 +47,17 @@ def get_add_to_incompatible_team_error():
     return backend.AddToIncompatibleTeamError
 
 
+def get_course_team_membership_model():
+    """
+    Wrapper for `teams.models.CourseTeamMembership`
+    """
+    backend_function = settings.OPENEDX_UNIDIGITAL_TEAMS_BACKEND
+    backend = import_module(backend_function)
+
+    return backend.CourseTeamMembership
+
+
 AddToIncompatibleTeamError = get_add_to_incompatible_team_error()
 AlreadyOnTeamInTeamset = get_already_on_team_in_teamset_error()
 NotEnrolledInCourseForTeam = get_not_enrolled_in_course_for_team_error()
+CourseTeamMembership = get_course_team_membership_model()
