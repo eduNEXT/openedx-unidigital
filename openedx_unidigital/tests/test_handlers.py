@@ -256,7 +256,7 @@ class TestHandlers(TestCase):
 
         mock_get_team_by_team_id.assert_called_once_with(self.team.id)
         self.team.add_user.assert_called_once_with(self.user)
-        mock_log.info.assert_called_with(
+        mock_log.exception.assert_called_with(
             f"The user='{self.user}' is already on a team in the teamset."
         )
 
@@ -278,7 +278,7 @@ class TestHandlers(TestCase):
 
         mock_get_team_by_team_id.assert_called_once_with(self.team.id)
         self.team.add_user.assert_called_once_with(self.user)
-        mock_log.info.assert_called_with(
+        mock_log.exception.assert_called_with(
             f"The user='{self.user}' is not enrolled in the course of the team."
         )
 
@@ -304,7 +304,7 @@ class TestHandlers(TestCase):
 
         mock_get_team_by_team_id.assert_called_once_with(self.team.id)
         self.team.add_user.assert_called_once_with(self.user)
-        mock_log.info.assert_called_with(
+        mock_log.exception.assert_called_with(
             f"The user='{self.user}' cannot be added to the team."
         )
 
@@ -320,7 +320,7 @@ class TestHandlers(TestCase):
         add_user_to_team(self.user, self.team.id)
 
         mock_get_team_by_team_id.assert_called_once_with(self.team.id)
-        mock_log.info.assert_called_with(
+        mock_log.exception.assert_called_with(
             "The team with the team_id='team_id' does not exist."
         )
         self.team.add_user.assert_not_called()
@@ -358,7 +358,7 @@ class TestHandlers(TestCase):
         add_user_to_cohort(self.user, self.cohort.id, self.course_key)
 
         mock_get_cohort_by_id.assert_called_once_with(self.course_key, self.cohort.id)
-        mock_log.info.assert_called_once_with(
+        mock_log.exception.assert_called_once_with(
             f"The cohort with the cohort_id='{self.cohort.id}' does not exist."
         )
 
@@ -382,6 +382,6 @@ class TestHandlers(TestCase):
 
         mock_get_cohort_by_id.assert_called_once_with(self.course_key, self.cohort.id)
         mock_add_user_to_cohort_backend.assert_called_once_with(self.cohort, self.user)
-        mock_log.info.assert_called_once_with(
+        mock_log.exception.assert_called_once_with(
             f"The user='{self.user}' is already in the cohort."
         )
