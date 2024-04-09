@@ -17,14 +17,14 @@ def add_user_to_cohort(*args, **kwargs):
     return backend.add_user_to_cohort(*args, **kwargs)
 
 
-def get_cohort_by_id(*args, **kwargs):
+def get_cohort_by_name(*args, **kwargs):
     """
-    Wrapper for `openedx.core.djangoapps.course_groups.cohorts.get_cohort_by_id`
+    Wrapper for `openedx.core.djangoapps.course_groups.cohorts.get_cohort_by_name`
     """
     backend_function = settings.OPENEDX_UNIDIGITAL_COURSE_GROUPS_BACKEND
     backend = import_module(backend_function)
 
-    return backend.get_cohort_by_id(*args, **kwargs)
+    return backend.get_cohort_by_name(*args, **kwargs)
 
 
 def get_course_user_group_model():

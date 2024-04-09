@@ -7,7 +7,7 @@ from django.conf import settings
 
 from openedx_unidigital.edxapp_wrapper.course_groups import CourseUserGroup
 from openedx_unidigital.edxapp_wrapper.course_groups import add_user_to_cohort as add_user_to_cohort_backend
-from openedx_unidigital.edxapp_wrapper.course_groups import get_cohort_by_id
+from openedx_unidigital.edxapp_wrapper.course_groups import get_cohort_by_name
 from openedx_unidigital.edxapp_wrapper.lang_pref import LANGUAGE_KEY
 from openedx_unidigital.edxapp_wrapper.modulestore import modulestore
 from openedx_unidigital.edxapp_wrapper.student import get_user_by_username_or_email
@@ -54,12 +54,11 @@ def add_user_to_course_group(user, course_groups: List[dict], course_key: str) -
         course_key (str): The course key.
     """
     for group in course_groups:
-        group_id = group.get("id", "")
         group_type = group.get("type", "").lower()
         if group_type == "team":
-            add_user_to_team(user, group_id)
+            add_user_to_team(user, group.get("id", ""))
         elif group_type == "cohort":
-            add_user_to_cohort(user, group_id, course_key)
+            add_user_to_cohort(user, group.get("name", ""), course_key)
 
 
 def get_language_preference(user) -> str:
@@ -119,27 +118,29 @@ def add_user_to_team(user, team_id: str) -> None:
         except AlreadyOnTeamInTeamset:
             log.exception(f"The user='{user}' is already on a team in the teamset.")
         except NotEnrolledInCourseForTeam:
-            log.exception(f"The user='{user}' is not enrolled in the course of the team.")
+            log.exception(
+                f"The user='{user}' is not enrolled in the course of the team."
+            )
         except AddToIncompatibleTeamError:
             log.exception(f"The user='{user}' cannot be added to the team.")
     else:
         log.exception(f"The team with the {team_id=} does not exist.")
 
 
-def add_user_to_cohort(user, cohort_id: str, course_key: str) -> None:
+def add_user_to_cohort(user, cohort_name: str, course_key: str) -> None:
     """
     Add a user to a cohort.
 
     Args:
         user (User): The user object.
-        cohort_id (str): The cohort id.
+        cohort_name (str): The cohort name.
         course_key (str): The course key.
     """
     try:
-        cohort = get_cohort_by_id(course_key, cohort_id)
+        cohort = get_cohort_by_name(course_key, cohort_name)
         add_user_to_cohort_backend(cohort, user)
         log.info(f"The user='{user}' has been added to the cohort='{cohort}'.")
     except CourseUserGroup.DoesNotExist:
-        log.exception(f"The cohort with the {cohort_id=} does not exist.")
+        log.exception(f"The cohort with the {cohort_name=} does not exist.")
     except ValueError:
         log.exception(f"The user='{user}' is already in the cohort.")
