@@ -1,7 +1,7 @@
 """Event handlers for the Open edX Unidigital plugin."""
 
 import logging
-from typing import List
+from typing import Dict, List
 
 from django.conf import settings
 
@@ -79,6 +79,9 @@ def get_membership_by_language(course_key: str) -> dict:
     """
     Get the other course settings for a course.
 
+    If the key of the dictionary is a comma-separated list of languages,
+    it will be parsed and added to new dictionary in a separate key.
+
     Args:
         course_key (str): The course key.
 
@@ -86,7 +89,17 @@ def get_membership_by_language(course_key: str) -> dict:
         dict: The other course settings if exists, otherwise an empty dict.
     """
     course_block = modulestore().get_course(course_key)
-    return course_block.other_course_settings.get("MEMBERSHIP_BY_LANGUAGE_CONFIG") or {}
+    membership_by_language: Dict[str, list] = (
+        course_block.other_course_settings.get("MEMBERSHIP_BY_LANGUAGE_CONFIG") or {}
+    )
+
+    parsed_dict = {}
+    for lang, groups in membership_by_language.items():
+        langs_list = lang.split(",")
+        for language in langs_list:
+            parsed_dict[language.lower()] = groups
+
+    return parsed_dict
 
 
 def add_user_to_team(user, team_id: str) -> None:
