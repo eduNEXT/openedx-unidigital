@@ -55,10 +55,11 @@ def add_user_to_course_group(user, course_groups: List[dict], course_key: str) -
     """
     for group in course_groups:
         group_type = group.get("type", "").lower()
+        group_id = group.get("id", "")
         if group_type == "team":
-            add_user_to_team(user, group.get("id", ""))
+            add_user_to_team(user, group_id)
         elif group_type == "cohort":
-            add_user_to_cohort(user, group.get("name", ""), course_key)
+            add_user_to_cohort(user, group_id, course_key)
 
 
 def get_language_preference(user) -> str:

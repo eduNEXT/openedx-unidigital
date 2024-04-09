@@ -38,8 +38,7 @@ class TestHandlers(TestCase):
         self.course_key = "test-course-key"
         self.username = "test-username"
         self.team = Mock(id="team-id")
-        self.cohort = Mock()
-        self.cohort.name = "cohort-name"
+        self.cohort = Mock(id="cohort-name")
         self.enrollment.course.course_key = self.course_key
         self.enrollment.user.pii.username = self.username
         self.user = Mock()
@@ -47,7 +46,7 @@ class TestHandlers(TestCase):
         self.membership_by_lang_conf = {
             "en": [
                 {"type": "team", "id": "team-id"},
-                {"type": "cohort", "name": "cohort-name"},
+                {"type": "cohort", "id": "cohort-name"},
             ]
         }
         self.other_course_settings = {
@@ -119,7 +118,7 @@ class TestHandlers(TestCase):
 
         mock_add_user_to_team.assert_called_once_with(self.user, self.team.id)
         mock_add_user_to_cohort.assert_called_once_with(
-            self.user, self.cohort.name, self.course_key
+            self.user, self.cohort.id, self.course_key
         )
 
     @patch(f"{HANDLERS_MODULE_PATH}.add_user_to_team")
@@ -144,7 +143,7 @@ class TestHandlers(TestCase):
         mock_add_user_to_team: Mock,
     ):
         """Test `add_user_to_course_group` with cohort type"""
-        course_groups = [{"type": "cohort", "name": "cohort-name-1"}]
+        course_groups = [{"type": "cohort", "id": "cohort-name-1"}]
         add_user_to_course_group(self.user, course_groups, self.course_key)
 
         mock_add_user_to_cohort.assert_called_once_with(
@@ -235,9 +234,7 @@ class TestHandlers(TestCase):
         mock_get_team_by_team_id.assert_called_once_with(self.team.id)
         self.team.add_user.assert_called_once_with(self.user)
         mock_log.info.assert_called_with(
-            "The user='{}' has been added to the team='{}'.".format(
-                self.user, self.team
-            )
+            f"The user='{self.user}' has been added to the team='{self.team}'."
         )
 
     @patch(f"{HANDLERS_MODULE_PATH}.AlreadyOnTeamInTeamset", new=AlreadyOnTeamInTeamset)
@@ -335,11 +332,9 @@ class TestHandlers(TestCase):
         """Test `add_user_to_cohort` when the operation is successful."""
         mock_get_cohort_by_name.return_value = self.cohort
 
-        add_user_to_cohort(self.user, self.cohort.name, self.course_key)
+        add_user_to_cohort(self.user, self.cohort.id, self.course_key)
 
-        mock_get_cohort_by_name.assert_called_once_with(
-            self.course_key, self.cohort.name
-        )
+        mock_get_cohort_by_name.assert_called_once_with(self.course_key, self.cohort.id)
         mock_add_user_to_cohort_backend.assert_called_once_with(self.cohort, self.user)
         mock_log.info.assert_called_once_with(
             f"The user='{self.user}' has been added to the cohort='{self.cohort}'."
@@ -358,13 +353,11 @@ class TestHandlers(TestCase):
         mock_course_user_group.DoesNotExist = ObjectDoesNotExist
         mock_get_cohort_by_name.side_effect = ObjectDoesNotExist
 
-        add_user_to_cohort(self.user, self.cohort.name, self.course_key)
+        add_user_to_cohort(self.user, self.cohort.id, self.course_key)
 
-        mock_get_cohort_by_name.assert_called_once_with(
-            self.course_key, self.cohort.name
-        )
+        mock_get_cohort_by_name.assert_called_once_with(self.course_key, self.cohort.id)
         mock_log.exception.assert_called_once_with(
-            f"The cohort with the cohort_name='{self.cohort.name}' does not exist."
+            f"The cohort with the cohort_name='{self.cohort.id}' does not exist."
         )
 
     @patch(f"{HANDLERS_MODULE_PATH}.CourseUserGroup")
@@ -383,11 +376,9 @@ class TestHandlers(TestCase):
         mock_course_user_group.DoesNotExist = ObjectDoesNotExist
         mock_add_user_to_cohort_backend.side_effect = ValueError
 
-        add_user_to_cohort(self.user, self.cohort.name, self.course_key)
+        add_user_to_cohort(self.user, self.cohort.id, self.course_key)
 
-        mock_get_cohort_by_name.assert_called_once_with(
-            self.course_key, self.cohort.name
-        )
+        mock_get_cohort_by_name.assert_called_once_with(self.course_key, self.cohort.id)
         mock_add_user_to_cohort_backend.assert_called_once_with(self.cohort, self.user)
         mock_log.exception.assert_called_once_with(
             f"The user='{self.user}' is already in the cohort."
