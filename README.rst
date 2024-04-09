@@ -73,30 +73,95 @@ This feature allows the instructor to configure a course so that any student
 (depending on their language preference on the platform) is added to a
 particular team or cohort of the course upon enrollment.
 
-1. Add the configuration to the course in the **Advanced Settings** >
-   **Other Course Settings**. You should use the following format:
+Add the configuration to the course in the **Advanced Settings** >
+**Other Course Settings**. You should use the following format:
 
-   .. code-block:: json
+.. code-block:: json
 
     {
         "MEMBERSHIP_BY_LANGUAGE_CONFIG": {
-            "<language-code>": [
+            "<language-code-1>,<language-code-2>": [
                 {
                     "type": "team",
                     "id": "<team-id>"
                 },
                 {
                     "type": "cohort",
-                    "id": "<cohort-id>"
+                    "id": "<cohort-name>"
+                }
+            ],
+            "<language-code-3>": [
+                {
+                    "type": "team",
+                    "id": "<team-id>"
                 }
             ]
         }
     }
 
-The language code must be in the ISO 639-1 format (e.g., "es" for Spanish). The
-team ID must be the UUID of the team. You can find this ID in the URL when you
-access the team in the platform. The cohort ID must be the ID of the cohort.
-You can find this ID in the URL when you access the cohort in the platform.
+The following keys are required:
+
+- The **language code** key must be in the ISO 639-1 format, the
+  `following codes`_ are supported. The string can contain multiple language
+  codes separated by commas, if you want to apply the same configuration to
+  multiple languages. Each language code should be a **list** of each of the
+  teams and cohorts you wish to assign to that language or languages.
+
+  Each team or cohort should be a dictionary with the following keys:
+
+  - **type**: The type of the group to which the user will be added. It can be
+    either "team" or "cohort".
+  - **id**: The identifier of the team or cohort to which the user will be
+    added. The value should be the team ID or cohort name. The team ID can be
+    found at the end of the URL when you access to the team in the LMS (<lms-domain>/courses/<course-id>/teams/#teams/<topic-id>/**<team-id>**).
+    The cohort name is the name of the cohort you want to add the user to.
+
+The following is an example of a configuration:
+
+.. code-block:: json
+
+    {
+        "MEMBERSHIP_BY_LANGUAGE_CONFIG": {
+            "es-419,es-es": [
+                {
+                    "type": "team",
+                    "id": "first-team-eee5e75d1c24412e9a8bb7300951cbb8"
+                },
+                {
+                    "type": "cohort",
+                    "id": "First Cohort"
+                }
+            ],
+            "en": [
+                {
+                    "type": "team",
+                    "id": "second-team-e3266314f27043fe95933fa036ecc570"
+                }
+            ]
+        }
+    }
+
+.. _following codes: https://github.com/openedx/frontend-app-account/blob/9693d938c63fec9622dd67b3ac761ba498857378/src/account-settings/site-language/constants.js
+
+Considerations
+--------------
+
+- By default, users do not have a language preference set, so each user
+  should set their language preference in their account settings in **Account**
+  > **Site Preferences** > **Site language**. If the user does not set a
+  language preference, language will be taken from the platform default
+  language.
+- The users cannot belong to more than one **cohort** nor to more that one
+  **team** within the same team set (topic). Therefore, the configuration must
+  be consistent with this restriction.
+- If a user changes their language preference, the user or the instructor
+  must remove the user from the team or cohort that represents the previous
+  language preference and add the user to the team or cohort that represents
+  the new language preference. Alternatively, after the user is removed from
+  the previous team or cohort, the user can be perform a re-enrollment in the
+  course to be added to the new team or cohort.
+- If a user unrolls from the course is not removed from the team or cohort to
+  which they were added.
 
 
 License
