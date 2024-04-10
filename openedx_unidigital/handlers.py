@@ -67,6 +67,9 @@ def get_language_preference(user) -> str:
     """
     Get the user's language preference.
 
+    If the user's language preference is not set, the default
+    language of the platform will be used.
+
     Args:
         user (User): The user object.
 
