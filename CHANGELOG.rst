@@ -16,6 +16,13 @@ Unreleased
 
 *
 
+0.11.0 - 2024-04-10
+**********************************************
+
+Added
+=====
+
+* Add user to team/cohort depending on their language preference in course enrollment event.
 
 0.10.9 - 2024-04-02
 **********************************************
