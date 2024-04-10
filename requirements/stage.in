@@ -14,10 +14,6 @@ platform-plugin-elm-credentials @ git+https://github.com/eduNEXT/platform-plugin
 platform-plugin-turnitin @ git+https://github.com/eduNEXT/platform-plugin-turnitin.git@bav/turnitin-api
 seb-openedx @ git+https://github.com/edunext/seb-openedx.git@bav/quince-support-tmp
 eox-core[sentry]==v9.1.1
-# git+https://github.com/eduNEXT/platform-plugin-ontask
-# git+https://github.com/eduNEXT/platform-plugin-groups
-# git+https://github.com/eduNEXT/platform-plugin-oncampus
-# git+https://github.com/eduNEXT/platform-plugin-turnitin
 
 # Community plugins
 h5p-xblock @ git+https://github.com/edly-io/h5pxblock.git@v0.2.9
