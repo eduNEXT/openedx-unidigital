@@ -113,7 +113,7 @@ The following keys are required:
     either "team" or "cohort".
   - **id**: The identifier of the team or cohort to which the user will be
     added. The value should be the team ID or cohort name. The team ID can be
-    found at the end of the URL when you access to the team in the LMS (<lms-domain>/courses/<course-id>/teams/#teams/<topic-id>/**<team-id>**).
+    found at the end of the URL when you view the team in the LMS (<lms-domain>/courses/<course-id>/teams/#teams/<topic-id>/**<team-id>**).
     The cohort name is the name of the cohort you want to add the user to.
 
 The following is an example of a configuration:
@@ -141,7 +141,7 @@ The following is an example of a configuration:
         }
     }
 
-.. _following codes: https://github.com/openedx/frontend-app-account/blob/9693d938c63fec9622dd67b3ac761ba498857378/src/account-settings/site-language/constants.js
+.. _following codes: https://github.com/openedx/frontend-app-account/blob/master/src/account-settings/site-language/constants.js
 
 Considerations
 --------------
@@ -151,15 +151,15 @@ Considerations
   > **Site Preferences** > **Site language**. If the user does not set a
   language preference, language will be taken from the platform default
   language.
-- The users cannot belong to more than one **cohort** nor to more that one
-  **team** within the same team set (topic). Therefore, the configuration must
-  be consistent with this restriction.
+- By definition, the users cannot belong to more than one **cohort** nor to
+  more that one **team** within the same team set (topic). Therefore, the
+  configuration must be consistent with this restriction.
 - If a user changes their language preference, the user or the instructor
   must remove the user from the team or cohort that represents the previous
   language preference and add the user to the team or cohort that represents
   the new language preference. Alternatively, after the user is removed from
-  the previous team or cohort, the user can be perform a re-enrollment in the
-  course to be added to the new team or cohort.
+  the previous team or cohort, the user can enroll again in the course to be
+  added to the new team or cohort.
 - If a user unrolls from the course is not removed from the team or cohort to
   which they were added.
 

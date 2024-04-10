@@ -116,7 +116,7 @@ def add_user_to_team(user, team_id: str) -> None:
     if team:
         try:
             team.add_user(user)
-            log.info(f"The user='{user}' has been added to the team='{team}'.")
+            log.debug(f"The user='{user}' has been added to the team='{team}'.")
         except AlreadyOnTeamInTeamset:
             old_membership = CourseTeamMembership.objects.filter(
                 user=user,
@@ -151,7 +151,7 @@ def add_user_to_cohort(user, cohort_name: str, course_key: str) -> None:
     try:
         cohort = get_cohort_by_name(course_key, cohort_name)
         add_user_to_cohort_backend(cohort, user)
-        log.info(f"The user='{user}' has been added to the cohort='{cohort}'.")
+        log.debug(f"The user='{user}' has been added to the cohort='{cohort}'.")
     except CourseUserGroup.DoesNotExist:
         log.exception(f"The cohort with the {cohort_name=} does not exist.")
     except ValueError:

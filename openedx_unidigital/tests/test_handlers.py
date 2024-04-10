@@ -19,15 +19,15 @@ LANGUAGE_KEY = "pref-lang"
 
 
 class AlreadyOnTeamInTeamset(BaseException):
-    pass
+    """Mock class for AlreadyOnTeamInTeamset"""
 
 
 class AddToIncompatibleTeamError(BaseException):
-    pass
+    """Mock class for AddToIncompatibleTeamError"""
 
 
 class NotEnrolledInCourseForTeam(BaseException):
-    pass
+    """Mock class for NotEnrolledInCourseForTeam"""
 
 
 class UserMock:
@@ -243,7 +243,7 @@ class TestHandlers(TestCase):
 
         mock_get_team_by_team_id.assert_called_once_with(self.team.id)
         self.team.add_user.assert_called_once_with(self.user)
-        mock_log.info.assert_called_with(
+        mock_log.debug.assert_called_with(
             f"The user='{self.user}' has been added to the team='{self.team}'."
         )
 
@@ -354,7 +354,7 @@ class TestHandlers(TestCase):
 
         mock_get_cohort_by_name.assert_called_once_with(self.course_key, self.cohort.id)
         mock_add_user_to_cohort_backend.assert_called_once_with(self.cohort, self.user)
-        mock_log.info.assert_called_once_with(
+        mock_log.debug.assert_called_once_with(
             f"The user='{self.user}' has been added to the cohort='{self.cohort}'."
         )
 
