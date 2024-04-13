@@ -115,6 +115,37 @@ class TestHandlers(TestCase):
         mock_get_language_preference.assert_called_once_with(self.user)
         mock_add_user_to_course_group.assert_not_called()
 
+    @patch(f"{HANDLERS_MODULE_PATH}.get_membership_by_language")
+    @patch(f"{HANDLERS_MODULE_PATH}.get_user_by_username_or_email")
+    @patch(f"{HANDLERS_MODULE_PATH}.get_language_preference")
+    @patch(f"{HANDLERS_MODULE_PATH}.add_user_to_course_group")
+    def test_add_member_to_course_group_by_language_with_default(
+        self,
+        mock_add_user_to_course_group: Mock,
+        mock_get_language_preference: Mock,
+        mock_get_user_by_username_or_email: Mock,
+        mock_get_membership_by_language: Mock,
+    ):
+        """Test `add_member_to_course_group_by_language` with default groups"""
+        self.lang_pref = "es"
+        default_groups = [
+            {"type": "team", "id": "team-id-default"},
+            {"type": "cohort", "id": "cohort-name-default"},
+        ]
+        self.membership_by_lang_conf["default"] = default_groups
+        mock_get_user_by_username_or_email.return_value = self.user
+        mock_get_language_preference.return_value = self.lang_pref
+        mock_get_membership_by_language.return_value = self.membership_by_lang_conf
+
+        add_member_to_course_group_by_language(self.enrollment)
+
+        mock_get_membership_by_language.assert_called_once_with(self.course_key)
+        mock_get_user_by_username_or_email.assert_called_once_with(self.username)
+        mock_get_language_preference.assert_called_once_with(self.user)
+        mock_add_user_to_course_group.assert_called_once_with(
+            self.user, default_groups, self.course_key
+        )
+
     @patch(f"{HANDLERS_MODULE_PATH}.add_user_to_team")
     @patch(f"{HANDLERS_MODULE_PATH}.add_user_to_cohort")
     def test_add_user_to_course_group_team_and_cohort(
