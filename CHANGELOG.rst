@@ -16,6 +16,19 @@ Unreleased
 
 *
 
+0.12.0 - 2024-04-15
+**********************************************
+
+Updated
+=======
+
+* Moved Additional Features section to ``docs`` folder.
+
+Added
+=====
+
+* Added ``default`` key in membership by language configuration.
+
 0.11.0 - 2024-04-10
 **********************************************
 

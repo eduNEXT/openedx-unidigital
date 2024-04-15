@@ -27,6 +27,9 @@ def add_member_to_course_group_by_language(enrollment, **kwargs) -> None:
     """
     Add user to course group (team/cohort) by language preference.
 
+    If the language preference of the user does not exist in the configuration,
+    the user will be added to the default group if it exists.
+
     - First, we get the configuration per language stored in other course settings.
     - Then, we get the user's language preference.
     - Finally, we add the user to the course group based on the user's language preference.
@@ -41,8 +44,11 @@ def add_member_to_course_group_by_language(enrollment, **kwargs) -> None:
     user = get_user_by_username_or_email(enrollment.user.pii.username)
     lang_pref = get_language_preference(user)
 
-    if lang_pref in membership_by_language:
-        add_user_to_course_group(user, membership_by_language[lang_pref], course_key)
+    course_groups = membership_by_language.get(
+        lang_pref, membership_by_language.get("default")
+    )
+    if course_groups:
+        add_user_to_course_group(user, course_groups, course_key)
 
 
 def add_user_to_course_group(user, course_groups: List[dict], course_key: str) -> None:
