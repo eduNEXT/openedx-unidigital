@@ -18,8 +18,11 @@ backports-zoneinfo==0.2.1 ; python_version < "3.9"
     #   -c requirements/constraints.txt
     #   -r requirements/quality.txt
     #   django
+    #   djangorestframework
 black==24.4.2
     # via -r requirements/dev.in
+bridgekeeper==0.9
+    # via -r requirements/quality.txt
 build==1.2.1
     # via
     #   -r requirements/pip-tools.txt
@@ -72,7 +75,23 @@ django==4.2.13
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/quality.txt
+    #   django-crum
+    #   django-filter
+    #   djangorestframework
     #   edx-i18n-tools
+    #   openedx-filters
+django-crum==0.7.9
+    # via -r requirements/quality.txt
+django-filter==23.5
+    # via
+    #   -c requirements/constraints.txt
+    #   -r requirements/quality.txt
+django-rest-framework==0.1.0
+    # via -r requirements/quality.txt
+djangorestframework==3.15.1
+    # via
+    #   -r requirements/quality.txt
+    #   django-rest-framework
 edx-i18n-tools==1.6.0
     # via -r requirements/dev.in
 edx-lint==5.3.6
@@ -121,6 +140,8 @@ mccabe==0.7.0
 mypy-extensions==1.0.0
     # via black
 openedx-atlas==0.6.0
+    # via -r requirements/quality.txt
+openedx-filters==1.8.1
     # via -r requirements/quality.txt
 packaging==24.0
     # via
@@ -262,6 +283,8 @@ virtualenv==20.26.2
     # via
     #   -r requirements/ci.txt
     #   tox
+web-fragments==2.2.0
+    # via -r requirements/quality.txt
 wheel==0.43.0
     # via
     #   -r requirements/pip-tools.txt

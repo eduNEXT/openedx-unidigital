@@ -17,6 +17,9 @@ backports-zoneinfo==0.2.1 ; python_version < "3.9"
     #   -c requirements/constraints.txt
     #   -r requirements/test.txt
     #   django
+    #   djangorestframework
+bridgekeeper==0.9
+    # via -r requirements/test.txt
 click==8.1.7
     # via
     #   -r requirements/test.txt
@@ -39,6 +42,22 @@ django==4.2.13
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/test.txt
+    #   django-crum
+    #   django-filter
+    #   djangorestframework
+    #   openedx-filters
+django-crum==0.7.9
+    # via -r requirements/test.txt
+django-filter==23.5
+    # via
+    #   -c requirements/constraints.txt
+    #   -r requirements/test.txt
+django-rest-framework==0.1.0
+    # via -r requirements/test.txt
+djangorestframework==3.15.1
+    # via
+    #   -r requirements/test.txt
+    #   django-rest-framework
 edx-lint==5.3.6
     # via -r requirements/quality.in
 exceptiongroup==1.2.1
@@ -64,6 +83,8 @@ markupsafe==2.1.5
 mccabe==0.7.0
     # via pylint
 openedx-atlas==0.6.0
+    # via -r requirements/test.txt
+openedx-filters==1.8.1
     # via -r requirements/test.txt
 packaging==24.0
     # via
@@ -144,3 +165,5 @@ typing-extensions==4.11.0
     #   asgiref
     #   astroid
     #   pylint
+web-fragments==2.2.0
+    # via -r requirements/test.txt

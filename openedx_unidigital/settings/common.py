@@ -2,6 +2,8 @@
 Common settings for the plugin.
 """
 
+from openedx_unidigital import ROOT_DIRECTORY
+
 
 def plugin_settings(settings):
     """
@@ -26,3 +28,17 @@ def plugin_settings(settings):
     settings.OPENEDX_UNIDIGITAL_STUDENT_BACKEND = (
         "openedx_unidigital.edxapp_wrapper.backends.student_q_v1"
     )
+    settings.OPENEDX_UNIDIGITAL_INSTRUCTOR_BACKEND = (
+        "openedx_unidigital.edxapp_wrapper.backends.instructor_q_v1"
+    )
+    settings.OPENEDX_UNIDIGITAL_XMODULE_BACKEND = (
+        "openedx_unidigital.edxapp_wrapper.backends.xmodule_q_v1"
+    )
+    if settings.SERVICE_VARIANT == "lms":
+        settings.AUTHENTICATION_BACKENDS.append(
+            "openedx_unidigital.backends.UnidigitalRulesBackend"
+        )
+        settings.AUTHENTICATION_BACKENDS.remove(
+            "bridgekeeper.backends.RulePermissionBackend"
+        )
+    settings.MAKO_TEMPLATE_DIRS_BASE.append(ROOT_DIRECTORY / "templates")
