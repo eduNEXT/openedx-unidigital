@@ -9,6 +9,8 @@ xblock-limesurvey @ git+https://github.com/eduNEXT/xblock-limesurvey@v0.6.4
 xblock-mindmap @ git+https://github.com/eduNEXT/xblock-mindmap@v1.0.0
 xblock-imagesgallery @ git+https://github.com/eduNEXT/xblock-imagesgallery.git@v0.5.0
 xblock-filesmanager @ git+https://github.com/eduNEXT/xblock-filesmanager.git@v0.8.1
+xblock-content-restrictions @ git+https://github.com/eduNEXT/xblock-content-restrictions@v0.2.0
+xblock-controlled-navigation @ git+https://github.com/eduNEXT/xblock-controlled-navigation@v0.2.0
 platform-plugin-forum-email-notifier @ git+https://github.com/edunext/platform-plugin-forum-email-notifier@v0.3.2
 platform-plugin-superset @ git+https://github.com/edunext/platform-plugin-superset@v0.1.0
 platform-plugin-communications @ git+https://github.com/edunext/platform-plugin-communications@v0.3.1

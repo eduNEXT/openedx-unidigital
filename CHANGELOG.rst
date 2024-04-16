@@ -16,6 +16,15 @@ Unreleased
 
 *
 
+0.13.0 - 2024-04-16
+**********************************************
+
+Added
+=====
+
+* Added ``xblock-content-restrictions`` in prod requirements.
+* Added ``xblock-controlled-navigation`` in prod requirements.
+
 0.12.0 - 2024-04-15
 **********************************************
 
