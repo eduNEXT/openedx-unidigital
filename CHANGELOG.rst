@@ -16,6 +16,15 @@ Unreleased
 
 *
 
+0.14.0 - 2024-04-18
+**********************************************
+
+Changed
+=======
+
+* Upgrade ``platform-plugin-aspects`` to ``0.7.1`` in prod requirements
+* Upgrade ``edx-event-routing-backends`` to ``9.0.0`` in prod requirements
+
 0.13.0 - 2024-04-16
 **********************************************
 
