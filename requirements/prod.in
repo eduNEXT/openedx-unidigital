@@ -1,6 +1,6 @@
 # Aspects requirements
-platform-plugin-aspects==0.2.0
-edx-event-routing-backends
+platform-plugin-aspects==v0.7.1
+edx-event-routing-backends==v9.0.0
 edx-completion
 openedx-events
 
