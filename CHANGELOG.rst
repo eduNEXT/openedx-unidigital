@@ -16,6 +16,14 @@ Unreleased
 
 *
 
+0.14.1 - 2024-04-19
+**********************************************
+
+Changed
+=======
+
+* Remove unnecessary requirement from prod requirements after platform-plugin-aspects upgrade.
+
 0.14.0 - 2024-04-18
 **********************************************
 
