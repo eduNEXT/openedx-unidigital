@@ -16,6 +16,15 @@ Unreleased
 
 *
 
+
+0.14.4 - 2024-04-23
+**********************************************
+
+Changed
+=======
+
+* Install ``xblock-content-restrictions`` with temp branch in stage requirements
+
 0.14.3 - 2024-04-22
 **********************************************
 
