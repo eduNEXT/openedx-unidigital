@@ -14,8 +14,8 @@ platform-plugin-superset @ git+https://github.com/edunext/platform-plugin-supers
 platform-plugin-communications @ git+https://github.com/edunext/platform-plugin-communications@v0.3.1
 platform-plugin-teams @ git+https://github.com/edunext/platform-plugin-teams@v0.2.0
 platform-plugin-elm-credentials @ git+https://github.com/eduNEXT/platform-plugin-elm-credentials.git@v0.3.1
-platform-plugin-turnitin @ git+https://github.com/eduNEXT/platform-plugin-turnitin.git@bav/turnitin-api
-seb-openedx @ git+https://github.com/edunext/seb-openedx.git@bav/quince-support-tmp
+platform-plugin-turnitin @ git+https://github.com/eduNEXT/platform-plugin-turnitin.git@v0.2.2
+seb-openedx @ git+https://github.com/edunext/seb-openedx.git@v3.0.0
 eox-core[sentry]==v9.1.1
 
 # Community plugins
