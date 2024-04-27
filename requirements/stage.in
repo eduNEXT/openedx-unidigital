@@ -1,5 +1,6 @@
 # edX requirements
-openedx-events
+openedx-events==9.9.2
+openedx-filters==1.8.1
 
 # eduNEXT plugins
 xblock-limesurvey @ git+https://github.com/eduNEXT/xblock-limesurvey@v0.6.4
@@ -8,7 +9,8 @@ xblock-imagesgallery @ git+https://github.com/eduNEXT/xblock-imagesgallery.git@v
 xblock-filesmanager @ git+https://github.com/eduNEXT/xblock-filesmanager.git@v0.8.1
 xblock-content-restrictions @ git+https://github.com/eduNEXT/xblock-content-restrictions@v0.3.1
 xblock-controlled-navigation @ git+https://github.com/eduNEXT/xblock-controlled-navigation@v0.2.1
-xblock-discussion-grading @ git+https://github.com/eduNEXT/xblock-discussion-grading@bav/discussion-grading-support
+xblock-discussion-grading @ git+https://github.com/eduNEXT/xblock-discussion-grading@v0.2.0
+xblock-completion-grading @ git+https://github.com/eduNEXT/xblock-completion-grading@MJG/add-spanish-trans
 platform-plugin-forum-email-notifier @ git+https://github.com/edunext/platform-plugin-forum-email-notifier@v0.3.2
 platform-plugin-superset @ git+https://github.com/edunext/platform-plugin-superset@v0.1.0
 platform-plugin-communications @ git+https://github.com/edunext/platform-plugin-communications@v0.3.1
@@ -24,4 +26,4 @@ feedback-xblock @ git+https://github.com/edunext/FeedbackXBlock@master
 ora2 @ git+https://github.com/eduNEXT/edx-ora2.git@5.5.5/edues/santander
 
 # Plugin dependencies
-edx-event-routing-backends==8.0.0
+edx-event-routing-backends==9.0.1

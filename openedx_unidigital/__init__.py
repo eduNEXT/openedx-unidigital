@@ -2,4 +2,4 @@
 An Open edX plugin for the Unidigital project.
 """
 
-__version__ = "0.14.8"
+__version__ = "0.15.0"
