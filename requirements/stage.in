@@ -10,7 +10,7 @@ xblock-filesmanager @ git+https://github.com/eduNEXT/xblock-filesmanager.git@v0.
 xblock-content-restrictions @ git+https://github.com/eduNEXT/xblock-content-restrictions@v0.3.1
 xblock-controlled-navigation @ git+https://github.com/eduNEXT/xblock-controlled-navigation@v0.2.1
 xblock-discussion-grading @ git+https://github.com/eduNEXT/xblock-discussion-grading@v0.2.0
-xblock-completion-grading @ git+https://github.com/eduNEXT/xblock-completion-grading@MJG/add-spanish-trans
+xblock-completion-grading @ git+https://github.com/eduNEXT/xblock-completion-grading@MJG/support-async-processing
 platform-plugin-forum-email-notifier @ git+https://github.com/edunext/platform-plugin-forum-email-notifier@v0.3.2
 platform-plugin-superset @ git+https://github.com/edunext/platform-plugin-superset@v0.1.0
 platform-plugin-communications @ git+https://github.com/edunext/platform-plugin-communications@v0.3.1
