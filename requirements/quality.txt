@@ -28,7 +28,7 @@ code-annotations==1.8.0
     # via
     #   -r requirements/test.txt
     #   edx-lint
-coverage[toml]==7.4.4
+coverage[toml]==7.5.1
     # via
     #   -r requirements/test.txt
     #   pytest-cov
@@ -40,7 +40,7 @@ django==4.2.11
     #   -r requirements/test.txt
 edx-lint==5.3.6
     # via -r requirements/quality.in
-exceptiongroup==1.2.0
+exceptiongroup==1.2.1
     # via
     #   -r requirements/test.txt
     #   pytest
@@ -52,7 +52,7 @@ isort==5.13.2
     # via
     #   -r requirements/quality.in
     #   pylint
-jinja2==3.1.3
+jinja2==3.1.4
     # via
     #   -r requirements/test.txt
     #   code-annotations
@@ -72,9 +72,9 @@ pbr==6.0.0
     # via
     #   -r requirements/test.txt
     #   stevedore
-platformdirs==4.2.0
+platformdirs==4.2.1
     # via pylint
-pluggy==1.4.0
+pluggy==1.5.0
     # via
     #   -r requirements/test.txt
     #   pytest
@@ -96,7 +96,7 @@ pylint-plugin-utils==0.8.2
     # via
     #   pylint-celery
     #   pylint-django
-pytest==8.1.1
+pytest==8.2.0
     # via
     #   -r requirements/test.txt
     #   pytest-cov
@@ -117,7 +117,7 @@ six==1.16.0
     # via edx-lint
 snowballstemmer==2.2.0
     # via pydocstyle
-sqlparse==0.4.4
+sqlparse==0.5.0
     # via
     #   -r requirements/test.txt
     #   django
