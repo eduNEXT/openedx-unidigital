@@ -89,3 +89,4 @@ OPENEDX_UNIDIGITAL_INSTRUCTOR_BACKEND = (
 OPENEDX_UNIDIGITAL_XMODULE_BACKEND = (
     "openedx_unidigital.edxapp_wrapper.backends.xmodule_q_v1_test"
 )
+ENABLE_UNIDIGITAL_AUTH_RULES_BACKEND = True

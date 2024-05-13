@@ -2,6 +2,7 @@
 
 from bridgekeeper.backends import RulePermissionBackend
 from crum import get_current_request
+from django.conf import settings
 
 from openedx_unidigital.edxapp_wrapper.instructor import (
     ALLOW_STUDENT_TO_BYPASS_ENTRANCE_EXAM,
@@ -10,6 +11,7 @@ from openedx_unidigital.edxapp_wrapper.instructor import (
     OVERRIDE_GRADES,
     VIEW_ENROLLMENTS,
 )
+from openedx_unidigital.edxapp_wrapper.student import CourseLimitedStaffRole
 from openedx_unidigital.edxapp_wrapper.teams import CourseTeamMembership
 from openedx_unidigital.models import CourseTeamInstructor
 
@@ -25,8 +27,15 @@ class UnidigitalRulesBackend(RulePermissionBackend):
         """
         has_perm_access = super().has_perm(user, perm, obj)
 
+        if not settings.ENABLE_UNIDIGITAL_AUTH_RULES_BACKEND:
+            return has_perm_access
+
+        if not CourseLimitedStaffRole(obj.course_id).has_user(user):
+            return has_perm_access
+
         if not isinstance(has_perm_access, bool):
             has_perm_access = has_perm_access.has_access
+
         if not has_perm_access:
             return False
 

@@ -54,3 +54,9 @@ def plugin_settings(settings):
         "OPENEDX_UNIDIGITAL_XMODULE_BACKEND",
         settings.OPENEDX_UNIDIGITAL_XMODULE_BACKEND,
     )
+    settings.ENABLE_UNIDIGITAL_AUTH_RULES_BACKEND = getattr(
+        settings, "ENV_TOKENS", {}
+    ).get(
+        "ENABLE_UNIDIGITAL_AUTH_RULES_BACKEND",
+        settings.ENABLE_UNIDIGITAL_AUTH_RULES_BACKEND,
+    )
