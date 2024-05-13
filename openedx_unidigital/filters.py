@@ -7,10 +7,7 @@ from django.utils.translation import gettext as _
 from openedx_filters import PipelineStep
 from web_fragments.fragment import Fragment
 
-from openedx_unidigital.edxapp_wrapper.student import (
-    CourseInstructorRole,
-    CourseLimitedStaffRole,
-)
+from openedx_unidigital.edxapp_wrapper.student import CourseInstructorRole, CourseLimitedStaffRole
 from openedx_unidigital.edxapp_wrapper.teams import get_teams_in_teamset
 from openedx_unidigital.edxapp_wrapper.xmodule import TeamsConfigurationService
 from openedx_unidigital.models import CourseTeamInstructor
