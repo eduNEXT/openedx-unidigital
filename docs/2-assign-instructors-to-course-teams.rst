@@ -14,14 +14,14 @@ This feature consists of:
 
 1. A new tab in the Instructor Dashboard UI that allows you to assign/remove/view
    instructors to course teams. This tab is only visible to users with the role
-    of "course admin" in the Instructor Dashboard UI. The tab is only visible if
+   of "course admin" in the Instructor Dashboard UI. The tab is only visible if
 2. A filter that will limit the tabs of the Instructor Dashboard UI to only Course
-    Info and Student Admin, so the user can only manage student grades. This filter
-    is necessary to prevent the user from accessing the other tabs of the Instructor
-    Dashboard UI. The tab is on if and only if a user with limited staff role is
-    assigned to at least one course team.
+   Info and Student Admin, so the user can only manage student grades. This filter
+   is necessary to prevent the user from accessing the other tabs of the Instructor
+   Dashboard UI. The tab is on if and only if a user with limited staff role is
+   assigned to at least one course team.
 3. An custom authentication that allows/denies users to perform actions based on
-    their role and the course team they are assigned to.
+   their role and the course team they are assigned to.
 
 Configuration
 =============
