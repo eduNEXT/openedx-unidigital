@@ -231,14 +231,15 @@ class TestUnidigitalRulesBackend(TestCase):
         """Test auth backend when the instructor does not have teams.
 
         Expected behavior:
-        - The method should return False denying the access.
+        - The method should return True allowing the access cause the instructor
+        is not part of any team.
         """
         mock_course_team_membership.objects.filter.return_value.values_list.return_value = {
             1,
             2,
         }
 
-        self.assertFalse(
+        self.assertTrue(
             self.backend.has_perm(
                 self.user, "VIEW_ENROLLMENTS", Mock(course_id="course_id")
             )

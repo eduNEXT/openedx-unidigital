@@ -16,6 +16,8 @@ class CourseTeamInstructor(models.Model):
         course_team_id (int): The ID of the course team.
         course_team_name (str): The name of the course team.
         username (str): The username of the user.
+
+    .. no_pii:
     """
 
     course_team_id = models.IntegerField(null=False)

@@ -4,6 +4,8 @@ import logging
 from typing import Dict, List
 
 from django.conf import settings
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 from openedx_unidigital.edxapp_wrapper.course_groups import CourseUserGroup
 from openedx_unidigital.edxapp_wrapper.course_groups import add_user_to_cohort as add_user_to_cohort_backend
@@ -19,6 +21,7 @@ from openedx_unidigital.edxapp_wrapper.teams import (
     get_team_by_team_id,
 )
 from openedx_unidigital.edxapp_wrapper.user_preferences import get_user_preference
+from openedx_unidigital.models import CourseTeamInstructor
 
 log = logging.getLogger(__name__)
 

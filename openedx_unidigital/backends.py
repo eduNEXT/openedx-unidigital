@@ -56,6 +56,8 @@ class UnidigitalRulesBackend(RulePermissionBackend):
                 team__course_id=obj.course_id,
             ).values_list("team_id", flat=True)
             instructor_teams = CourseTeamInstructor.get_teams_for_user(user.username)
+            if not instructor_teams:
+                return True
             has_team_access = bool(student_teams.intersection(instructor_teams))
 
         return has_team_access

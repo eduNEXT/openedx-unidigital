@@ -106,7 +106,8 @@ class TestTeamLimitedStaffDashboard(TestCase):
     )
     @patch("openedx_unidigital.filters.CourseLimitedStaffRole")
     @patch("openedx_unidigital.filters.get_current_request")
-    def test_run_filter_for_limited_staff(self, _, mock_limited_staff_role):
+    @patch("openedx_unidigital.filters.CourseTeamInstructor")
+    def test_run_filter_for_limited_staff(self, mock_course_team_instructor, _, mock_limited_staff_role):
         """Test run_filter method for a limited staff user.
 
         Expected behavior:
@@ -121,6 +122,7 @@ class TestTeamLimitedStaffDashboard(TestCase):
             ],
         }
         mock_limited_staff_role().has_user.return_value = True
+        mock_course_team_instructor.get_teams_for_user.return_value = [Mock()]
 
         InstructorDashboardRenderStarted.run_filter(
             context=context,
@@ -156,6 +158,46 @@ class TestTeamLimitedStaffDashboard(TestCase):
             ],
         }
         mock_limited_staff_role().has_user.return_value = False
+
+        InstructorDashboardRenderStarted.run_filter(
+            context=context,
+            template_name="instructor_dashboard",
+        )
+
+        self.assertEqual(len(context["sections"]), 3)
+        self.assertEqual(context["sections"][0]["section_key"], "course_info")
+        self.assertEqual(context["sections"][1]["section_key"], "student_admin")
+        self.assertEqual(
+            context["sections"][2]["section_key"], "course_team_management"
+        )
+
+    @override_settings(
+        OPEN_EDX_FILTERS_CONFIG={
+            "org.openedx.learning.instructor.dashboard.render.started.v1": {
+                "fail_silently": False,
+                "pipeline": ["openedx_unidigital.filters.TeamLimitedStaffDashboard"],
+            }
+        }
+    )
+    @patch("openedx_unidigital.filters.CourseLimitedStaffRole")
+    @patch("openedx_unidigital.filters.get_current_request")
+    @patch("openedx_unidigital.filters.CourseTeamInstructor")
+    def test_run_filter_for_limited_staff_no_teams(self, mock_course_team_instructor, _, mock_limited_staff_role):
+        """Test run_filter method for a limited staff user with no teams.
+
+        Expected behavior:
+        - The sections should not be filtered.
+        """
+        context = {
+            "course": Mock(),
+            "sections": [
+                {"section_key": "course_info"},
+                {"section_key": "student_admin"},
+                {"section_key": "course_team_management"},
+            ],
+        }
+        mock_limited_staff_role().has_user.return_value = True
+        mock_course_team_instructor.get_teams_for_user.return_value = []
 
         InstructorDashboardRenderStarted.run_filter(
             context=context,

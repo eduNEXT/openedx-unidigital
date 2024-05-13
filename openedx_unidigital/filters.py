@@ -105,13 +105,23 @@ class TeamLimitedStaffDashboard(PipelineStep):
     def run_filter(self, context, template_name):  # pylint: disable=arguments-differ
         """Pipeline step that filters the sections list for the instructor dashboard.
 
+        This method filters the sections list for the instructor dashboard removing
+        the sections that are not needed for the Limited Staff role that is part of
+        a course team.
+
         Args:
             context (dict): the context for the instructor dashboard.
             _ (str): instructor dashboard template name.
         """
         course = context["course"]
         user = get_current_request().user
+
         if not CourseLimitedStaffRole(course.id).has_user(user):
+            return {
+                "context": context,
+            }
+
+        if not CourseTeamInstructor.get_teams_for_user(user.username):
             return {
                 "context": context,
             }
