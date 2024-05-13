@@ -20,7 +20,8 @@ class UnidigitalRulesBackend(RulePermissionBackend):
     """Backend for the Unidigital project based on custom business rules."""
 
     def has_perm(self, user, perm, obj=None):
-        """Check if the user has the permission to perform the action.
+        """
+        Check if the user has the permission to perform the action.
 
         For a set of specified permissions, the user must be an instructor
         of the team that the student is part of.

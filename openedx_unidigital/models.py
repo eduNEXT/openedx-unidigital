@@ -5,7 +5,8 @@ from django.db import models
 
 
 class CourseTeamInstructor(models.Model):
-    """Django model for Course Team Instructors.
+    """
+    Django model for Course Team Instructors.
 
     A Course Team Instructor is a user that:
      - Is part of a team that is part of a course.
@@ -25,16 +26,20 @@ class CourseTeamInstructor(models.Model):
     username = models.CharField(max_length=255, null=False)
 
     class Meta:
+        """Meta options for the CourseTeamInstructor model."""
+
         unique_together = ("course_team_id", "username")
         verbose_name = "Course Team Instructor"
         verbose_name_plural = "Course Team Instructors"
 
     def __str__(self):
+        """Return the string representation of the CourseTeamInstructor object."""
         return f"{self.course_team_name} - {self.username}"
 
     @classmethod
     def get_teams_for_user(cls, username):
-        """Get CourseTeamInstructor objects for a user.
+        """
+        Get CourseTeamInstructor objects for a user.
 
         Args:
             username (str): The username.

@@ -20,7 +20,8 @@ BLOCK_CATEGORY = "course_team_management"
 
 
 class TeamAssignmentDashboard(PipelineStep):
-    """Filter to add a section to the instructor dashboard with the team instructors management.
+    """
+    Filter to add a section to the instructor dashboard with the team instructors management.
 
     This filter adds a section to the instructor dashboard with the team instructors
     for the course teams. The section includes a list of the course teams and the
@@ -31,11 +32,12 @@ class TeamAssignmentDashboard(PipelineStep):
     def run_filter(
         self, context, template_name
     ):  # pylint: disable=unused-argument, arguments-differ
-        """Execute filter that modifies the instructor dashboard context.
+        """
+        Execute filter that modifies the instructor dashboard context.
 
         Args:
             context (dict): the context for the instructor dashboard.
-            _ (str): instructor dashboard template name.
+            template_name (str): instructor dashboard template name.
         """
         course = context["course"]
         user = get_current_request().user
@@ -102,8 +104,9 @@ class TeamLimitedStaffDashboard(PipelineStep):
     the sections list.
     """
 
-    def run_filter(self, context, template_name):  # pylint: disable=arguments-differ
-        """Pipeline step that filters the sections list for the instructor dashboard.
+    def run_filter(self, context, template_name):  # pylint: disable=arguments-differ, unused-argument
+        """
+        Pipeline step that filters the sections list for the instructor dashboard.
 
         This method filters the sections list for the instructor dashboard removing
         the sections that are not needed for the Limited Staff role that is part of
@@ -111,7 +114,7 @@ class TeamLimitedStaffDashboard(PipelineStep):
 
         Args:
             context (dict): the context for the instructor dashboard.
-            _ (str): instructor dashboard template name.
+            template_name (str): instructor dashboard template name.
         """
         course = context["course"]
         user = get_current_request().user
@@ -135,7 +138,6 @@ class TeamLimitedStaffDashboard(PipelineStep):
 
         return {
             "context": context,
-            "template_name": template_name,
         }
 
     @staticmethod
