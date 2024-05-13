@@ -1,3 +1,5 @@
+"""Test cases for the views of the openedx_unidigital app."""
+
 from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase

@@ -6,8 +6,6 @@ from unittest.mock import Mock, patch
 from django.test import override_settings
 from openedx_filters.learning.filters import InstructorDashboardRenderStarted
 
-from openedx_unidigital.filters import TeamAssignmentDashboard
-
 
 class TestTeamAssignmentDashboard(TestCase):
     """Test suite for the TeamAssignmentDashboard filter."""
@@ -107,7 +105,9 @@ class TestTeamLimitedStaffDashboard(TestCase):
     @patch("openedx_unidigital.filters.CourseLimitedStaffRole")
     @patch("openedx_unidigital.filters.get_current_request")
     @patch("openedx_unidigital.filters.CourseTeamInstructor")
-    def test_run_filter_for_limited_staff(self, mock_course_team_instructor, _, mock_limited_staff_role):
+    def test_run_filter_for_limited_staff(
+        self, mock_course_team_instructor, _, mock_limited_staff_role
+    ):
         """Test run_filter method for a limited staff user.
 
         Expected behavior:
@@ -182,7 +182,9 @@ class TestTeamLimitedStaffDashboard(TestCase):
     @patch("openedx_unidigital.filters.CourseLimitedStaffRole")
     @patch("openedx_unidigital.filters.get_current_request")
     @patch("openedx_unidigital.filters.CourseTeamInstructor")
-    def test_run_filter_for_limited_staff_no_teams(self, mock_course_team_instructor, _, mock_limited_staff_role):
+    def test_run_filter_for_limited_staff_no_teams(
+        self, mock_course_team_instructor, _, mock_limited_staff_role
+    ):
         """Test run_filter method for a limited staff user with no teams.
 
         Expected behavior:

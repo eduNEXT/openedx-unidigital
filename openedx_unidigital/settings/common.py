@@ -41,5 +41,7 @@ def plugin_settings(settings):
         settings.AUTHENTICATION_BACKENDS.remove(
             "bridgekeeper.backends.RulePermissionBackend"
         )
-    settings.ENABLE_UNIDIGITAL_AUTH_RULES_BACKEND = getattr(settings, "ENABLE_UNIDIGITAL_AUTH_RULES_BACKEND", True)
+    settings.ENABLE_UNIDIGITAL_AUTH_RULES_BACKEND = getattr(
+        settings, "ENABLE_UNIDIGITAL_AUTH_RULES_BACKEND", True
+    )
     settings.MAKO_TEMPLATE_DIRS_BASE.append(ROOT_DIRECTORY / "templates")

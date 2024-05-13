@@ -19,7 +19,9 @@ class TestUnidigitalRulesBackend(TestCase):
         return_value=False,
     )
     @patch("openedx_unidigital.backends.CourseLimitedStaffRole")
-    def test_no_access_rule_permission_backend(self, mock_course_limited_staff_role, *_):
+    def test_no_access_rule_permission_backend(
+        self, mock_course_limited_staff_role, *_
+    ):
         """Test auth backend when the user does not have access according to the RulePermissionBackend.
 
         Expected behavior:
@@ -113,7 +115,6 @@ class TestUnidigitalRulesBackend(TestCase):
             )
         )
 
-
     @patch(
         "openedx_unidigital.backends.get_current_request",
         return_value=Mock(
@@ -154,12 +155,16 @@ class TestUnidigitalRulesBackend(TestCase):
         return_value=True,
     )
     @patch("openedx_unidigital.backends.CourseLimitedStaffRole")
-    def test_access_based_on_teams_no_post_student(self, mock_course_limited_staff_role, *_):
+    def test_access_based_on_teams_no_post_student(
+        self, mock_course_limited_staff_role, *_
+    ):
         """Test auth backend when the post student is not present.
 
         Expected behavior:
         - The method should return True allowing the access.
         """
+        mock_course_limited_staff_role().has_user.return_value = True
+
         self.assertTrue(
             self.backend.has_perm(
                 self.user, "VIEW_ENROLLMENTS", Mock(course_id="course_id")
@@ -179,12 +184,16 @@ class TestUnidigitalRulesBackend(TestCase):
         return_value=True,
     )
     @patch("openedx_unidigital.backends.CourseLimitedStaffRole")
-    def test_access_based_on_teams_different_perm(self, mock_course_limited_staff_role, *_):
+    def test_access_based_on_teams_different_perm(
+        self, mock_course_limited_staff_role, *_
+    ):
         """Test auth backend when the permission is different from the monitored ones.
 
         Expected behavior:
         - The method should return True allowing the access.
         """
+        mock_course_limited_staff_role().has_user.return_value = True
+
         self.assertTrue(
             self.backend.has_perm(
                 self.user, "ANOTHER_PERM", Mock(course_id="course_id")
@@ -217,6 +226,7 @@ class TestUnidigitalRulesBackend(TestCase):
         Expected behavior:
         - The method should return False denying the access.
         """
+        mock_course_limited_staff_role().has_user.return_value = True
         mock_course_team_membership.objects.filter.return_value.values_list.return_value = {
             1,
             2,
@@ -255,6 +265,7 @@ class TestUnidigitalRulesBackend(TestCase):
         - The method should return True allowing the access cause the instructor
         is not part of any team.
         """
+        mock_course_limited_staff_role().has_user.return_value = True
         mock_course_team_membership.objects.filter.return_value.values_list.return_value = {
             1,
             2,

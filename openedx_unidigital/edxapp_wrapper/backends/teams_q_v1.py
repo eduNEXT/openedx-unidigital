@@ -11,6 +11,6 @@ from lms.djangoapps.teams.errors import (  # pylint: disable=import-error, unuse
     AlreadyOnTeamInTeamset,
     NotEnrolledInCourseForTeam,
 )
-from lms.djangoapps.teams.models import (
+from lms.djangoapps.teams.models import (  # pylint: disable=import-error, unused-import
     CourseTeamMembership,
-)  # pylint: disable=import-error, unused-import
+)
