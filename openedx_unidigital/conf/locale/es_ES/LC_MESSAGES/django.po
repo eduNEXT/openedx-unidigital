@@ -1,0 +1,56 @@
+# edX translation file.
+# Copyright (C) 2024 EdX
+# This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
+# EdX Team <info@edx.org>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1a\n"
+"Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
+"POT-Creation-Date: 2023-06-13 08:00+0000\n"
+"PO-Revision-Date: 2023-06-13 09:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: openedx-translation <openedx-translation@googlegroups.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: filters.py:80
+msgid "Courses' Team Instructors"
+msgstr "Instructores de equipos del curso"
+
+#: static/html/course_team_management.html:5
+msgid "Assign instructors to course teams"
+msgstr "Asigna instructores a los equipos de los cursos"
+
+#: static/html/course_team_management.html:7
+msgid ""
+"These are the teams associated with the course. You can assign instructors "
+"to each team by selecting a team from the dropdown below and entering the "
+"instructor's username. Each instructor can be associated with multiple "
+"teams. When assigned to a team, the instructor will be able to manage the "
+"team's members."
+msgstr ""
+" Estos son los equipos asociados al curso. Puede asignar instructores "
+"a cada equipo seleccionando un equipo en el menú desplegable de abajo e introduciendo el "
+"nombre de usuario del instructor. Cada instructor puede estar asociado a varios "
+"equipos. Una vez asignado a un equipo, el instructor podrá gestionar los "
+"los miembros del equipo".
+
+#: static/html/course_team_management.html:12
+msgid "Courses' teams"
+msgstr "Equipos del curso"
+
+#: static/html/course_team_management.html:15
+msgid "Select a team"
+msgstr "Selecciona un equipo"
+
+#: static/html/course_team_management.html:26
+msgid "Username"
+msgstr "Nombre de usuario"
+
+#: static/html/course_team_management.html:27
+msgid "Revoke Access"
+msgstr "Revocar acceso"

@@ -1,4 +1,4 @@
-.PHONY: clean clean_tox compile_translations coverage diff_cover dummy_translations \
+.PHONY: clean clean_tox compile_translations coverage diff_cover dummy_translations symlink_translations \
         extract_translations fake_translations help pii_check pull_translations push_translations \
         quality requirements selfcheck test test-all upgrade validate install_transifex_client
 
@@ -6,6 +6,8 @@
 
 # For opening files in a browser. Use like: $(BROWSER)relative/path/to/file.html
 BROWSER := python -m webbrowser file://$(CURDIR)/
+PACKAGE_NAME := openedx_unidigital
+TRANSLATIONS_DIR := $(PACKAGE_NAME)/translations
 
 help: ## display this help message
 	@echo "Please use \`make <target>' where <target> is one of"
@@ -119,3 +121,6 @@ install_transifex_client: ## Install the Transifex client
 	git diff -s --exit-code HEAD || { echo "Please commit changes first."; exit 1; }
 	curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
 	git checkout -- LICENSE README.md ## overwritten by Transifex installer
+
+symlink_translations:
+	if [ ! -d "$(TRANSLATIONS_DIR)" ]; then ln -s conf/locale/ $(TRANSLATIONS_DIR); fi

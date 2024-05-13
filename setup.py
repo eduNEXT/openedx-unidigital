@@ -166,6 +166,7 @@ setup(
             "openedx_unidigital = openedx_unidigital.apps:OpenedxUnidigitalConfig"
         ],
     },
+    package_data={"openedx_unidigital": ["static", "public", "translations"]},
     include_package_data=True,
     install_requires=load_requirements("requirements/base.in"),
     extras_require={
