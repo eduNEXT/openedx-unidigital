@@ -67,6 +67,7 @@ Additional Features
 *******************
 
 - `Add user to team/cohort in course enrollment <./docs/1-add-user-to-team-cohort-in-course-enrollment.rst>`_
+- `Assign instructors to course teams <./docs/2-assign-instructors-to-course-teams.rst>`_
 
 License
 *******
