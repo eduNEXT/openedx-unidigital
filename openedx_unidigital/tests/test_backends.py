@@ -75,9 +75,7 @@ class TestUnidigitalRulesBackend(TestCase):
         }
 
         self.assertTrue(
-            self.backend.has_perm(
-                self.user, "VIEW_ENROLLMENTS", self.block
-            )
+            self.backend.has_perm(self.user, "VIEW_ENROLLMENTS", self.block)
         )
 
     @patch(
@@ -113,9 +111,7 @@ class TestUnidigitalRulesBackend(TestCase):
         }
 
         self.assertFalse(
-            self.backend.has_perm(
-                self.user, "VIEW_ENROLLMENTS", self.block
-            )
+            self.backend.has_perm(self.user, "VIEW_ENROLLMENTS", self.block)
         )
 
     @patch(
@@ -140,9 +136,7 @@ class TestUnidigitalRulesBackend(TestCase):
         mock_course_limited_staff_role().has_user.return_value = True
 
         self.assertTrue(
-            self.backend.has_perm(
-                self.user, "VIEW_ENROLLMENTS", self.block
-            )
+            self.backend.has_perm(self.user, "VIEW_ENROLLMENTS", self.block)
         )
 
     @patch(
@@ -169,9 +163,7 @@ class TestUnidigitalRulesBackend(TestCase):
         mock_course_limited_staff_role().has_user.return_value = True
 
         self.assertTrue(
-            self.backend.has_perm(
-                self.user, "VIEW_ENROLLMENTS", self.block
-            )
+            self.backend.has_perm(self.user, "VIEW_ENROLLMENTS", self.block)
         )
 
     @patch(
@@ -197,11 +189,7 @@ class TestUnidigitalRulesBackend(TestCase):
         """
         mock_course_limited_staff_role().has_user.return_value = True
 
-        self.assertTrue(
-            self.backend.has_perm(
-                self.user, "ANOTHER_PERM", self.block
-            )
-        )
+        self.assertTrue(self.backend.has_perm(self.user, "ANOTHER_PERM", self.block))
 
     @patch(
         "openedx_unidigital.backends.CourseTeamInstructor.get_teams_for_user",
@@ -236,9 +224,7 @@ class TestUnidigitalRulesBackend(TestCase):
         }
 
         self.assertFalse(
-            self.backend.has_perm(
-                self.user, "VIEW_ENROLLMENTS", self.block
-            )
+            self.backend.has_perm(self.user, "VIEW_ENROLLMENTS", self.block)
         )
 
     @patch(
@@ -275,9 +261,7 @@ class TestUnidigitalRulesBackend(TestCase):
         }
 
         self.assertTrue(
-            self.backend.has_perm(
-                self.user, "VIEW_ENROLLMENTS", self.block
-            )
+            self.backend.has_perm(self.user, "VIEW_ENROLLMENTS", self.block)
         )
 
     @patch(
@@ -294,7 +278,5 @@ class TestUnidigitalRulesBackend(TestCase):
         mock_course_limited_staff_role().has_user.return_value = False
 
         self.assertTrue(
-            self.backend.has_perm(
-                self.user, "VIEW_ENROLLMENTS", self.block
-            )
+            self.backend.has_perm(self.user, "VIEW_ENROLLMENTS", self.block)
         )
