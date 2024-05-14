@@ -63,7 +63,7 @@ class UnidigitalRulesBackend(RulePermissionBackend):
             ]
         ):
             student_teams = CourseTeamMembership.objects.filter(
-                user_id=user.id,
+                user__username=post_student,
                 team__course_id=obj.course_id,
             ).values_list("team_id", flat=True)
             instructor_teams = CourseTeamInstructor.get_teams_for_user(user.username)
