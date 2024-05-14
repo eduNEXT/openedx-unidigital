@@ -3,7 +3,6 @@
 from bridgekeeper.backends import RulePermissionBackend
 from crum import get_current_request
 from django.conf import settings
-from opaque_keys.edx.keys import CourseKey
 
 from openedx_unidigital.edxapp_wrapper.instructor import (
     ALLOW_STUDENT_TO_BYPASS_ENTRANCE_EXAM,
