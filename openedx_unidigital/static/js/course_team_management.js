@@ -22,7 +22,7 @@ function addInstructorToTable(data) {
   revokeAccessCell.html(
     `
     <a href="#">
-      <span class="fa fa-times-circle revoke-access" data-course-instructor-team-id="${data.id} aria-hidden="true"></span>
+      <span class="icon fa fa-times fa-lg revoke-access" data-course-instructor-team-id="${data.id} aria-hidden="true"></span>
     </a>
     `
   );
@@ -53,7 +53,7 @@ function fetchInstructorsForTeam(teamId) {
       console.error("Error fetching instructors:", error);
     });
 }
-$("#add-instructor-button").on("click", function (select) {
+$("#add-instructor").on("click", function (select) {
   $("#error-message").text("");
   const username = $("#add-instructor-input").val();
   const courseTeamId = $("#course-teamset").val();
