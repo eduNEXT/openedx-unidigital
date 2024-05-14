@@ -20,7 +20,11 @@ function addInstructorToTable(data) {
   var revokeAccessCell = $("<td>");
   usernameCell.text(data.username);
   revokeAccessCell.html(
-    '<input type="button" value="Revoke Access" data-course-instructor-team-id="' + data.id + '" class="revoke-access-button">'
+    `
+    <a href="#">
+      <span class="fa fa-times-circle revoke-access" data-course-instructor-team-id="${data.id} aria-hidden="true"></span>
+    </a>
+    `
   );
   row.append(usernameCell);
   row.append(revokeAccessCell);
@@ -106,7 +110,7 @@ $("#course-teamset").on("change", function (select) {
   }
 
   document.addEventListener("click", function(event) {
-    if (event.target && event.target.classList.contains("revoke-access-button")) {
+    if (event.target && event.target.classList.contains("revoke-access")) {
       const courseInstructorTeamId = event.target.getAttribute("data-course-instructor-team-id");
       revokeAccess(courseInstructorTeamId);
     }
