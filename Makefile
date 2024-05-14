@@ -7,7 +7,7 @@
 # For opening files in a browser. Use like: $(BROWSER)relative/path/to/file.html
 BROWSER := python -m webbrowser file://$(CURDIR)/
 PACKAGE_NAME := openedx_unidigital
-TRANSLATIONS_DIR := $(PACKAGE_NAME)/translations
+TRANSLATIONS_DIR := $(PACKAGE_NAME)/locale
 
 help: ## display this help message
 	@echo "Please use \`make <target>' where <target> is one of"
