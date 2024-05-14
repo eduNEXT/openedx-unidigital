@@ -32,12 +32,12 @@ msgid ""
 "instructor's username. Each instructor can be associated with multiple "
 "teams. When assigned to a team, the instructor will be able to manage the "
 "team's members."
-msgstr ""
-" Estos son los equipos asociados al curso. Puede asignar instructores "
+msgstr
+"Estos son los equipos asociados al curso. Puede asignar instructores "
 "a cada equipo seleccionando un equipo en el menú desplegable de abajo e introduciendo el "
 "nombre de usuario del instructor. Cada instructor puede estar asociado a varios "
 "equipos. Una vez asignado a un equipo, el instructor podrá gestionar los "
-"los miembros del equipo".
+"los miembros del equipo."
 
 #: static/html/course_team_management.html:12
 msgid "Courses' teams"
