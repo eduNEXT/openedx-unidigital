@@ -13,6 +13,9 @@ class TestUnidigitalRulesBackend(TestCase):
         """Set up the test suite."""
         self.backend = UnidigitalRulesBackend()
         self.user = Mock()
+        self.block = Mock(
+            course_id="course_id",
+        )
 
     @patch(
         "openedx_unidigital.backends.RulePermissionBackend.has_perm",
@@ -33,7 +36,7 @@ class TestUnidigitalRulesBackend(TestCase):
             self.backend.has_perm(
                 self.user,
                 "perm",
-                Mock(course_id="course_id"),
+                self.block,
             )
         )
 
@@ -73,7 +76,7 @@ class TestUnidigitalRulesBackend(TestCase):
 
         self.assertTrue(
             self.backend.has_perm(
-                self.user, "VIEW_ENROLLMENTS", Mock(course_id="course_id")
+                self.user, "VIEW_ENROLLMENTS", self.block
             )
         )
 
@@ -111,7 +114,7 @@ class TestUnidigitalRulesBackend(TestCase):
 
         self.assertFalse(
             self.backend.has_perm(
-                self.user, "VIEW_ENROLLMENTS", Mock(course_id="course_id")
+                self.user, "VIEW_ENROLLMENTS", self.block
             )
         )
 
@@ -138,7 +141,7 @@ class TestUnidigitalRulesBackend(TestCase):
 
         self.assertTrue(
             self.backend.has_perm(
-                self.user, "VIEW_ENROLLMENTS", Mock(course_id="course_id")
+                self.user, "VIEW_ENROLLMENTS", self.block
             )
         )
 
@@ -167,7 +170,7 @@ class TestUnidigitalRulesBackend(TestCase):
 
         self.assertTrue(
             self.backend.has_perm(
-                self.user, "VIEW_ENROLLMENTS", Mock(course_id="course_id")
+                self.user, "VIEW_ENROLLMENTS", self.block
             )
         )
 
@@ -196,7 +199,7 @@ class TestUnidigitalRulesBackend(TestCase):
 
         self.assertTrue(
             self.backend.has_perm(
-                self.user, "ANOTHER_PERM", Mock(course_id="course_id")
+                self.user, "ANOTHER_PERM", self.block
             )
         )
 
@@ -234,7 +237,7 @@ class TestUnidigitalRulesBackend(TestCase):
 
         self.assertFalse(
             self.backend.has_perm(
-                self.user, "VIEW_ENROLLMENTS", Mock(course_id="course_id")
+                self.user, "VIEW_ENROLLMENTS", self.block
             )
         )
 
@@ -273,7 +276,7 @@ class TestUnidigitalRulesBackend(TestCase):
 
         self.assertTrue(
             self.backend.has_perm(
-                self.user, "VIEW_ENROLLMENTS", Mock(course_id="course_id")
+                self.user, "VIEW_ENROLLMENTS", self.block
             )
         )
 
@@ -292,6 +295,6 @@ class TestUnidigitalRulesBackend(TestCase):
 
         self.assertTrue(
             self.backend.has_perm(
-                self.user, "VIEW_ENROLLMENTS", Mock(course_id="course_id")
+                self.user, "VIEW_ENROLLMENTS", self.block
             )
         )

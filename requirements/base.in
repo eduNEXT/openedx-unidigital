@@ -9,3 +9,4 @@ openedx-filters    # Library of filters for Open edX
 web-fragments      # For managing web fragments
 django-rest-framework # For building RESTful APIs
 django-filter    # For filtering Django querysets
+edx-opaque-keys      # For generating and validating opaque keys

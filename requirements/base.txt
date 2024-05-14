@@ -30,13 +30,25 @@ django-rest-framework==0.1.0
     # via -r requirements/base.in
 djangorestframework==3.15.1
     # via django-rest-framework
+dnspython==2.6.1
+    # via pymongo
+edx-opaque-keys==2.9.0
+    # via -r requirements/base.in
 openedx-atlas==0.6.0
     # via -r requirements/base.in
 openedx-filters==1.8.1
     # via -r requirements/base.in
+pbr==6.0.0
+    # via stevedore
+pymongo==4.4.0
+    # via edx-opaque-keys
 sqlparse==0.5.0
     # via django
+stevedore==5.2.0
+    # via edx-opaque-keys
 typing-extensions==4.11.0
-    # via asgiref
+    # via
+    #   asgiref
+    #   edx-opaque-keys
 web-fragments==2.2.0
     # via -r requirements/base.in
