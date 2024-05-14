@@ -54,3 +54,7 @@ msgstr "Nombre de usuario"
 #: static/html/course_team_management.html:27
 msgid "Revoke Access"
 msgstr "Revocar acceso"
+
+#: static/html/course_team_management.html:36
+msgid "Add Instructor"
+msgstr "Añadir Instructor"
