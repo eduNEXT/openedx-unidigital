@@ -8,6 +8,7 @@ asgiref==3.8.1
     # via django
 backports-zoneinfo==0.2.1 ; python_version < "3.9"
     # via
+    #   -c requirements/constraints.txt
     #   django
     #   djangorestframework
 bridgekeeper==0.9
@@ -22,10 +23,8 @@ django==4.2.13
     #   openedx-filters
 django-crum==0.7.9
     # via -r requirements/base.in
-django-filter==23.5
-    # via
-    #   -c requirements/constraints.txt
-    #   -r requirements/base.in
+django-filter==24.2
+    # via -r requirements/base.in
 django-rest-framework==0.1.0
     # via -r requirements/base.in
 djangorestframework==3.15.1

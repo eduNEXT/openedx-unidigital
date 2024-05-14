@@ -82,10 +82,8 @@ django==4.2.13
     #   openedx-filters
 django-crum==0.7.9
     # via -r requirements/quality.txt
-django-filter==23.5
-    # via
-    #   -c requirements/constraints.txt
-    #   -r requirements/quality.txt
+django-filter==24.2
+    # via -r requirements/quality.txt
 django-rest-framework==0.1.0
     # via -r requirements/quality.txt
 djangorestframework==3.15.1
