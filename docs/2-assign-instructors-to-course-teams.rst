@@ -1,26 +1,26 @@
 Assign instructors to course teams
 **********************************
 
-In campus education often relies on Teaching Assistants to handle some of the
-load of managing students in a large course. This feature allows you to assign
+In campus education settings there is often an instructor figure that handles some of the
+load of managing students in a large course. So, this feature allows you to assign
 instructors to course teams. This means that when assigned to a course team, the
 instructor will be able to manage student grades for the students in the course
 team.
 
-A "Teaching Assistant" is a user with the role of "limited staff" that's assigned
+So, a courses' team instructor is a user with the role of "limited staff" that's assigned
 to at least one course team.
 
 This feature consists of:
 
 1. A new tab in the Instructor Dashboard UI that allows you to assign/remove/view
    instructors to course teams. This tab is only visible to users with the role
-   of "course admin" in the Instructor Dashboard UI. The tab is only visible if
+   of "course admin" in the Instructor Dashboard UI.
 2. A filter that will limit the tabs of the Instructor Dashboard UI to only Course
    Info and Student Admin, so the user can only manage student grades. This filter
    is necessary to prevent the user from accessing the other tabs of the Instructor
    Dashboard UI. The tab is on if and only if a user with limited staff role is
    assigned to at least one course team.
-3. An custom authentication that allows/denies users to perform actions based on
+3. An custom authentication backend that allows/denies users to perform actions based on
    their role and the course team they are assigned to.
 
 Configuration
@@ -72,12 +72,12 @@ team by following these steps:
 3. Select the team the instructor will be removed from.
 4. Click on the "Revoke access" button next to the instructor you want to remove from the team.
 
-Managing grades as a Teaching Assistant
----------------------------------------
+Managing grades as a Course Team Instructor
+-------------------------------------------
 
-As a Teaching Assistant, you can manage student grades for the students in the course team you are assigned to.
+As a course team instructor, you can manage student grades for the students in the course team you are assigned to.
 You can access the Instructor Dashboard UI and see the tabs for Course Info and Student Admin. You can manage
-student grades by clicking on the "Student Admin" tab. A Teaching Assistant can manage grades if and only if:
+student grades by clicking on the "Student Admin" tab. A Course Team Instructor can manage grades of a student if and only if:
 
 1. The user has the role of "limited staff".
 2. The user is assigned to at least one course team.
