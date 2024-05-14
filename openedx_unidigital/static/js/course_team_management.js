@@ -50,6 +50,7 @@ function fetchInstructorsForTeam(teamId) {
     });
 }
 $("#add-instructor-button").on("click", function (select) {
+  $("#error-message").text("");
   const username = $("#add-instructor-input").val();
   const courseTeamId = $("#course-teamset").val();
   const courseTeamName = $("#course-teamset option:selected").text();
@@ -66,10 +67,14 @@ $("#add-instructor-button").on("click", function (select) {
     },
   })
     .then(function (response) {
+      if (!response.ok) {
+        $("#add-instructor-input").val("");
+        $("#error-message").text("Error adding instructor. Please try again.");
+        return Promise.reject("Error adding instructor");
+      }
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
       addInstructorToTable(data);
       $("#add-instructor-input").val("");
     });
@@ -101,7 +106,6 @@ $("#course-teamset").on("change", function (select) {
   }
 
   document.addEventListener("click", function(event) {
-    console.log(event.target);
     if (event.target && event.target.classList.contains("revoke-access-button")) {
       const courseInstructorTeamId = event.target.getAttribute("data-course-instructor-team-id");
       revokeAccess(courseInstructorTeamId);
