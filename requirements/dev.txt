@@ -8,13 +8,14 @@ asgiref==3.8.1
     # via
     #   -r requirements/quality.txt
     #   django
-astroid==3.1.0
+astroid==3.2.0
     # via
     #   -r requirements/quality.txt
     #   pylint
     #   pylint-celery
-backports-zoneinfo==0.2.1
+backports-zoneinfo==0.2.1 ; python_version < "3.9"
     # via
+    #   -c requirements/constraints.txt
     #   -r requirements/quality.txt
     #   django
 black==24.4.2
@@ -67,7 +68,7 @@ distlib==0.3.8
     # via
     #   -r requirements/ci.txt
     #   virtualenv
-django==4.2.11
+django==4.2.13
     # via
     #   -c https://raw.githubusercontent.com/edx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/quality.txt
@@ -103,7 +104,7 @@ jinja2==3.1.4
     #   -r requirements/quality.txt
     #   code-annotations
     #   diff-cover
-lxml[html-clean,html_clean]==5.2.1
+lxml[html-clean,html_clean]==5.2.2
     # via
     #   edx-i18n-tools
     #   lxml-html-clean
@@ -164,7 +165,7 @@ pydocstyle==6.3.0
     # via -r requirements/quality.txt
 pygments==2.18.0
     # via diff-cover
-pylint==3.1.0
+pylint==3.2.0
     # via
     #   -r requirements/quality.txt
     #   edx-lint
@@ -244,7 +245,7 @@ tomli==2.0.1
     #   pyproject-api
     #   pytest
     #   tox
-tomlkit==0.12.4
+tomlkit==0.12.5
     # via
     #   -r requirements/quality.txt
     #   pylint
@@ -257,7 +258,7 @@ typing-extensions==4.11.0
     #   astroid
     #   black
     #   pylint
-virtualenv==20.26.1
+virtualenv==20.26.2
     # via
     #   -r requirements/ci.txt
     #   tox
