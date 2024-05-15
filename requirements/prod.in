@@ -17,9 +17,8 @@ platform-plugin-forum-email-notifier @ git+https://github.com/edunext/platform-p
 platform-plugin-communications @ git+https://github.com/edunext/platform-plugin-communications@v0.3.1
 platform-plugin-teams @ git+https://github.com/edunext/platform-plugin-teams@v0.2.0
 platform-plugin-elm-credentials @ git+https://github.com/eduNEXT/platform-plugin-elm-credentials.git@v0.3.1
-eox-core[sentry]==v10.0.0
+eox-core[sentry] @ git+https://github.com/edunext/eox-core.git@MJG/fix-impr-config-router
 
 # Community plugins
 h5p-xblock @ git+https://github.com/edly-io/h5pxblock.git@v0.2.9
 feedback-xblock @ git+https://github.com/openedx/FeedbackXBlock@master
-ora2 @ git+https://github.com/eduNEXT/edx-ora2.git@5.5.5/edues/san-sebastian

@@ -16,6 +16,15 @@ Unreleased
 
 *
 
+0.18.3 - 2024-05-15
+**********************************************
+
+Changed
+=======
+
+* Use compatible ``eox-core`` version in prod requirements.
+* Remove ``edx-ora2`` from prod requirements.
+
 0.18.2 - 2024-05-15
 **********************************************
 
