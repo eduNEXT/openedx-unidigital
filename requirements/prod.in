@@ -1,5 +1,5 @@
 # Aspects requirements
-platform-plugin-aspects==v0.7.2
+platform-plugin-aspects==v0.9.2
 platform-plugin-superset @ git+https://github.com/edunext/platform-plugin-superset@v0.1.1
 edx-completion
 openedx-events
