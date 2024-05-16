@@ -27,21 +27,21 @@
         <table id="course-team-instructors-table" role="table" class="pgn__data-table is-striped">
             <thead>
                 <tr role="row" class="pgn__data-table-row">
-                    <th role="columnheader" style="width:100%">Username</th>
-                    <th role="columnheader" style="width:100%">Revoke Access</th>
+                    <th role="columnheader" style="width:100%">{% trans "Username" %}</th>
+                    <th role="columnheader" style="width:100%">{% trans "Revoke Access" %}</th>
                 </tr>
             </thead>
             <tbody id="instructors-table-body" role="rowgroup">
             </tbody>
         </table>
         <br>
-        <input id="add-instructor-input" type="text" name="instructor-username" placeholder="Instructor username">
+        <input id="add-instructor-input" type="text" name="instructor-username" placeholder={% trans "Instructor username" %}>
         <a href="#">
             <span id="add-instructor" class="icon fa fa-plus fa-lg" aria-hidden="true"></span>
         </a>
     </div>
     <br>
     <div>
-        <span id="error-message" style="color: red;"></span>
+        <span id="error-message" style="color: red; display:none">{% trans "An error occurred. Please try again. If the problem persists, contact support." %}</span>
     </div>
 </div>

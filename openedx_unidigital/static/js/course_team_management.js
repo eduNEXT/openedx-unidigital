@@ -54,7 +54,7 @@ function fetchInstructorsForTeam(teamId) {
     });
 }
 $("#add-instructor").on("click", function (select) {
-  $("#error-message").text("");
+  $("#error-message").hide();
   const username = $("#add-instructor-input").val();
   const courseTeamId = $("#course-teamset").val();
   const courseTeamName = $("#course-teamset option:selected").text();
@@ -73,8 +73,8 @@ $("#add-instructor").on("click", function (select) {
     .then(function (response) {
       if (!response.ok) {
         $("#add-instructor-input").val("");
-        $("#error-message").text("Error adding instructor. Please try again.");
-        return Promise.reject("Error adding instructor");
+        $("#error-message").show();
+        return Promise.reject(response);
       }
       return response.json();
     })

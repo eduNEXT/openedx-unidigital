@@ -5,4 +5,6 @@ include requirements/base.in
 include requirements/stage.in
 include requirements/prod.in
 include requirements/constraints.txt
+recursive-include openedx_unidigital/locale *.po
+recursive-include openedx_unidigital/locale *.mo
 recursive-include openedx_unidigital *.html *.png *.gif *.js *.css *.jpg *.jpeg *.svg
