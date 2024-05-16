@@ -14,10 +14,10 @@ function getCookie(name) {
   return cookieValue;
 }
 function addInstructorToTable(data) {
-  var instructorsTableBody = $("#instructors-table-body");
-  var row = $("<tr>");
-  var usernameCell = $("<td>");
-  var revokeAccessCell = $("<td>");
+  let instructorsTableBody = $("#instructors-table-body");
+  let row = $("<tr>");
+  let usernameCell = $("<td>");
+  let revokeAccessCell = $("<td>");
   usernameCell.text(data.username);
   revokeAccessCell.html(
     `
@@ -34,8 +34,8 @@ function addInstructorToTable(data) {
 }
 
 function fetchInstructorsForTeam(teamId) {
-  var instructorsTable = $("#instructors-table");
-  var instructorsTableBody = $("#instructors-table-body");
+  let instructorsTable = $("#instructors-table");
+  let instructorsTableBody = $("#instructors-table-body");
   instructorsTable.css("display", "block");
   instructorsTableBody.empty(); // Clear previous data
 
@@ -86,8 +86,7 @@ $("#add-instructor").on("click", function (select) {
 
 $("#course-teamset").on("change", function (select) {
   const teamId = $("#course-teamset").val();
-  var instructorsTable = $("#instructors-table");
-  var instructorsTableBody = $("#instructors-table-body");
+  let instructorsTable = $("#instructors-table");
   if (teamId) {
     fetchInstructorsForTeam(teamId);
   } else {

@@ -46,26 +46,20 @@ class TeamAssignmentDashboard(PipelineStep):
         team_sets = (
             TeamsConfigurationService().get_teams_configuration(course.id).teamsets
         )
-        teams_in_teamsets = []
+        teams_in_teamsets = {}
         for teamset in team_sets:
-            teams_in_teamsets.extend(
-                list(get_teams_in_teamset(str(course.id), teamset.teamset_id))
-            )
+            teams_in_teamsets[teamset.name] = get_teams_in_teamset(str(course.id), teamset.teamset_id)
 
-        context.update(
-            {
-                "teams": teams_in_teamsets,
-                "course_teams_instructors": [
+        context["teams_in_teamsets"] = []
+        for teamset, teams in teams_in_teamsets.items():
+            for team in teams:
+                context["teams_in_teamsets"].append(
                     {
-                        "team": team,
-                        "instructors": CourseTeamInstructor.objects.filter(
-                            course_team_id=team.id
-                        ),
+                        "team_id": team.id,
+                        "team_name": team.name,
+                        "teamset_name": teamset,
                     }
-                    for team in teams_in_teamsets
-                ],
-            }
-        )
+                )
 
         template = Template(
             self.resource_string("static/html/course_team_management.html")

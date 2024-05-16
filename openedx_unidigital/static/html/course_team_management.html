@@ -13,8 +13,8 @@
         <br>
         <select id="course-teamset" name="course-teamset">
             <option value=""> {% trans "Select a team" %}</option>
-            {% for team in teams %}
-                <option value="{{ team.id }}">{{ team.name }}</option>
+            {% for team in teams_in_teamsets %}
+                <option value="{{ team.team_id }}">{{ team.teamset_name }} - {{ team.team_name }}</option>
             {% endfor %}
         </select>
     </div>
