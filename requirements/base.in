@@ -8,5 +8,6 @@ django-crum        # Django middleware to track the current user
 openedx-filters    # Library of filters for Open edX
 web-fragments      # For managing web fragments
 django-rest-framework # For building RESTful APIs
-django-filter    # For filtering Django querysets
-edx-opaque-keys      # For generating and validating opaque keys
+django-filter      # For filtering Django querysets
+edx-opaque-keys    # For generating and validating opaque keys
+edx-drf-extensions # Utilities for Django REST Framework

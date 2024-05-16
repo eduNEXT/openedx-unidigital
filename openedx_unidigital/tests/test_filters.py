@@ -52,8 +52,7 @@ class TestTeamAssignmentDashboard(TestCase):
             template_name="instructor_dashboard",
         )
 
-        self.assertIn("teams", context)
-        self.assertIn("course_teams_instructors", context)
+        self.assertIn("teams_in_teamsets", context)
         self.assertEqual(len(context["sections"]), 1)
         self.assertEqual(
             context["sections"][0]["section_key"], "course_team_management"
