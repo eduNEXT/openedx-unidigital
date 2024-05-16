@@ -23,6 +23,7 @@ Added
 =====
 
 *  Course team instructor management filters, views and backends.
+*  Translations (es_ES & es_419) for course team instructor management.
 
 0.18.4 - 2024-05-16
 **********************************************
