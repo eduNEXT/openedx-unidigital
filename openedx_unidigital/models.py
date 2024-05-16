@@ -1,8 +1,11 @@
 """Model for Course Team Instructors for the Unidigital project."""
 
+from django.contrib.auth import get_user_model
 from django.contrib import admin
 from django.db import models
 
+
+User = get_user_model()
 
 class CourseTeamInstructor(models.Model):
     """
@@ -23,12 +26,12 @@ class CourseTeamInstructor(models.Model):
 
     course_team_id = models.IntegerField(null=False)
     course_team_name = models.CharField(max_length=255, null=False)
-    username = models.CharField(max_length=255, null=False)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
         """Meta options for the CourseTeamInstructor model."""
 
-        unique_together = ("course_team_id", "username")
+        unique_together = ("course_team_id", "user__username")
         verbose_name = "Course Team Instructor"
         verbose_name_plural = "Course Team Instructors"
 
