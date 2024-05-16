@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: filters.py:80
+#: filters.py:67
 msgid "Courses' Team Instructors"
 msgstr ""
 
@@ -42,10 +42,16 @@ msgstr ""
 msgid "Select a team"
 msgstr ""
 
-#: static/html/course_team_management.html:26
+#: static/html/course_team_management.html:30
 msgid "Username"
 msgstr ""
 
-#: static/html/course_team_management.html:27
+#: static/html/course_team_management.html:31
 msgid "Revoke Access"
+msgstr ""
+
+#: static/html/course_team_management.html:45
+msgid ""
+"An error occurred. Please try again. If the problem persists, contact "
+"support."
 msgstr ""
