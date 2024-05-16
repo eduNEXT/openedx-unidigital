@@ -1,15 +1,14 @@
 """API Views for the platform_plugin_forum_email_notifier plugin."""
 
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework.generics import DestroyAPIView, ListCreateAPIView
+from edx_rest_framework_extensions.auth.jwt.authentication import JwtAuthentication
 from edx_rest_framework_extensions.permissions import IsStaff, IsSuperuser
+from rest_framework.authentication import SessionAuthentication
+from rest_framework.generics import DestroyAPIView, ListCreateAPIView
 
 from openedx_unidigital.api.v1.permissions import IsCourseInstructor
 from openedx_unidigital.api.v1.serializers import CourseTeamInstructorSerializer
 from openedx_unidigital.models import CourseTeamInstructor
-
-from edx_rest_framework_extensions.auth.jwt.authentication import JwtAuthentication
-from rest_framework.authentication import SessionAuthentication
 
 
 class CourseTeamInstructorAPIView(ListCreateAPIView, DestroyAPIView):
@@ -26,4 +25,4 @@ class CourseTeamInstructorAPIView(ListCreateAPIView, DestroyAPIView):
     queryset = CourseTeamInstructor.objects.all()
     serializer_class = CourseTeamInstructorSerializer
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ["course_team_id", "username"]
+    filterset_fields = ["course_team_id"]

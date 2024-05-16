@@ -18,7 +18,7 @@ function addInstructorToTable(data) {
   let row = $("<tr>");
   let usernameCell = $("<td>");
   let revokeAccessCell = $("<td>");
-  usernameCell.text(data.username);
+  usernameCell.text(data.user);
   revokeAccessCell.html(
     `
     <a href="#">
@@ -61,7 +61,7 @@ $("#add-instructor").on("click", function (select) {
   fetch("api/v1/course-team-instructor/", {
     method: "POST",
     body: JSON.stringify({
-      username: username,
+      user: username,
       course_team_id: courseTeamId,
       course_team_name: courseTeamName,
     }),

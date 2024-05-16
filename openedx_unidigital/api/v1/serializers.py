@@ -1,12 +1,12 @@
 """Serializers for the API endpoints of the openedx_unidigital app."""
 
-from rest_framework import serializers
 from django.contrib.auth import get_user_model
+from rest_framework import serializers
 
 from openedx_unidigital.models import CourseTeamInstructor
 
-
 User = get_user_model()
+
 
 class CourseTeamInstructorSerializer(serializers.ModelSerializer):
     """

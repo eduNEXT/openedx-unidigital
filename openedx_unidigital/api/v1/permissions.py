@@ -2,9 +2,10 @@
 Permissions for the Open edX Unidigital API.
 """
 
-from rest_framework.permissions import BasePermission
-from openedx_unidigital.edxapp_wrapper.student import CourseInstructorRole
 from opaque_keys.edx.keys import CourseKey
+from rest_framework.permissions import BasePermission
+
+from openedx_unidigital.edxapp_wrapper.student import CourseInstructorRole
 
 
 class IsCourseInstructor(BasePermission):

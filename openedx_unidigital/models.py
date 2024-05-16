@@ -1,11 +1,11 @@
 """Model for Course Team Instructors for the Unidigital project."""
 
-from django.contrib.auth import get_user_model
 from django.contrib import admin
+from django.contrib.auth import get_user_model
 from django.db import models
 
-
 User = get_user_model()
+
 
 class CourseTeamInstructor(models.Model):
     """
@@ -31,13 +31,13 @@ class CourseTeamInstructor(models.Model):
     class Meta:
         """Meta options for the CourseTeamInstructor model."""
 
-        unique_together = ("course_team_id", "user__username")
+        unique_together = ("course_team_id", "user")
         verbose_name = "Course Team Instructor"
         verbose_name_plural = "Course Team Instructors"
 
     def __str__(self):
         """Return the string representation of the CourseTeamInstructor object."""
-        return f"{self.course_team_name} - {self.username}"
+        return f"Team name: {self.course_team_name} ({self.course_team_id}) - Username: {self.user.username}"
 
     @classmethod
     def get_teams_for_user(cls, username):
