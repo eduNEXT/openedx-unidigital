@@ -37,7 +37,7 @@ msgstr
 "a cada equipo seleccionando un equipo en el menú desplegable de abajo e introduciendo el "
 "nombre de usuario del instructor. Cada instructor puede estar asociado a varios "
 "equipos. Una vez asignado a un equipo, el instructor podrá gestionar los "
-"los miembros del equipo."
+"miembros del equipo."
 
 #: static/html/course_team_management.html:12
 msgid "Courses' teams"
@@ -55,10 +55,14 @@ msgstr "Nombre de usuario"
 msgid "Revoke Access"
 msgstr "Revocar acceso"
 
+#: static/html/course_team_management.html:38
+msgid "Instructor username"
+msgstr "Nombre de usuario del instructor"
+
 #: static/html/course_team_management.html:45
 msgid ""
 "An error occurred. Please try again. If the problem persists, contact "
 "support."
 msgstr
 "Se ha producido un error. Por favor, inténtelo de nuevo. Si el problema persiste, póngase en contacto con "
-"con el servicio de soporte."
+"el servicio de soporte."

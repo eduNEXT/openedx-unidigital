@@ -50,6 +50,10 @@ msgstr ""
 msgid "Revoke Access"
 msgstr ""
 
+#: static/html/course_team_management.html:38
+msgid "Instructor username"
+msgstr ""
+
 #: static/html/course_team_management.html:45
 msgid ""
 "An error occurred. Please try again. If the problem persists, contact "
