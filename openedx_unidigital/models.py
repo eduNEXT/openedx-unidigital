@@ -50,7 +50,7 @@ class CourseTeamInstructor(models.Model):
         Returns:
             QuerySet: The teams that the user is part of.
         """
-        return cls.objects.filter(username=username).values_list(
+        return cls.objects.filter(user__username=username).values_list(
             "course_team_id",
             flat=True,
         )
