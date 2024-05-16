@@ -4,6 +4,11 @@ openedx_unidigital Django application initialization.
 
 from django.apps import AppConfig
 
+try:
+    from openedx.core.constants import COURSE_ID_PATTERN
+except ImportError:
+    COURSE_ID_PATTERN = object
+
 
 class OpenedxUnidigitalConfig(AppConfig):
     """
@@ -13,6 +18,13 @@ class OpenedxUnidigitalConfig(AppConfig):
     name = "openedx_unidigital"
 
     plugin_app = {
+        "url_config": {
+            "lms.djangoapp": {
+                "namespace": "openedx-unidigital",
+                "regex": rf"courses/{COURSE_ID_PATTERN}/",
+                "relative_path": "urls",
+            },
+        },
         "settings_config": {
             "lms.djangoapp": {
                 "test": {"relative_path": "settings.test"},

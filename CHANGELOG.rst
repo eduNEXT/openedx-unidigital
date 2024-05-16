@@ -16,6 +16,14 @@ Unreleased
 
 *
 
+1.0.0 - 2024-05-16
+**********************************************
+
+Added
+=====
+
+*  Course team instructor management filters, views and backends.
+
 0.18.4 - 2024-05-16
 **********************************************
 

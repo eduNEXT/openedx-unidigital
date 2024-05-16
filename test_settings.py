@@ -42,10 +42,12 @@ LOCALE_PATHS = [
 SECRET_KEY = "insecure-secret-key"
 
 MIDDLEWARE = (
+    "django.contrib.sessions.middleware.SessionMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
-    "django.contrib.sessions.middleware.SessionMiddleware",
 )
+
+ROOT_URLCONF = "openedx_unidigital.urls"
 
 TEMPLATES = [
     {
@@ -81,3 +83,10 @@ OPENEDX_UNIDIGITAL_USER_PREFERENCES_BACKEND = (
 OPENEDX_UNIDIGITAL_STUDENT_BACKEND = (
     "openedx_unidigital.edxapp_wrapper.backends.student_q_v1_test"
 )
+OPENEDX_UNIDIGITAL_INSTRUCTOR_BACKEND = (
+    "openedx_unidigital.edxapp_wrapper.backends.instructor_q_v1_test"
+)
+OPENEDX_UNIDIGITAL_XMODULE_BACKEND = (
+    "openedx_unidigital.edxapp_wrapper.backends.xmodule_q_v1_test"
+)
+ENABLE_UNIDIGITAL_AUTH_RULES_BACKEND = True

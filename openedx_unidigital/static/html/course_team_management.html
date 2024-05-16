@@ -1,0 +1,47 @@
+{% load i18n %}
+
+<div class="course-team-management-wrapper" class="paragon-styles">
+    <div>
+        <h3>{% trans "Assign instructors to course teams" %}</h3>
+        <p class="course-team-management-description"></p>
+            {% trans "These are the teams associated with the course. You can assign instructors to each team by selecting a team from the dropdown below and entering the instructor's username. Each instructor can be associated with multiple teams. When assigned to a team, the instructor will be able to manage the team's members." %}
+        </p>
+    </div>
+
+    <div>
+        <label for="course-team">{% trans "Courses' teams" %} </label>
+        <br>
+        <select id="course-teamset" name="course-teamset">
+            <option value=""> {% trans "Select a team" %}</option>
+            {% for teamset, team in teams_in_teamsets.items %}
+                <optgroup label="{{ teamset }}">
+                    {% for team in team %}
+                        <option value="{{ team.id }}">{{ team.name }}</option>
+                    {% endfor %}
+                </optgroup>
+            {% endfor %}
+        </select>
+    </div>
+    <br>
+    <div id="instructors-table" style="display: none;">
+        <table id="course-team-instructors-table" role="table" class="pgn__data-table is-striped">
+            <thead>
+                <tr role="row" class="pgn__data-table-row">
+                    <th role="columnheader" style="width:100%">Username</th>
+                    <th role="columnheader" style="width:100%">Revoke Access</th>
+                </tr>
+            </thead>
+            <tbody id="instructors-table-body" role="rowgroup">
+            </tbody>
+        </table>
+        <br>
+        <input id="add-instructor-input" type="text" name="instructor-username" placeholder="Instructor username">
+        <a href="#">
+            <span id="add-instructor" class="icon fa fa-plus fa-lg" aria-hidden="true"></span>
+        </a>
+    </div>
+    <br>
+    <div>
+        <span id="error-message" style="color: red;"></span>
+    </div>
+</div>
