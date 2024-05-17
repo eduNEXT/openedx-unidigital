@@ -16,6 +16,14 @@ Unreleased
 
 *
 
+1.1.0 - 2024-05-16
+**********************************************
+
+Added
+=====
+
+* On Task ontask, extemporaneous grading and seb xblock plugin to production environment.
+
 1.0.0 - 2024-05-16
 **********************************************
 
