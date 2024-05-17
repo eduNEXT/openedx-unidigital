@@ -16,6 +16,16 @@ Unreleased
 
 *
 
+1.2.0 - 2024-05-17
+**********************************************
+
+Added
+=====
+
+* Added latest version of ``xblock-content-restrictions==0.4.0`` in prod requirements.
+* Added latest version of ``seb-openedx==3.2.0`` in prod requirements.
+* Added ``edx-event-routing-backends`` with branch ``cag/forum-events`` in prod requirements.
+
 1.1.2 - 2024-05-17
 **********************************************
 

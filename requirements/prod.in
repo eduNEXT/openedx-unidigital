@@ -9,7 +9,7 @@ xblock-limesurvey @ git+https://github.com/eduNEXT/xblock-limesurvey@v0.6.4
 xblock-mindmap @ git+https://github.com/eduNEXT/xblock-mindmap@v1.0.0
 xblock-imagesgallery @ git+https://github.com/eduNEXT/xblock-imagesgallery.git@v0.5.0
 xblock-filesmanager @ git+https://github.com/eduNEXT/xblock-filesmanager.git@v0.9.1
-xblock-content-restrictions @ git+https://github.com/eduNEXT/xblock-content-restrictions@bav/seb-restriction
+xblock-content-restrictions @ git+https://github.com/eduNEXT/xblock-content-restrictions@v0.4.0
 xblock-controlled-navigation @ git+https://github.com/eduNEXT/xblock-controlled-navigation@v0.2.2
 xblock-discussion-grading @ git+https://github.com/eduNEXT/xblock-discussion-grading@v0.2.0
 xblock-completion-grading @ git+https://github.com/eduNEXT/xblock-completion-grading@v0.3.0
@@ -19,9 +19,12 @@ platform-plugin-teams @ git+https://github.com/edunext/platform-plugin-teams@v0.
 platform-plugin-elm-credentials @ git+https://github.com/eduNEXT/platform-plugin-elm-credentials.git@v0.3.1
 platform-plugin-ontask @ git+https://github.com/edunext/platform-plugin-ontask@v0.2.2
 xblock-extemporaneous-grading @ git+https://github.com/eduNEXT/xblock-extemporaneous-grading@v0.2.0
-seb-openedx @ git+https://github.com/edunext/seb-openedx.git@v3.1.0
+seb-openedx @ git+https://github.com/edunext/seb-openedx.git@v3.2.0
 eox-core[sentry] @ git+https://github.com/edunext/eox-core.git@MJG/fix-impr-config-router
 
 # Community plugins
 h5p-xblock @ git+https://github.com/edly-io/h5pxblock.git@v0.2.9
 feedback-xblock @ git+https://github.com/openedx/FeedbackXBlock@master
+
+# Plugin dependencies
+edx-event-routing-backends @ git+https://github.com/openedx/event-routing-backends@cag/forum-events
