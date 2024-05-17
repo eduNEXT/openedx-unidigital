@@ -24,6 +24,11 @@ Added
 
 * On Task ontask, extemporaneous grading and seb xblock plugin to production environment.
 
+Changed
+=======
+
+* Move username placeholder to label to it translates correctly.
+
 1.0.0 - 2024-05-16
 **********************************************
 

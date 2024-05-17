@@ -43,6 +43,7 @@ msgid "Select a team"
 msgstr ""
 
 #: static/html/course_team_management.html:30
+#: static/html/course_team_management.html:38
 msgid "Username"
 msgstr ""
 
@@ -50,11 +51,7 @@ msgstr ""
 msgid "Revoke Access"
 msgstr ""
 
-#: static/html/course_team_management.html:38
-msgid "Instructor username"
-msgstr ""
-
-#: static/html/course_team_management.html:45
+#: static/html/course_team_management.html:46
 msgid ""
 "An error occurred. Please try again. If the problem persists, contact "
 "support."
