@@ -89,20 +89,20 @@ API Access for associating instructors with teams
 To assign an instructor to a course team, you need instructor-level access, known as "course admin" in the Instructor Dashboard UI. You can assign an instructor to a course
 team via the available rest API by following these steps:
  
-Make a POST request to `<lms_host>/oauth2/access_token/` to generate a token for the user. As mentioned before, the user must be course admin, global staff or superadmin. 
+Make a POST request to ``<lms_host>/oauth2/access_token/`` to generate a token for the user. As mentioned before, the user must be course admin, global staff or superadmin. 
 The content type of the request must be application/x-www-form-urlencoded. 
 
 **Body parameters**
 
-- **client_id**: Client ID of the OAuth2 application. You can find it in the Django admin panel. Normally, it is login-service-client-id.
-- **grant_type**: Grant type of the OAuth2 application. 
-- **token_type**: Type of the token. By default, it is bearer. This API uses JWT.
+- ``client_id``: Client ID of the OAuth2 application. You can find it in the Django admin panel. Normally, it is login-service-client-id.
+- ``grant_type``: Grant type of the OAuth2 application. 
+- ``token_type``: Type of the token. By default, it is bearer. This API uses JWT.
 
-You can create a new application in the Django admin panel. The body parameters are the same as the previous endpoint, but you must use the client_id and client_secret of the new application. The grant_type must be client_credentials.
+You can create a new application in the Django admin panel. The body parameters are the same as the previous endpoint, but you must use the ``client_id`` and ``client_secret`` of the new application. The grant_type must be client_credentials.
 
 **Response**
 
-- **access_token**: Access token of the user. You must use this token in the Authorization header of the requests to the API.
+- ``access_token``: Access token of the user. You must use this token in the Authorization header of the requests to the API.
 
 Then, you are ready to use the API. The next endpoints are available:
 
