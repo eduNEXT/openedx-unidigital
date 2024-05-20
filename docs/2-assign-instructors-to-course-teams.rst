@@ -107,7 +107,7 @@ You can create a new application in the Django admin panel. The body parameters 
 Then, you are ready to use the API. The next endpoints are available:
 
 - GET ``<lms_host>/courses/<course_id>/api/v1/course-team-instructor/``: list all assignments.
-- GET ``<lms_host>/courses/<course_id>/api/v1/course-team-instructor/?course_team_id=<course_team_id>``: list users assinged to `course_team_id`.
+- GET ``<lms_host>/courses/<course_id>/api/v1/course-team-instructor/?course_team_id=<course_team_id>``: list users assigned to `course_team_id`.
 - POST ``<lms_host>/courses/<course_id>/api/v1/course-team-instructor/``: create a new assignment.
 
   **Body parameters**
