@@ -88,7 +88,7 @@ Platform Plugins
 - `Teams <https://github.com/eduNEXT/platform-plugin-teams>`_: A plugin that includes a custom teams API.
 - `On Task <https://github.com/edunext/platform-plugin-ontask>`_: A plugin that includes a new tab in the instructor's dashboard for accessing On Task.
 - `SEB Open edX <https://github.com/edunext/seb-openedx.git>`_: A plugin for SEB integration with Open edX.
-- `Turnitin <https://github.com/eduNEXT/platform-plugin-turnitin>_`: A plugin that includes Turnitin integration with Open edX.
+- `Turnitin <https://github.com/eduNEXT/platform-plugin-turnitin>`_: A plugin that includes Turnitin integration with Open edX.
 
 Other dependencies like EOX Core for more Open edX APIs capabilities.
 
