@@ -20,16 +20,34 @@ execute the following command:
 
 .. code-block::
 
-    pip install git+https://github.com/eduNEXT/openedx-unidigital.git@main
+    pip install git+https://github.com/eduNEXT/openedx-unidigital.git@vX.Y.Z
 
 This command installs the necessary dependencies and adds the plugin to the list
 of installed plugins in the platform.
 
+Compatibility Notes
+===================
 
-**Note**: Ensure that you use the specified branch of the edx-platform repository:
-`Unidigital release <https://github.com/eduNEXT/edunext-platform/tree/open-release/palm.4/edues>`_.
-The plugin is based on the `open-release/palm.4 <https://gtihub.com/eduNEXT/edx-platform/tree/open-release/palm.4>`_
-branch and is compatible with Tutor version v16.1.7.
++------------------+--------------+
+| Open edX Release | Version      |
++==================+==============+
+| Quince           | >= 1.0.0     |
++------------------+--------------+
+| Redwood          | >= 1.0.0     |
++------------------+--------------+
+
+The following changes to the plugin settings are necessary. If the release you are looking for is
+not listed, then the accumulation of changes from previous releases is enough.
+
+**Redwood**
+
+.. code-block:: yaml
+
+   OPENEDX_UNIDIGITAL_INSTRUCTOR_BACKEND: "openedx_unidigital.edxapp_wrapper.backends.instructor_r_v1"
+
+These settings can be changed in ``openedx_unidigital/settings/common.py`` or, for example, in tutor configurations.
+
+**NOTE**: the current ``common.py`` works with Open edX Quince version.
 
 Features
 ********
@@ -42,6 +60,8 @@ platform, including:
 
 - `openedx-event-sink-clickhouse <https://github.com/openedx/openedx-event-sink-clickhouse>`_: A plugin for sending events to a Clickhouse database.
 - `event-routing-backends <https://github.com/openedx/event-routing-backends>`_: A plugin for routing events to different backends.
+- `edx-completion <https://pypi.org/project/edx-completion/>`_: A library for tracking completion of blocks by learners in Open edX courses.
+- `platform-plugin-aspects <https://pypi.org/project/platform-plugin-aspects/>`_: A plugin that holds various Aspects plugins for the Open edX platform.
 
 XBlocks
 =======
@@ -53,15 +73,24 @@ XBlocks
 - `H5P XBlock <https://github.com/eduNEXT/h5pxblock>`_: An XBlock for embedding H5P content within a course.
 - `Feedback XBlock <https://github.com/eduNEXT/FeedbackXBlock>`_: An XBlock for embedding a Feedback form within a course.
 - `edx-ora2 <https://github.com/eduNEXT/edx-ora2>`_: An XBlock for embedding ORA2 content within a course.
+- `Content Restrictions <https://github.com/eduNEXT/xblock-content-restrictions>`_: An XBlock for restricting content based on different configurations, such as password, IP addresses and SEB.
+- `Controlled Navigation <https://github.com/eduNEXT/xblock-controlled-navigation>`_: An XBlock for controlling the navigation within a course unit.
+- `Discussion Grading <https://github.com/eduNEXT/xblock-discussion-grading>`_: An XBlock that assigns grades based on their participation on the forums.
+- `Completion Grading <https://github.com/eduNEXT/xblock-completion-grading>`_: An XBlock that assigns grades based on the completion of the course.
+- `Extemporaneous Grading <https://github.com/eduNEXT/xblock-extemporaneous-grading>`_: An XBlock that allows the course author to set a due date and a late due date for a set of components.
 
 Platform Plugins
 ================
 
 - `Forum Email Notifier <https://github.com/eduNEXT/platform-plugin-forum-email-notifier>`_: A plugin for sending email notifications to students when there is new activity in the forums.
-- `Superset <https://github.com/eduNEXT/platform-plugin-superset>`_: A plugin for embedding Superset dashboards within the platform.
 - `ELM Credentials <https://github.com/eduNEXT/platform-plugin-elm-credentials>`_: A plugin that includes API to generate JSON files in ELMv3.
 - `Communications <https://github.com/eduNEXT/platform-plugin-communications>`_: A plugin that extends email capabilities within the platform.
 - `Teams <https://github.com/eduNEXT/platform-plugin-teams>`_: A plugin that includes a custom teams API.
+- `On Task <https://github.com/edunext/platform-plugin-ontask>`_: A plugin that includes a new tab in the instructor's dashboard for accessing On Task.
+- `SEB Open edX <https://github.com/edunext/seb-openedx.git>`_: A plugin for SEB integration with Open edX.
+- `Turnitin <https://github.com/eduNEXT/platform-plugin-turnitin>_`: A plugin that includes Turnitin integration with Open edX.
+
+Other dependencies like EOX Core for more Open edX APIs capabilities.
 
 Additional Features
 *******************
