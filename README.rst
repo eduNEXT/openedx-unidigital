@@ -60,6 +60,8 @@ platform, including:
 
 - `openedx-event-sink-clickhouse <https://github.com/openedx/openedx-event-sink-clickhouse>`_: A plugin for sending events to a Clickhouse database.
 - `event-routing-backends <https://github.com/openedx/event-routing-backends>`_: A plugin for routing events to different backends.
+- `edx-completion <https://pypi.org/project/edx-completion/>`_: A library for tracking completion of blocks by learners in Open edX courses.
+- `platform-plugin-aspects <https://pypi.org/project/platform-plugin-aspects/>`_: A plugin that holds various Aspects plugins for the Open edX platform.
 
 XBlocks
 =======
@@ -86,6 +88,9 @@ Platform Plugins
 - `Teams <https://github.com/eduNEXT/platform-plugin-teams>`_: A plugin that includes a custom teams API.
 - `On Task <https://github.com/edunext/platform-plugin-ontask>`_: A plugin that includes a new tab in the instructor's dashboard for accessing On Task.
 - `SEB Open edX <https://github.com/edunext/seb-openedx.git>`_: A plugin for SEB integration with Open edX.
+- `Turnitin <https://github.com/eduNEXT/platform-plugin-turnitin>_`: A plugin that includes Turnitin integration with Open edX.
+
+Other dependencies like EOX Core for more Open edX APIs capabilities.
 
 Additional Features
 *******************
