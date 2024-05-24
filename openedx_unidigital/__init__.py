@@ -5,6 +5,6 @@ An Open edX plugin for the Unidigital project.
 import os
 from pathlib import Path
 
-__version__ = "1.2.1"
+__version__ = "1.3.0"
 
 ROOT_DIRECTORY = Path(os.path.dirname(os.path.abspath(__file__)))

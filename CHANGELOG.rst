@@ -16,6 +16,14 @@ Unreleased
 
 *
 
+1.3.0 - 2024-05-24
+**********************************************
+
+Added
+=====
+
+* Added latest version of ``xblock-extemporaneous-grading==0.3.0`` in prod requirements.
+
 1.2.1 - 2024-05-21
 **********************************************
 
