@@ -28,4 +28,4 @@ h5p-xblock @ git+https://github.com/edly-io/h5pxblock.git@v0.2.9
 feedback-xblock @ git+https://github.com/openedx/FeedbackXBlock@master
 
 # Plugin dependencies
-edx-event-routing-backends @ git+https://github.com/openedx/event-routing-backends@cag/forum-events
+edx-event-routing-backends==v9.2.0

@@ -23,6 +23,7 @@ Added
 =====
 
 * Added latest version of ``xblock-extemporaneous-grading==0.3.0`` in prod requirements.
+* Added ``edx-event-routing-backends==9.2.0`` in prod requirements.
 
 1.2.1 - 2024-05-21
 **********************************************
