@@ -16,6 +16,15 @@ Unreleased
 
 *
 
+1.4.1 - 2024-08-01
+**********************************************
+
+Changed
+=======
+
+* Use ``platform-plugin-ontask`` with ``bav/ontask-openedx-modifications``
+  branch in prod requirements.
+
 1.4.0 - 2024-07-16
 **********************************************
 
