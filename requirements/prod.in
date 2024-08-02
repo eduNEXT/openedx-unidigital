@@ -17,7 +17,7 @@ platform-plugin-forum-email-notifier @ git+https://github.com/edunext/platform-p
 platform-plugin-communications @ git+https://github.com/edunext/platform-plugin-communications@v0.3.1
 platform-plugin-teams @ git+https://github.com/edunext/platform-plugin-teams@v0.2.0
 platform-plugin-elm-credentials @ git+https://github.com/eduNEXT/platform-plugin-elm-credentials.git@v0.3.1
-platform-plugin-ontask @ git+https://github.com/edunext/platform-plugin-ontask@bav/ontask-openedx-modifications
+platform-plugin-ontask @ git+https://github.com/edunext/platform-plugin-ontask@v0.4.0
 platform-plugin-turnitin @ git+https://github.com/eduNEXT/platform-plugin-turnitin@v0.3.0
 xblock-extemporaneous-grading @ git+https://github.com/eduNEXT/xblock-extemporaneous-grading@v0.3.0
 seb-openedx @ git+https://github.com/edunext/seb-openedx.git@v3.2.0
