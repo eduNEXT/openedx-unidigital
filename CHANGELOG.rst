@@ -16,6 +16,15 @@ Unreleased
 
 *
 
+1.4.2 - 2024-09-05
+**********************************************
+
+Changed
+=======
+
+* Use ``platform-plugin-ontask`` with ``fmo/final-delivery``
+  branch in prod requirements.
+
 1.4.1 - 2024-08-01
 **********************************************
 
