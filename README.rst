@@ -35,6 +35,8 @@ Compatibility Notes
 +------------------+--------------+
 | Redwood          | >= 1.0.0     |
 +------------------+--------------+
+| Sumac            | >= 1.4.3     |
++------------------+--------------+
 
 The following changes to the plugin settings are necessary. If the release you are looking for is
 not listed, then the accumulation of changes from previous releases is enough.
