@@ -16,6 +16,18 @@ Unreleased
 
 *
 
+1.4.3 - 2025-04-21
+**********************************************
+
+Changed
+=======
+
+* Use ``xblock-mindmap==2.0.0`` in prod requirements.
+* Use ``xblock-imagesgallery==1.0.0`` in prod requirements.
+* Use ``xblock-filesmanager==1.0.0`` in prod requirements.
+* Use ``platform-plugin-forum-email-notifier==0.3.3`` in prod requirements.
+* Use ``h5p-xblock==0.2.17`` in prod requirements.
+
 1.4.2 - 2024-09-05
 **********************************************
 
