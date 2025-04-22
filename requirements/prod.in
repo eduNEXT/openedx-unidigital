@@ -21,7 +21,7 @@ platform-plugin-ontask @ git+https://github.com/edunext/platform-plugin-ontask@v
 platform-plugin-turnitin @ git+https://github.com/eduNEXT/platform-plugin-turnitin@v0.3.0
 xblock-extemporaneous-grading @ git+https://github.com/eduNEXT/xblock-extemporaneous-grading@v0.3.0
 seb-openedx @ git+https://github.com/edunext/seb-openedx.git@v3.2.0
-eox-core[sentry] @ git+https://github.com/edunext/eox-core.git@MJG/fix-impr-config-router
+eox-core[sentry] @ git+https://github.com/edunext/eox-core.git@v11.3.0
 
 # Community plugins
 h5p-xblock @ git+https://github.com/edly-io/h5pxblock.git@v0.2.17
