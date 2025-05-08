@@ -25,7 +25,7 @@ eox-core[sentry] @ git+https://github.com/edunext/eox-core.git@v11.3.0
 
 # Community plugins
 h5p-xblock @ git+https://github.com/edly-io/h5pxblock.git@v0.2.17
-feedback-xblock @ git+https://github.com/openedx/FeedbackXBlock@v1.6.0
+feedback-xblock @ git+https://github.com/openedx/FeedbackXBlock@v2.1.0
 
 # Plugin dependencies
 edx-event-routing-backends==v9.2.0
