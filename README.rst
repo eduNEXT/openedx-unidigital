@@ -31,11 +31,11 @@ Compatibility Notes
 +------------------+--------------+
 | Open edX Release | Version      |
 +==================+==============+
-| Quince           | >= 1.0.0     |
+| Quince           | < 2.0.0      |
 +------------------+--------------+
-| Redwood          | >= 1.0.0     |
+| Redwood          | < 2.0.0      |
 +------------------+--------------+
-| Sumac            | >= 1.4.3     |
+| Sumac            | < 3.0.0      |
 +------------------+--------------+
 
 The following changes to the plugin settings are necessary. If the release you are looking for is
