@@ -1,14 +1,5 @@
-# Aspects requirements
-platform-plugin-aspects==v1.1.0
-platform-plugin-superset @ git+https://github.com/edunext/platform-plugin-superset@v0.1.1
-edx-completion
-openedx-events
-
 # eduNEXT plugins
 xblock-limesurvey @ git+https://github.com/eduNEXT/xblock-limesurvey@v0.6.4
-xblock-mindmap @ git+https://github.com/eduNEXT/xblock-mindmap@v2.0.0
-xblock-imagesgallery @ git+https://github.com/eduNEXT/xblock-imagesgallery.git@v1.0.0
-xblock-filesmanager @ git+https://github.com/eduNEXT/xblock-filesmanager.git@v1.0.0
 xblock-content-restrictions @ git+https://github.com/eduNEXT/xblock-content-restrictions@v0.4.0
 xblock-controlled-navigation @ git+https://github.com/eduNEXT/xblock-controlled-navigation@v0.2.2
 xblock-discussion-grading @ git+https://github.com/eduNEXT/xblock-discussion-grading@v0.2.0
@@ -21,10 +12,3 @@ platform-plugin-ontask @ git+https://github.com/edunext/platform-plugin-ontask@v
 platform-plugin-turnitin @ git+https://github.com/eduNEXT/platform-plugin-turnitin@v0.3.0
 xblock-extemporaneous-grading @ git+https://github.com/eduNEXT/xblock-extemporaneous-grading@v0.3.0
 seb-openedx @ git+https://github.com/edunext/seb-openedx.git@v3.2.0
-
-# Community plugins
-h5p-xblock @ git+https://github.com/edly-io/h5pxblock.git@v0.2.17
-feedback-xblock @ git+https://github.com/openedx/FeedbackXBlock@v2.1.0
-
-# Plugin dependencies
-edx-event-routing-backends==v9.2.0
